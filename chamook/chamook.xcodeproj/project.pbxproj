@@ -1,0 +1,601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E1C3A80129F123D800CC6F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3A80029F123D800CC6F8F /* AppDelegate.swift */; };
+		E1C3A80329F123D800CC6F8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3A80229F123D800CC6F8F /* SceneDelegate.swift */; };
+		E1C3A80529F123D800CC6F8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3A80429F123D800CC6F8F /* ViewController.swift */; };
+		E1C3A80829F123D800CC6F8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C3A80629F123D800CC6F8F /* Main.storyboard */; };
+		E1C3A80A29F123D800CC6F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1C3A80929F123D800CC6F8F /* Assets.xcassets */; };
+		E1C3A80D29F123D800CC6F8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C3A80B29F123D800CC6F8F /* LaunchScreen.storyboard */; };
+		E1C3A81829F123D900CC6F8F /* chamookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3A81729F123D900CC6F8F /* chamookTests.swift */; };
+		E1C3A82229F123D900CC6F8F /* chamookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3A82129F123D900CC6F8F /* chamookUITests.swift */; };
+		E1C3A82429F123D900CC6F8F /* chamookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3A82329F123D900CC6F8F /* chamookUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E1C3A81429F123D900CC6F8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1C3A7F529F123D800CC6F8F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1C3A7FC29F123D800CC6F8F;
+			remoteInfo = chamook;
+		};
+		E1C3A81E29F123D900CC6F8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1C3A7F529F123D800CC6F8F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1C3A7FC29F123D800CC6F8F;
+			remoteInfo = chamook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E1C3A7FD29F123D800CC6F8F /* chamook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chamook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1C3A80029F123D800CC6F8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E1C3A80229F123D800CC6F8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E1C3A80429F123D800CC6F8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E1C3A80729F123D800CC6F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E1C3A80929F123D800CC6F8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E1C3A80C29F123D800CC6F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E1C3A80E29F123D800CC6F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1C3A81329F123D900CC6F8F /* chamookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chamookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1C3A81729F123D900CC6F8F /* chamookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chamookTests.swift; sourceTree = "<group>"; };
+		E1C3A81D29F123D900CC6F8F /* chamookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chamookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1C3A82129F123D900CC6F8F /* chamookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chamookUITests.swift; sourceTree = "<group>"; };
+		E1C3A82329F123D900CC6F8F /* chamookUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chamookUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E1C3A7FA29F123D800CC6F8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1C3A81029F123D900CC6F8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1C3A81A29F123D900CC6F8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E1C3A7F429F123D800CC6F8F = {
+			isa = PBXGroup;
+			children = (
+				E1C3A7FF29F123D800CC6F8F /* chamook */,
+				E1C3A81629F123D900CC6F8F /* chamookTests */,
+				E1C3A82029F123D900CC6F8F /* chamookUITests */,
+				E1C3A7FE29F123D800CC6F8F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E1C3A7FE29F123D800CC6F8F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1C3A7FD29F123D800CC6F8F /* chamook.app */,
+				E1C3A81329F123D900CC6F8F /* chamookTests.xctest */,
+				E1C3A81D29F123D900CC6F8F /* chamookUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1C3A7FF29F123D800CC6F8F /* chamook */ = {
+			isa = PBXGroup;
+			children = (
+				E1C3A80029F123D800CC6F8F /* AppDelegate.swift */,
+				E1C3A80229F123D800CC6F8F /* SceneDelegate.swift */,
+				E1C3A80429F123D800CC6F8F /* ViewController.swift */,
+				E1C3A80629F123D800CC6F8F /* Main.storyboard */,
+				E1C3A80929F123D800CC6F8F /* Assets.xcassets */,
+				E1C3A80B29F123D800CC6F8F /* LaunchScreen.storyboard */,
+				E1C3A80E29F123D800CC6F8F /* Info.plist */,
+			);
+			path = chamook;
+			sourceTree = "<group>";
+		};
+		E1C3A81629F123D900CC6F8F /* chamookTests */ = {
+			isa = PBXGroup;
+			children = (
+				E1C3A81729F123D900CC6F8F /* chamookTests.swift */,
+			);
+			path = chamookTests;
+			sourceTree = "<group>";
+		};
+		E1C3A82029F123D900CC6F8F /* chamookUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E1C3A82129F123D900CC6F8F /* chamookUITests.swift */,
+				E1C3A82329F123D900CC6F8F /* chamookUITestsLaunchTests.swift */,
+			);
+			path = chamookUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E1C3A7FC29F123D800CC6F8F /* chamook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1C3A82729F123D900CC6F8F /* Build configuration list for PBXNativeTarget "chamook" */;
+			buildPhases = (
+				E1C3A7F929F123D800CC6F8F /* Sources */,
+				E1C3A7FA29F123D800CC6F8F /* Frameworks */,
+				E1C3A7FB29F123D800CC6F8F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = chamook;
+			productName = chamook;
+			productReference = E1C3A7FD29F123D800CC6F8F /* chamook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E1C3A81229F123D900CC6F8F /* chamookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1C3A82A29F123D900CC6F8F /* Build configuration list for PBXNativeTarget "chamookTests" */;
+			buildPhases = (
+				E1C3A80F29F123D900CC6F8F /* Sources */,
+				E1C3A81029F123D900CC6F8F /* Frameworks */,
+				E1C3A81129F123D900CC6F8F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1C3A81529F123D900CC6F8F /* PBXTargetDependency */,
+			);
+			name = chamookTests;
+			productName = chamookTests;
+			productReference = E1C3A81329F123D900CC6F8F /* chamookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E1C3A81C29F123D900CC6F8F /* chamookUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1C3A82D29F123D900CC6F8F /* Build configuration list for PBXNativeTarget "chamookUITests" */;
+			buildPhases = (
+				E1C3A81929F123D900CC6F8F /* Sources */,
+				E1C3A81A29F123D900CC6F8F /* Frameworks */,
+				E1C3A81B29F123D900CC6F8F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1C3A81F29F123D900CC6F8F /* PBXTargetDependency */,
+			);
+			name = chamookUITests;
+			productName = chamookUITests;
+			productReference = E1C3A81D29F123D900CC6F8F /* chamookUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1C3A7F529F123D800CC6F8F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					E1C3A7FC29F123D800CC6F8F = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					E1C3A81229F123D900CC6F8F = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = E1C3A7FC29F123D800CC6F8F;
+					};
+					E1C3A81C29F123D900CC6F8F = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = E1C3A7FC29F123D800CC6F8F;
+					};
+				};
+			};
+			buildConfigurationList = E1C3A7F829F123D800CC6F8F /* Build configuration list for PBXProject "chamook" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E1C3A7F429F123D800CC6F8F;
+			productRefGroup = E1C3A7FE29F123D800CC6F8F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1C3A7FC29F123D800CC6F8F /* chamook */,
+				E1C3A81229F123D900CC6F8F /* chamookTests */,
+				E1C3A81C29F123D900CC6F8F /* chamookUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1C3A7FB29F123D800CC6F8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1C3A80D29F123D800CC6F8F /* LaunchScreen.storyboard in Resources */,
+				E1C3A80A29F123D800CC6F8F /* Assets.xcassets in Resources */,
+				E1C3A80829F123D800CC6F8F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1C3A81129F123D900CC6F8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1C3A81B29F123D900CC6F8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1C3A7F929F123D800CC6F8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1C3A80529F123D800CC6F8F /* ViewController.swift in Sources */,
+				E1C3A80129F123D800CC6F8F /* AppDelegate.swift in Sources */,
+				E1C3A80329F123D800CC6F8F /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1C3A80F29F123D900CC6F8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1C3A81829F123D900CC6F8F /* chamookTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1C3A81929F123D900CC6F8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1C3A82229F123D900CC6F8F /* chamookUITests.swift in Sources */,
+				E1C3A82429F123D900CC6F8F /* chamookUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E1C3A81529F123D900CC6F8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1C3A7FC29F123D800CC6F8F /* chamook */;
+			targetProxy = E1C3A81429F123D900CC6F8F /* PBXContainerItemProxy */;
+		};
+		E1C3A81F29F123D900CC6F8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1C3A7FC29F123D800CC6F8F /* chamook */;
+			targetProxy = E1C3A81E29F123D900CC6F8F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E1C3A80629F123D800CC6F8F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1C3A80729F123D800CC6F8F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E1C3A80B29F123D800CC6F8F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1C3A80C29F123D800CC6F8F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E1C3A82529F123D900CC6F8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E1C3A82629F123D900CC6F8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E1C3A82829F123D900CC6F8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = chamook/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tom.chamook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E1C3A82929F123D900CC6F8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = chamook/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tom.chamook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E1C3A82B29F123D900CC6F8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tom.chamookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/chamook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/chamook";
+			};
+			name = Debug;
+		};
+		E1C3A82C29F123D900CC6F8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tom.chamookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/chamook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/chamook";
+			};
+			name = Release;
+		};
+		E1C3A82E29F123D900CC6F8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tom.chamookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = chamook;
+			};
+			name = Debug;
+		};
+		E1C3A82F29F123D900CC6F8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tom.chamookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = chamook;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E1C3A7F829F123D800CC6F8F /* Build configuration list for PBXProject "chamook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1C3A82529F123D900CC6F8F /* Debug */,
+				E1C3A82629F123D900CC6F8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1C3A82729F123D900CC6F8F /* Build configuration list for PBXNativeTarget "chamook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1C3A82829F123D900CC6F8F /* Debug */,
+				E1C3A82929F123D900CC6F8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1C3A82A29F123D900CC6F8F /* Build configuration list for PBXNativeTarget "chamookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1C3A82B29F123D900CC6F8F /* Debug */,
+				E1C3A82C29F123D900CC6F8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1C3A82D29F123D900CC6F8F /* Build configuration list for PBXNativeTarget "chamookUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1C3A82E29F123D900CC6F8F /* Debug */,
+				E1C3A82F29F123D900CC6F8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E1C3A7F529F123D800CC6F8F /* Project object */;
+}
