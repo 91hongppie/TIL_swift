@@ -38,15 +38,25 @@ class ViewController: UIViewController {
         }
     }
     
+    var savedProgram: CalculatorBrain.PropertyList?
+    @IBAction func save() {
+        savedProgram = brain.program
+    }
+    @IBAction func restore() {
+        if savedProgram != nil {
+            brain.program = savedProgram as AnyObject
+            displayValue = brain.result
+        }
+    }
     private var brain = CalculatorBrain()
     
     @IBAction private func performOperation(_ sender: UIButton) {
         if userIsInTheMiddleOfTyping {
-            brain.setOperand(operand: displayValue)
+            brain.setOperand(displayValue)
             userIsInTheMiddleOfTyping = false
         }
         if let mathmaticalSymbol = sender.currentTitle {
-            brain.performOperation(symbol: mathmaticalSymbol)
+            brain.performOperation(mathmaticalSymbol)
         }
         displayValue = brain.result
     }
