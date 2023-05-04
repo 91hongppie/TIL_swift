@@ -48,6 +48,9 @@
                             <constraint firstItem="jwj-F3-njp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="NWU-Qn-nbP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="faceView" destination="jwj-F3-njp" id="bgp-w1-m03"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

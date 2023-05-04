@@ -17,7 +17,7 @@ class FaceView: UIView
     @IBInspectable
     var eyesOpen: Bool = false { didSet { setNeedsDisplay() } }
     @IBInspectable
-    var eyeBrowTitl: Double = -0.5 { didSet { setNeedsDisplay() } } // -1 = 완전 주름짐, 1 = 완전 펴
+    var eyeBrowTilt: Double = -0.5 { didSet { setNeedsDisplay() } } // -1 = 완전 주름짐, 1 = 완전 펴
     @IBInspectable
     var color: UIColor = UIColor.blue { didSet { setNeedsDisplay() } }
     @IBInspectable
@@ -113,7 +113,7 @@ class FaceView: UIView
     
     private func pathForBrow(_ eye: Eye) -> UIBezierPath
     {
-        var tilt = eyeBrowTitl
+        var tilt = eyeBrowTilt
         switch eye {
         case .Left: tilt *= -1.0
         case .Right: break
