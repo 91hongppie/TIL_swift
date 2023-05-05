@@ -9,8 +9,8 @@ import Foundation
 
 class CalculatorBrain
 {
-    private var accumulator = 0.0
-    private var internalProgram = [AnyObject]()
+    private var accumulator = 0.0 // 결과값
+    private var internalProgram = [AnyObject]() // 입력된 숫자와 연산자들의 배열 ex) ["52", "+", "48"]
     func setOperand(_ operand: Double) {
         accumulator = operand
         internalProgram.append(operand as AnyObject)
@@ -52,7 +52,7 @@ class CalculatorBrain
         }
     }
     
-    private func executePendingBinaryOperation() {
+    private func executePendingBinaryOperation() { // 계산기에서 = 을 눌렀을 때
         if pending != nil {
             accumulator = pending!.binaryFunction(pending!.firstOperand, accumulator)
             pending = nil
@@ -61,13 +61,15 @@ class CalculatorBrain
     
     private var pending: PendingBinaryOperationInfo?
     
+    // 숫자가 두개 필요한 연산자의 경우 실행될 함수
     private struct PendingBinaryOperationInfo {
+        // 첫 숫자와 연산자에 따라 실행될 binaryFunction
         var binaryFunction: (Double, Double) -> Double
         var firstOperand: Double
     }
     
     typealias PropertyList = AnyObject
-    var program: PropertyList {
+    var program: PropertyList { // 여태까지 입력한 배열
         get {
             return internalProgram as AnyObject
         }
@@ -86,8 +88,8 @@ class CalculatorBrain
     }
     
     func clear() {
-        accumulator = 0.0
-        pending = nil
+        accumulator = 0.0 // 계산 결과값
+        pending = nil //
         internalProgram.removeAll()
     }
     
