@@ -17,8 +17,42 @@ class FaceViewController: UIViewController
     
     @IBOutlet weak var faceView: FaceView! {
         didSet {
+            faceView.addGestureRecognizer(UIPinchGestureRecognizer(target: faceView, action: #selector(FaceView.changeScale(recognizer:))))
+            let happierSwipeGestureRecognizer = UISwipeGestureRecognizer(
+                target: self,
+                action: #selector(FaceViewController.increaseHappiness))
+            happierSwipeGestureRecognizer.direction = .up
+            faceView.addGestureRecognizer(happierSwipeGestureRecognizer)
+            let sadderSwipeGestureRecognizer = UISwipeGestureRecognizer(
+                target: self, action: #selector(FaceViewController.decreaseHappiness))
+            sadderSwipeGestureRecognizer.direction = .down
+            faceView.addGestureRecognizer(sadderSwipeGestureRecognizer)
             updateUI()
         }
+    }
+    
+    /*
+     스토리 보드를 통해 드래그로 가져온 함수
+     탭 제스쳐를 스토리 보드에서 드래그를 통해 가져온 함수는
+     addGestureRecognizer가 자동으로 호출된다고 보면 된다.
+     */
+    @IBAction func toggleEyes(_ recognizer : UITapGestureRecognizer) {
+        if recognizer.state == .ended {
+            switch expression.eyes {
+            case .Open: expression.eyes = .Closed
+            case .Closed: expression.eyes = .Open
+            case .Squinting: break
+            }
+        }
+    }
+    @objc func decreaseHappiness()
+    {
+        expression.mouth = expression.mouth.sadderMouth()
+    }
+    
+    @objc func increaseHappiness()
+    {
+        expression.mouth = expression.mouth.happierMouth()
     }
     
     private var mouthCurvatures = [
