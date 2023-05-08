@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8b70ed1-1dd1-460b-8b05-5e84899f460b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/chamook/chamook.xcodeproj/project.pbxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chamook/chamook.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chamook/chamook.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chamook/chamook.xcodeproj/project.xcworkspace/xcuserdata/tom.jo.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chamook/chamook.xcodeproj/xcuserdata/tom.jo.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chamook/chamook/AppDelegate.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chamook/chamook/Assets.xcassets/AccentColor.colorset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chamook/chamook/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chamook/chamook/Assets.xcassets/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chamook/chamook/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chamook/chamook/Base.lproj/Main.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chamook/chamook/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chamook/chamook/SceneDelegate.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chamook/chamook/ViewController.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chamook/chamookTests/chamookTests.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chamook/chamookUITests/chamookUITests.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chamook/chamookUITests/chamookUITestsLaunchTests.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inflearm_yagom/function.playground/Contents.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inflearm_yagom/function.playground/contents.xcplayground" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +36,7 @@
       <option name="presentableId" value="Default" />
       <updated>1682305598948</updated>
       <workItem from="1682305601834" duration="49000" />
+      <workItem from="1683524890847" duration="604000" />
     </task>
     <servers />
   </component>
