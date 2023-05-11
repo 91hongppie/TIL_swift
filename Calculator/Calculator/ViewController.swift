@@ -7,6 +7,8 @@
 
 import UIKit // 버튼이나 텍스트 필드
 
+var calculatorCount = 0
+
 
 // 모든 MVC의 Controller은 UIViewController을 상속받아야 한다. 직접적으로든 간접적으로든
 class ViewController: UIViewController {
@@ -14,6 +16,21 @@ class ViewController: UIViewController {
     @IBOutlet private weak var display: UILabel! // 숫자가 나타나는 화면
     
     private var userIsInTheMiddleOfTyping = false // 유저가 첫 터치이거나 연산자를 터치한 경우 false
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        calculatorCount += 1
+        print("Loaded up a new Calculator (count = \(calculatorCount))")
+        brain.addUnaryOperation("Z") { [weak weakSelf = self] in
+            weakSelf?.display.textColor = UIColor.red
+            return sqrt($0)
+        }
+    }
+    
+    deinit {
+        calculatorCount -= 1
+        print("Calculator left the heap (count = \(calculatorCount))")
+    }
     
     @IBAction private func touchDigit(_ sender: UIButton) { // 0 ~ 9 까지의 버튼을 눌렀을 때 수행하는 함수
         let digit = sender.currentTitle! // 버튼에 표시된 숫자
