@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8b70ed1-1dd1-460b-8b05-5e84899f460b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cassini/Cassini/CassiniViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cassini/Cassini/DemoURL.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cassini/Cassini.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Cassini/Cassini.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cassini/Cassini.xcodeproj/project.xcworkspace/xcuserdata/tom.jo.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/Cassini/Cassini.xcodeproj/project.xcworkspace/xcuserdata/tom.jo.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cassini/Cassini/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/Cassini/Cassini/Base.lproj/Main.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cassini/Cassini/ImageViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Cassini/Cassini/ImageViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cassini/Cassini/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Cassini/Cassini/Info.plist" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +43,7 @@
       <updated>1682305598948</updated>
       <workItem from="1682305601834" duration="49000" />
       <workItem from="1683524890847" duration="604000" />
+      <workItem from="1684237663235" duration="1000" />
     </task>
     <servers />
   </component>
