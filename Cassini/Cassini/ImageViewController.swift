@@ -12,7 +12,9 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
     var imageURL: NSURL? {
         didSet {
             image = nil
-            fetchImage()
+            if view.window != nil {
+                fetchImage()
+            }
         }
     }
     
@@ -47,6 +49,13 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
             imageView.image = newValue
             imageView.sizeToFit()
             scrollView?.contentSize = imageView.frame.size
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(<#T##animated: Bool##Bool#>)
+        if image == nil {
+            fetchImage()
         }
     }
 
