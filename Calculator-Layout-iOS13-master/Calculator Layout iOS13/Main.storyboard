@@ -22,14 +22,31 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5Rf-ua-47m">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="90.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 0  " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gC2-i9-XzD">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vaw-dl-R2K">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="90.5"/>
-                                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="20"/>
-                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="50"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 0  " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gC2-i9-XzD">
+                                                        <rect key="frame" x="20" y="0.0" width="280" height="90.5"/>
+                                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="20"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="50"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="gC2-i9-XzD" secondAttribute="bottom" id="505-bu-px8"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gC2-i9-XzD" secondAttribute="trailing" constant="20" id="O3b-4n-8ZX"/>
+                                                    <constraint firstItem="gC2-i9-XzD" firstAttribute="top" secondItem="Vaw-dl-R2K" secondAttribute="top" id="Rtk-mx-5hD"/>
+                                                    <constraint firstItem="gC2-i9-XzD" firstAttribute="leading" secondItem="Vaw-dl-R2K" secondAttribute="leading" constant="20" id="wi7-rE-Lhj"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Vaw-dl-R2K" firstAttribute="leading" secondItem="5Rf-ua-47m" secondAttribute="leading" id="TaH-gr-HOC"/>
+                                            <constraint firstItem="Vaw-dl-R2K" firstAttribute="top" secondItem="5Rf-ua-47m" secondAttribute="top" id="bR1-60-GTO"/>
+                                            <constraint firstAttribute="bottom" secondItem="Vaw-dl-R2K" secondAttribute="bottom" id="ezO-LQ-pDo"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vaw-dl-R2K" secondAttribute="trailing" id="ikj-gE-p5U"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="pxM-Ru-frK">
                                         <rect key="frame" x="0.0" y="91.5" width="320" height="90.5"/>
@@ -230,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3E-z2-QY8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.23188405797103" y="132.58928571428572"/>
+            <point key="canvasLocation" x="135" y="132.04225352112675"/>
         </scene>
     </scenes>
 </document>
