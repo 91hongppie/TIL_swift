@@ -36,53 +36,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "72222529-F51C-4DB7-860C-6D958D4BDAC0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Xylophone/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "keyPressed(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "72222529-F51C-4DB7-860C-6D958D4BDAC0 - 4a71ee971d797540"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Xylophone.ViewController.keyPressed(__C.UIButton) -&gt; ()"
-                  moduleName = "Xylophone"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tom.jo/Desktop/learning/TIL_swift/Xylophone-iOS13-master/Xylophone/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "60">
-               </Location>
-               <Location
-                  uuid = "72222529-F51C-4DB7-860C-6D958D4BDAC0 - 4a71ee971d797540"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Xylophone.ViewController.keyPressed(__C.UIButton) -&gt; ()"
-                  moduleName = "Xylophone"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tom.jo/Desktop/learning/TIL_swift/Xylophone-iOS13-master/Xylophone/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "196">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
