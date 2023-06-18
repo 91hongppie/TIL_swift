@@ -10,11 +10,13 @@ import Foundation
 
 // struct를 위한 파일을 만들 때 struct와 같은 이름으로 만든다.
 struct Question {
-    let text: String
-    let answer: String
+    let q: String
+    let a: [String]
+    let correctAnswer: String
     
-    init(q: String, a: String) {
-        self.text = q
-        self.answer = a
+    init(q: String, a: [String], correctAnswer: String) {
+        self.q = q
+        self.a = a
+        self.correctAnswer = correctAnswer
     }
 }
