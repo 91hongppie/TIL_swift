@@ -12,3 +12,38 @@ swift 공부해보자
   - 부모 ControllerView에서 prepare를 통해 performSegue를 호출한 뒤 자식 ControllerView로 가기 전에 필요한 작업을 할 수 있다.
     - 이 함수안에서 자식 ControllerView의 변수 값을 바꿔주거나 하는 작업을 할 수 있음
 
+# Optionals
+
+1. Force Unwrapping
+
+   ``````
+   optional!
+   ``````
+
+2. Check for nil value
+
+   ``````
+   if optional != nil {
+   	optional!
+   }
+   ``````
+
+3. Optional Binding
+
+   ``````
+   if let safeOptional = optional {
+   	safeOptional
+   }
+   ``````
+
+4. Nil Coalescing Operator
+
+   ``````
+   optional ?? defaultValue
+
+5. Optional Chaining
+
+   ``````
+   optional?.property
+   optional?.method
+   ``````
