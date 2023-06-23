@@ -10,9 +10,7 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
     
-    var percent: Double? = 0.1
-    var result: Double? = 0.0
-    var split: Int = 1
+    var tipsyBrain: TipsyBrain?
     
     @IBOutlet weak var billTextField: UITextField!
     @IBOutlet weak var zeroPctButton: UIButton!
@@ -22,8 +20,7 @@ class CalculatorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        percent = 0.1
-        split = 2
+        tipsyBrain = TipsyBrain(percent: 0.1, split: 2)
     }
 
     @IBAction func tipChange(_ sender: UIButton) {
@@ -31,16 +28,16 @@ class CalculatorViewController: UIViewController {
         sender.isSelected = true
         billTextField.endEditing(true)
         if sender.currentTitle == "10%" {
-            percent = 0.1
+            tipsyBrain?.setPercent(percent: 0.1)
         } else if sender.currentTitle == "20%" {
-            percent = 0.2
+            tipsyBrain?.setPercent(percent: 0.1)
         } else {
-            percent = 0.0
+            tipsyBrain?.setPercent(percent: 0.0)
         }
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
-        split = Int(sender.value)
+        tipsyBrain?.setSplit(split: Int(sender.value))
         splitNumberLabel.text = String(Int(sender.value))
     }
     
@@ -52,23 +49,17 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func calculatePressed(_ sender: UIButton) {
         let billValue = Double(billTextField?.text ?? "0.0") ?? 0
-        let splitValue = Double(splitNumberLabel.text ?? "1") ?? 1
-        print(splitValue)
-        let resultPercent = percent ?? 1.0
-        print(billValue, splitValue, resultPercent)
-        result = (billValue + (billValue * resultPercent)) / splitValue
-        print(result ?? 0.0)
+        tipsyBrain?.calculateResult(bill: billValue)
         self.performSegue(withIdentifier: "goToResult", sender: self)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(segue.identifier ?? "")
         if segue.identifier == "goToResult" {
             let destinationVC = segue.destination as! ResultViewController
-            destinationVC.resultValue = "\(String(format: "%.2f", result ?? 0.0))"
-            destinationVC.splitValue = "\(String(split))"
-            destinationVC.tip = "\(String(Int((percent ?? 0) * 100)))"
+            destinationVC.resultValue = tipsyBrain?.getResult()
+            destinationVC.splitValue = tipsyBrain?.getSplit()
+            destinationVC.tip = tipsyBrain?.getPercent()
         }
     }
 }
