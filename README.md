@@ -16,13 +16,13 @@ swift 공부해보자
 
 1. Force Unwrapping
 
-   ``````
+   ``````swift
    optional!
    ``````
 
 2. Check for nil value
 
-   ``````
+   ``````swift
    if optional != nil {
    	optional!
    }
@@ -30,7 +30,7 @@ swift 공부해보자
 
 3. Optional Binding
 
-   ``````
+   ``````swift
    if let safeOptional = optional {
    	safeOptional
    }
@@ -38,12 +38,51 @@ swift 공부해보자
 
 4. Nil Coalescing Operator
 
-   ``````
+   ``````swift
    optional ?? defaultValue
 
 5. Optional Chaining
 
-   ``````
+   ``````swift
    optional?.property
    optional?.method
    ``````
+
+# UITextField
+
+- UITextField에 문자열을 작성하고 키보드의 return 버튼으로 동작을 컨트롤하고 싶을 때는 UITextFieldDelegate가 필요하다 UIViewController에 UITextFieldDelegate를 같이 상속 받아 viewDidLoad에서 textField IBOutlet에 self를 할당하여 사용
+
+- textFieldShouldReturn
+  - textField에서 값을 입력하고 키보드의 return 버튼을 누르면 호출된다.
+- textFieldShouldEndEditing
+  - textField.endEditing(true)를 호출했을 때 호출된다.
+- textFieldDidEndEditing
+  - textField가 endEditing 됐을 때 호출된다.
+  - textFieldShouldEndEditing 이 먼저 실행된 다음에 결과가 true일 때 호출
+
+
+
+# Protocols
+
+``````swift
+protocol MyProtocol {
+	// Define requirements
+}
+``````
+
+``````swift
+struct MyStruct: MyProtocol {}
+class MyClass: MyProtocol {}
+``````
+
+- struct는 protocol만 상속 받을 수 있다.
+
+- class는 class와 protocol을 같이 상속 받으면 class를 먼저 작성하고 뒤에 protocol을 작성한다.
+
+  ``````swift
+  class MyClass: Superclass, FirstProtocol, AnotherProtocol {
+  	// class definition goes here
+  }
+  ``````
+
+- protocol은 여러개 상속 받을 수 있다.
