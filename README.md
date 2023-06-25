@@ -97,3 +97,53 @@ class MyClass: MyProtocol {}
 - 이는 서브클래스가 부모클래스에게 요청을 전달하는 것과 유사한 방식이다.
 - 위임과 동일한 효과를 얻으려면 수신 객체는 대리자에게 자신을 매개변수로 전달해서 위임된 연산이 수신자를 참조하게 한다.
 - 이해는 되는데 아직은 어디서 사용될지 궁금하다..
+
+# URLSession
+
+- API 요청을 위한 swift 내장 클래스
+
+## 사용법
+
+1. Create a URL
+
+   - URL 구조체를 이용하여 url을 생성한다.
+   - ```let url = URL(string: urlString)```
+
+2. Create a URLSession
+
+   - URLSession을 생성한다.
+   - ```let session = URLSession(configuration: .default)```
+
+3. Give the session a task
+
+   - session에 dataTask를 호출한다.
+
+     ```swift
+     let task = session.dataTask(with: url, completionHandler: handler(data:response:error:))
+     
+       func handle(data: Data?, response: URLResponse?, error: Error?) {
+             if error != nil {
+                 print(error!)
+                 return
+             }
+             
+             if let safeData = data {
+                 let dataString = String(data: safeData, encoding: .utf8)
+                 print(dataString)
+             }
+         }
+     ```
+
+4. Start the task
+
+   - task를 시작한다.
+   - ```task.resume()```
+   - 메서드 이름이 resume인 이유는 - 새로 초기화된 작업은 일시 중단된 상태에서 시작되므로 이 메서드를 호출하여 작업을 시작해야 합니다. 라고 공식 문서에 나온다.
+   - 즉, 처음 생성한 곳에서 일시 중단된 상태로 시작한다는 것
+
+### etc
+
+- 이번 강의에서는 session.dataTask 밖에 학습하지 못했다
+- dataTask = 서버에서 메모리로 데이터를 검색하는 HTTP GET 요청에 사용하는 태스크
+- uploadTask = HTTP POST, PUT 메서드를 통해 디스크에서 웹서버로 파일을 전송할 때 사용하는 태스크
+- downloadTask = 임시의 파일 위치로 원격 서버에서 파일을 다운로드할 때 사용하는 태스크
