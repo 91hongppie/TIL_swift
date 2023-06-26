@@ -205,3 +205,32 @@ func add(n1: Int, n2: Int) -> Int {
   ```
 
   
+
+# Parameter Names
+
+- swift는 함수에서 외부 매개변수 이름과 내부 매개변수 이름을 따로 사용할 수 있다.
+- 외부 매개변수 이름을 사용하지 않으려면 _ 로 대체한다.
+- 외부 매개변수 이름을 사용하지 않을 때는 매개변수를 함수 호출할 때 순서대로 넣어주면된다.
+
+```swift
+func myFunc(name: Type) {
+	print(name)
+}
+```
+
+```swift
+func myFunc(externalName internalName: Type) {
+  print(internalName)
+}
+
+myFunc(externalName: value)
+```
+
+```
+func myFunc(_ internalName: Type) {
+  print(internalName)
+}
+
+myFunc(value)
+```
+
