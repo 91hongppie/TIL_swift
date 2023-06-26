@@ -1,4 +1,7 @@
+
+
 # TIL_swift
+
 swift 공부해보자
 
 - struct를 외부에서 바꾸는 것과 내부에서 바꾸는 건 차이가 있다.
@@ -40,6 +43,7 @@ swift 공부해보자
 
    ``````swift
    optional ?? defaultValue
+   ``````
 
 5. Optional Chaining
 
@@ -147,3 +151,57 @@ class MyClass: MyProtocol {}
 - dataTask = 서버에서 메모리로 데이터를 검색하는 HTTP GET 요청에 사용하는 태스크
 - uploadTask = HTTP POST, PUT 메서드를 통해 디스크에서 웹서버로 파일을 전송할 때 사용하는 태스크
 - downloadTask = 임시의 파일 위치로 원격 서버에서 파일을 다운로드할 때 사용하는 태스크
+
+# Closures
+
+- 모든 함수를 클로저라고 한다.
+- 이름이 있으면 named closure
+- 이름이 없으면 unnamed closure
+- 이름이 있는 클로저를 보통 함수라고 하고 이름이 없는 클로저를 클로저라고 한다.
+
+## 작성법
+
+- 함수
+
+``````swift
+func add(n1: Int, n2: Int) -> Int {
+	return n1 + n2
+}
+``````
+
+- 클로저
+
+`````swift
+{
+  (n1: Int, n2: Int) -> Int in 
+    return n1 + n2
+}
+`````
+
+```swift
+{
+	(n1: Int, n2: Int) in n1 + n1 
+}
+```
+
+```
+{ $0 + $1 }
+```
+
+- 트레일링 클로저
+
+  - 함수의 마지막 파라미터가 클로저일 때, 함수를 따로 만들어서 넣지않고 트레일링 클로저를 넣을 수 있다.
+
+  ```swift
+  func calculator(n1: Int, n2: Int, operation: (Int, Int) -> Int) -> Int {
+    return operation(n1, n2)
+  }
+  
+  let addResult  = calculator(n1: 2, n2: 3) { $0 + $1 }
+  let multiplyResult = calculator(n1: 2, n2: 3) { $0 * $1 }
+  
+  print(addResult) // 5
+  print(multiplyResult) // 6
+  ```
+
+  
