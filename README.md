@@ -234,3 +234,39 @@ func myFunc(_ internalName: Type) {
 myFunc(value)
 ```
 
+
+
+# Extensions
+
+```swift
+extension SomeType {
+	// Add new functionality
+}
+```
+
+- JS의 prototype 과 비슷하다.
+- 예를들어, Double 이라는 이름의 익스텐션을 만들면 Double 타입에서 따로 처리없이 호출할수있다.
+
+```swift
+var myDouble = 3.14159
+
+extension Double {
+    func round(to places: Int) -> Double {
+        let precisionNumber = pow(10, Double(places))
+        var n = self
+        n = n * precisionNumber
+        n.round()
+        n = n / precisionNumber
+        return n
+    }
+}
+
+
+myDouble.round(to: 1)
+
+
+let a = 234.234234
+
+a.round(to: 2) // 234.23
+```
+
