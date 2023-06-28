@@ -11,7 +11,7 @@ import CoreLocation
 
 protocol WeatherManagerDelegate {
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel)
-    func  didFailWithError(error: Error)
+    func didFailWithError(error: Error)
 }
 
 struct WeatherManager {
