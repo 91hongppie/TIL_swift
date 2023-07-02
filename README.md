@@ -273,3 +273,9 @@ a.round(to: 2) // 234.23
 # Third Party Libraries
 
 - <a>cocoapods.org</a> 사이트에 접속하여 라이브러리를 검색할 수 있다.
+- cocoapods 설치
+  - ```sudo gem install cocopods```
+    - cocoapod 설치
+    - 처음 명령어 실행하면 좀 오랜 시간동안 아무것도 일어나지 않는데 인내심을 가지고 기다려보자...
+  - ```pod setup --verbose```
+    - github에 있는 cocoa pods의 마스터 브랜치에서 데이터를 받아오면서 cocoapods을 세팅
