@@ -32,7 +32,7 @@
                                     <segue destination="5v2-hE-4Ub" kind="show" id="ORv-t1-wi7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="⚡️FlashChat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7D-jv-BlJ" customClass="CLTypingLabel" customModule="CLTypingLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="⚡️FlashChat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7D-jv-BlJ">
                                 <rect key="frame" x="0.0" y="418" width="414" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ph1-wX-D3a"/>
@@ -377,7 +377,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="ALM-JX-FYo"/>
+        <segue reference="PRY-8D-lao"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="paperplane.fill" catalog="system" width="128" height="119"/>
