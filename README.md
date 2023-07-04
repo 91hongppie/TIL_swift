@@ -287,3 +287,11 @@ a.round(to: 2) // 234.23
   - 그래서 외부 라이브러리를 사용하는 경우에 .xcodeproj로 프로젝트를 실행하면 에러가 발생하게 된다.
 
 - cocoapods vs Swift Package Manager
+
+# UITableView
+
+## TableViewCell
+
+- Selection 
+  - None = 선택 안됨
+  - Default = 선택
