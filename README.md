@@ -339,6 +339,7 @@ let newCell = messageCell as UITableViewCell
 
 ## Any, AnyObject, NSObject
 
-- Any는 모든 타입
-- AnyObject는 모든 클래스로 생성된 인스턴스의 타입, 구조체(struct) 안됨
-- 
+- Any는 어떠한 타입
+- AnyObject는 어떠한 클래스 타입, 구조체(struct) 안됨
+  - swift에서 String, Int 등 원시타입은 struct이다.
+- NSObject
