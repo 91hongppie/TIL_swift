@@ -295,3 +295,50 @@ a.round(to: 2) // 234.23
 - Selection 
   - None = 선택 안됨
   - Default = 선택
+
+# Type Casting
+
+## as?
+
+```swift
+if let messageCell = cell as? MessageCell {
+  
+} else {
+  
+}
+```
+
+- 옵셔널로 된다. 
+- 위 코드에서 cell이 MessageCell 타입이 아닌 경우 else 문으로 빠진다.
+
+## as!
+
+``` swift
+let messageCell = cell as! MesaageCell 
+```
+
+- 강제 다운캐스트
+
+- 데이터 타입을 서브클래스로 변환, 캐스트한다.
+
+- 문제점
+
+  - 다른 타입에 잘못 변환했을때 코드 레벨에서 문제가 발생하지 않는다. - 런타임에서 발생한다.
+
+  
+
+## as
+
+```swift
+let newCell = messageCell as UITableViewCell
+```
+
+- as는 업캐스팅을 수행하는데 사용된다.
+
+
+
+## Any, AnyObject, NSObject
+
+- Any는 모든 타입
+- AnyObject는 모든 클래스로 생성된 인스턴스의 타입, 구조체(struct) 안됨
+- 
