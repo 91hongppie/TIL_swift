@@ -343,3 +343,9 @@ let newCell = messageCell as UITableViewCell
 - AnyObject는 어떠한 클래스 타입, 구조체(struct) 안됨
   - swift에서 String, Int 등 원시타입은 struct이다.
 - NSObject
+
+
+
+# DispatchQueue
+
+- 비동기 메서드

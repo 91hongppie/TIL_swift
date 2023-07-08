@@ -50,6 +50,11 @@ class ChatViewController: UIViewController {
                             
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
+                                
+                                
+                                
+                                let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                                self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                             }
                         }
                     }
@@ -70,6 +75,9 @@ class ChatViewController: UIViewController {
                     print("There was an issue saving data to firestore, \(e)")
                 } else {
                     print("Successfully saved data.")
+                    DispatchQueue.main.async {
+                        self.messageTextfield.text = ""
+                    }
                 }
             }
         }
@@ -88,6 +96,7 @@ class ChatViewController: UIViewController {
 }
 
 extension ChatViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
@@ -105,11 +114,12 @@ extension ChatViewController: UITableViewDataSource {
             cell.messageBubble.backgroundColor = UIColor(named: K.BrandColors.lightPurple)
             cell.label.textColor = UIColor(named: K.BrandColors.purple)
         }
-        
         // This is a message from another sender.
         else {
             cell.leftImageView.isHidden = false
             cell.rightImageView.isHidden = true
+            cell.messageBubble.backgroundColor = UIColor(named: K.BrandColors.purple)
+            cell.label.textColor = UIColor(named: K.BrandColors.lightPurple)
         }
         
         
