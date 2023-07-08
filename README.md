@@ -349,3 +349,30 @@ let newCell = messageCell as UITableViewCell
 # DispatchQueue
 
 - 비동기 메서드
+
+
+
+# ViewController Lifecycle
+
+1. viewDidLoad()
+   - 모든 IBOutlet, IBAction... 뷰와 관련된 모든 개체가 연결되어 액세스 가능해진다.
+   - 뷰가 생성됐을 때 한 번만 호출된다.
+2. viewWillAppear()
+   - 뷰가 로드된 후에 운영체제가 viewWillAppear을 호출한다.
+   - 화면에 뷰가 나타나기 직전에 호출된다.
+   - 사용자는 아직 아무것도 볼 수 없다. 하지만 특정 UI 구성 요소를 숨기거나 보여주기에 좋은 시점이다.
+   - 사용자는 뷰에서 어떤 변화도 감지할 수 없다.
+3. viewDidAppear()
+   - 이 단계에서 사용자가 화면을 볼 수 있다.
+   - 카운트다운 타이머 시작하기 좋은 시점이다.
+   - 화면에서 하든 애니메이션을 시작하든 사용자가 감지할 수 있는 어떤 것이든지
+4. viewWillDisappear()
+   - 뒤로 이동하거나 현재의 ViewController을 해제할 때 첫번째 메서드
+   - 애니메이션을 멈추고 UI의 모습을 바꾸고 싶을 때
+   - 네비게이션 바를 숨길 때 
+5. viewDidDisappear()
+   - 이 시점에 뷰는 이미 화면에 안보인다.
+   - 이전 뷰를 바꿀 수 있는 마지막 함수
+   - 말 그대로 사용자가 볼 수 없다는 뜻
+   - ViewController가 파괴되지않고 내비게이션 스택의 백그라운드에 남아있는다.
+   - 다음 화면으로 넘어가면 다음 화면의 viewWillApear, viewDidAppear 뒤에 호출된다.
