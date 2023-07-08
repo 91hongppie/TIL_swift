@@ -376,3 +376,21 @@ let newCell = messageCell as UITableViewCell
    - 말 그대로 사용자가 볼 수 없다는 뜻
    - ViewController가 파괴되지않고 내비게이션 스택의 백그라운드에 남아있는다.
    - 다음 화면으로 넘어가면 다음 화면의 viewWillApear, viewDidAppear 뒤에 호출된다.
+
+# Application Lifecycle
+
+1. App Launched
+2. App Visible
+3. App Recedes into Background
+4. Resources Reclaimed
+   - Application: didFinishLaunchingWithOptions
+     - 앱이 실행되는 이벤트에 반응하고 이 코드가 다른 어떤 것보다 먼저 실행된다는 것을 보장
+   - 앱 수명 주기 메서드를 어디서 확인할 수 있을까?
+     - AppDelegate.swift, SceneDelegate.swift
+       - ios 운영체제가 앱 수명 주기 측면에서 어떤 지점에 있는지 알려주는 것
+       - ios 12 포함 그 이전에는 모든 수명 주기 메서드가 AppDelegate.swift에 있었다.
+       - 하지만 ios13 부터 특히 ipadOS에선 앱이 다중 windows에서 실행될 수 있다.
+       - 그 말은 앱의 다양한 인스턴스를 실행하는 여러 개의 창이 있을 수 있다. 즉, 두 개의  다른 장면이 있는 것이다.
+       - 그래서 SceneDelegate가 각 window의 수명 주기에 대해 탐지한다.
+
+> print(#function) = 호출되는 함수의 이름을 print 한다.
