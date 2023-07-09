@@ -409,3 +409,19 @@ let newCell = messageCell as UITableViewCell
 > 왜 커맨드 라인을 사용할까?
 > 더 큰 통제력을 위해서
 
+
+
+
+
+# SiwftUI
+
+- 애플의 새로운 UI 프레임워크
+- 선언형 Swift 코드로 구축
+- Drag and Drop to Create Code
+- Easy Layouts VHZ Stack
+  - VHZ = VerticalHorizontalZaxis
+- Highly Reusable UI
+  - 재사용하고 싶은 요소의 코드에 우클릭 -> Extract Subview 클릭 -> 코드상에 새로운 요소로 추출 되어 변경 가능
+- Live Preview
+- Cross Apple Platform
+- 
