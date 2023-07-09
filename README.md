@@ -413,7 +413,7 @@ let newCell = messageCell as UITableViewCell
 
 
 
-# SiwftUI
+# SwiftUI
 
 - 애플의 새로운 UI 프레임워크
 - 선언형 Swift 코드로 구축
