@@ -394,3 +394,18 @@ let newCell = messageCell as UITableViewCell
        - 그래서 SceneDelegate가 각 window의 수명 주기에 대해 탐지한다.
 
 > print(#function) = 호출되는 함수의 이름을 print 한다.
+
+
+
+# Command Line
+
+## Shell
+
+- 운영체제 macos가 피스타치오라면 실제 견과류는 kernel, shell 은 껍데기
+- kernel = 하드웨어와 인터페이스하는 실제 프로그램을 가리킨다. 운영체제의 핵심
+- shell = 사람이 kernel과 상호 작용할 수 있도록 해주는 유저 인터페이스, 컴퓨터 하드웨어와도 같다.
+- bash shell = CLI 또는 UNIX 시스템의 커맨드 라인 인터프리터, 유닉스에 기반한 시스템
+
+> 왜 커맨드 라인을 사용할까?
+> 더 큰 통제력을 위해서
+
