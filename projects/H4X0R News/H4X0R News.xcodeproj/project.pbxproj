@@ -13,6 +13,8 @@
 		E1D4791A2A5D7085003FFE3B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1D479192A5D7085003FFE3B /* Preview Assets.xcassets */; };
 		E1D479222A5D745E003FFE3B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D479212A5D745E003FFE3B /* NetworkManager.swift */; };
 		E1D479242A5D7553003FFE3B /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D479232A5D7553003FFE3B /* PostData.swift */; };
+		E1D479272A5D8505003FFE3B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D479262A5D8505003FFE3B /* DetailView.swift */; };
+		E1D479292A5D87EF003FFE3B /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D479282A5D87EF003FFE3B /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		E1D479192A5D7085003FFE3B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E1D479212A5D745E003FFE3B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E1D479232A5D7553003FFE3B /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		E1D479262A5D8505003FFE3B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		E1D479282A5D87EF003FFE3B /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +61,7 @@
 			children = (
 				E1D479202A5D7444003FFE3B /* Models */,
 				E1D479122A5D7084003FFE3B /* H4X0R_NewsApp.swift */,
-				E1D479142A5D7084003FFE3B /* ContentView.swift */,
+				E1D479252A5D84E4003FFE3B /* Views */,
 				E1D479162A5D7085003FFE3B /* Assets.xcassets */,
 				E1D479182A5D7085003FFE3B /* Preview Content */,
 			);
@@ -79,6 +83,16 @@
 				E1D479232A5D7553003FFE3B /* PostData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E1D479252A5D84E4003FFE3B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E1D479142A5D7084003FFE3B /* ContentView.swift */,
+				E1D479262A5D8505003FFE3B /* DetailView.swift */,
+				E1D479282A5D87EF003FFE3B /* WebView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +168,8 @@
 				E1D479222A5D745E003FFE3B /* NetworkManager.swift in Sources */,
 				E1D479242A5D7553003FFE3B /* PostData.swift in Sources */,
 				E1D479152A5D7084003FFE3B /* ContentView.swift in Sources */,
+				E1D479292A5D87EF003FFE3B /* WebView.swift in Sources */,
+				E1D479272A5D8505003FFE3B /* DetailView.swift in Sources */,
 				E1D479132A5D7084003FFE3B /* H4X0R_NewsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,11 +299,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"H4X0R News/Preview Content\"";
+				DEVELOPMENT_TEAM = V86PDK37VD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -311,11 +329,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"H4X0R News/Preview Content\"";
+				DEVELOPMENT_TEAM = 24Y7TSVQ6L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
