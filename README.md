@@ -424,5 +424,20 @@ let newCell = messageCell as UITableViewCell
   - 재사용하고 싶은 요소의 코드에 우클릭 -> Extract Subview 클릭 -> 코드상에 새로운 요소로 추출 되어 변경 가능
 - Live Preview
 - Cross Apple Platform
-- @State
-  - 변수를 업데이트 가능하게 하고 변수값이 바뀌면 ContentView를 새로고침한다.
+- - 
+
+- ObservableObject
+  - 한 개 혹은 그 이상의 속성을 어느 이해관계자에게든 방송할 수 있다는 뜻이다.
+- - 
+
+- Property Wrapper
+
+  - @State
+    - 변수를 업데이트 가능하게 하고 변수값이 바뀌면 ContentView를 새로고침한다.
+  - @Published
+    - 내용이 바뀔 때마다 알수 있다.
+    - 콘텐츠뷰에서 이것을 듣기 위해서 해당 클래스 인스턴스를 생성한다. 이 때 변수앞에 @ObservedObject를 넣어야한다.
+    - **핵심은 메인스레드에서 페치하도록 늘 확인해야 한다.**
+
+  - ObservedObject
+    - ObservableObject를 사용하려는 곳에서 달리는 태그
