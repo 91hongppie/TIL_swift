@@ -424,4 +424,5 @@ let newCell = messageCell as UITableViewCell
   - 재사용하고 싶은 요소의 코드에 우클릭 -> Extract Subview 클릭 -> 코드상에 새로운 요소로 추출 되어 변경 가능
 - Live Preview
 - Cross Apple Platform
-- 
+- @State
+  - 변수를 업데이트 가능하게 하고 변수값이 바뀌면 ContentView를 새로고침한다.
