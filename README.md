@@ -449,9 +449,24 @@ let newCell = messageCell as UITableViewCell
 # Git and GitHub
 
 - mkdir Story
+
   - Story 디렉토리 생성
+
 - touch chapter1.txt
+
   - chapter1.txt 파일 생성
+
 - open chapter1.txt
+
   - chapter1.txt 열기
-- 
+
+- DS_Store
+
+  - 설정 파일
+  - 특정 프로젝트 폴더에 아이콘이 배열되는 방법 같은 것을 저장한다.
+
+- git rm --cached -r .
+
+  - git add 를 통해 스테이징 영역애 있는 모든 것을 제거한다.
+
+    
