@@ -441,3 +441,17 @@ let newCell = messageCell as UITableViewCell
 
   - ObservedObject
     - ObservableObject를 사용하려는 곳에서 달리는 태그
+
+
+
+
+
+# Git and GitHub
+
+- mkdir Story
+  - Story 디렉토리 생성
+- touch chapter1.txt
+  - chapter1.txt 파일 생성
+- open chapter1.txt
+  - chapter1.txt 열기
+- 
