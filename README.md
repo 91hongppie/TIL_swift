@@ -467,3 +467,16 @@ let newCell = messageCell as UITableViewCell
   - name에 들어간 이름의 브랜치로 이동한다.
 - git merge ${name}
   - name의 브랜치를 현재 브랜치에 머지한다.
+
+
+
+# Xcode를 이용하여 커밋하기
+
+1. 처음 프로젝트를 생성할 때 create Git repository on my Mac을 체크하여 생성하면 git init과 똑같은 역할을 한다.
+
+2. 아래 이미지의 두번째를 클릭하면 변경사항을 볼 수 있다.
+
+   ![Screenshot 2023-07-12 at 10.34.31 PM](/Users/tom.jo/Desktop/Screenshot 2023-07-12 at 10.34.31 PM.png)
+
+3. 작업 표시줄의 Source Control의 commit을 클릭하면 내용을 입력하고 commit을 생성할 수 있다.
+4. 작업을 망쳤을 때 이전 커밋으로 되돌리고 싶으면 Source Control의 Discard All Changes...를 통해 되돌릴 수 있다.
