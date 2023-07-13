@@ -480,3 +480,10 @@ let newCell = messageCell as UITableViewCell
 
 3. 작업 표시줄의 Source Control의 commit을 클릭하면 내용을 입력하고 commit을 생성할 수 있다.
 4. 작업을 망쳤을 때 이전 커밋으로 되돌리고 싶으면 Source Control의 Discard All Changes...를 통해 되돌릴 수 있다.
+
+5. Xcode에 github 아이디로 로그인 할 수 있다.
+6. Xcode에서 github에 repository를 만들 수 있다.
+7. github 아이디로 로그인하고 Source Controll Navigator에 가서 프로젝트 이름을 우클릭하면 Create "project name" Remote on GitHub...을 클릭한다.
+8. xcode를 통해 커밋을 push 하고 싶으면 작업표시줄의 Source Control에서 push 를 클릭한다.
+9. pull도 xcode의 Source Control에 있다.
+10. xcode로 관리하는게 터미널로 관리하는 것보다 편한지는 더 경험이 필요한듯 하다.
