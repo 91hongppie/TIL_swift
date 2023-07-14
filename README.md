@@ -487,3 +487,8 @@ let newCell = messageCell as UITableViewCell
 8. xcode를 통해 커밋을 push 하고 싶으면 작업표시줄의 Source Control에서 push 를 클릭한다.
 9. pull도 xcode의 Source Control에 있다.
 10. xcode로 관리하는게 터미널로 관리하는 것보다 편한지는 더 경험이 필요한듯 하다.
+
+
+
+
+
