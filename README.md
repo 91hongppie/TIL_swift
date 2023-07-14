@@ -492,3 +492,7 @@ let newCell = messageCell as UITableViewCell
 
 
 
+> Xcode에서 초기 컨트롤 뷰 화살표를 모르고 삭제했다면 다른 컨트롤 뷰를 선택해서 Is Initial View Controller을 체크한다.
+
+
+
