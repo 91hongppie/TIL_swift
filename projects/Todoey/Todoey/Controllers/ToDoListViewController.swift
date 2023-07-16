@@ -51,11 +51,19 @@ class ToDoListViewController: UITableViewController {
         
         
         
-        if item.done == true {
-            cell.accessoryType = .checkmark
-        } else {
-            cell.accessoryType = .none
-        }
+//        if item.done == true {
+//            cell.accessoryType = .checkmark
+//        } else {
+//            cell.accessoryType = .none
+//        }
+        
+        
+        /**
+         Ternary Operator ==>
+            value = condition ? valueIfTrue :valueIfFalse
+         */
+        
+        cell.accessoryType = item.done ? .checkmark : .none
         
         return cell
     }
