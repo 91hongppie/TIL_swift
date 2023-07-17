@@ -505,3 +505,15 @@ let newCell = messageCell as UITableViewCell
 - 보호받는 환경일 뿐 아무것도 아니다.
 - 각각의 앱은 앱과 관련된 파일과 문서를 저장하는 고유 폴더가 있다.
 - 하나의 앱이 다른앱의 폴더에 접근할 수 없음
+
+
+
+# Encodable
+
+- Encodable을 상속 받으려면 클래스 안에 표준 데이터 타입만 있어야한다.
+  - String, Boolean, Array, Dictionary
+- 커스텀 데이터 타입이 있어선 안된다.
+
+
+
+# UserDefaults VS NSCoder
