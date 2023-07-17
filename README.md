@@ -517,3 +517,25 @@ let newCell = messageCell as UITableViewCell
 
 
 # UserDefaults VS NSCoder
+
+
+
+
+
+# Databases
+
+- UserDefaults
+  - 작은 키 값 쌍 같은 아주 적은 양의 정보를 저장하고 싶을 때
+- Codable
+  - 적은 양의 사용자 지정 개체를 저장하고 싶을 때
+- Keychain
+  - 사용자 암호같은 안전한 데이터를 저장하고 싶을 때
+- SQLite, Core Data, Realm
+  - 많은 양의 데이터가 있는데 그 안에 있는 특정 항목을 끌어내기 위해 데이터를 쿼리해야 할 때
+- SQLite
+  - SQLite에 대해 이미 알거나 데이터베이스에 저장된 게 있다면 추천
+- Core Data
+  - 처음부터 데이터를 전송할 때 추천
+  - 레퍼런스가 많다.
+- Realm
+  - 코어 데이터로 할 수 있는 대부분의 작업을 좀 더 빠르고 효율적으로 하고 싶을 때
