@@ -539,3 +539,11 @@ let newCell = messageCell as UITableViewCell
   - 레퍼런스가 많다.
 - Realm
   - 코어 데이터로 할 수 있는 대부분의 작업을 좀 더 빠르고 효율적으로 하고 싶을 때
+
+
+
+# 진행하던 프로젝트에 Core Data 도입하기
+
+- Core Data를 포함하여 새로 프로젝트를 만든다.
+- 원래 진행하던 프로젝트에 Core Data 파일을 생성한다.
+- 새로운 프로젝트의 AppDelegate에서 // MARK: - Core Data stack 부분을 복사 붙여넣기 한다.
