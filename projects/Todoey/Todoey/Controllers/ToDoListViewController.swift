@@ -14,14 +14,18 @@ class ToDoListViewController: UITableViewController {
 
     var itemArray = [Item]()
     
+    var selectedCategory: Category? {
+        didSet {
+            loadItems()
+        }
+    }
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
-
-        loadItems()
     }
     
     //MARK: - Tableview Datasource Method
@@ -80,6 +84,7 @@ class ToDoListViewController: UITableViewController {
                 let newItem = Item(context: self.context)
                 newItem.title = result
                 newItem.done = false
+                newItem.parentCategory = self.selectedCategory
                 self.itemArray.append(newItem)
                 
                 self.saveItems()
@@ -111,6 +116,9 @@ class ToDoListViewController: UITableViewController {
     
     func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest()) {
         
+        let predicate = NSPredicate(format: "parentCategory.name MATCHES %@", selectedCategory!.name!)
+        
+        request.predicate = predicate
         do {
             itemArray = try context.fetch(request)
         } catch {
