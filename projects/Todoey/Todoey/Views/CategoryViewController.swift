@@ -7,9 +7,11 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 class CategoryViewController: UITableViewController {
+    
+    let realm = try! Realm()
     
     var categoryArray = [Category]()
     
@@ -53,25 +55,28 @@ class CategoryViewController: UITableViewController {
     
     //MARK: - Data Manipulation Methods
     
-    func saveCategories() {
+    func save(category: Category) {
         let encoder = PropertyListEncoder()
         
         do {
-            try context.save()
+            try realm.write {
+                realm.add(category)
+            }
         } catch {
             print("Error saving context, \(error)")
         }
         self.tableView.reloadData()
     }
     
-    func loadCategories(with request: NSFetchRequest<Category> = Category.fetchRequest()) {
-        do {
-            categoryArray = try context.fetch(request)
-        } catch {
-            print("Error fetching data from database \(error)")
-        }
-        
-        tableView.reloadData()
+    func loadCategories() {
+//        let request: NSFetchRequest<Category> = Category.fetchRequest()
+//        do {
+//            categoryArray = try context.fetch(request)
+//        } catch {
+//            print("Error fetching data from database \(error)")
+//        }
+//
+//        tableView.reloadData()
     }
     
     //MARK: - Add New Categories
@@ -82,12 +87,15 @@ class CategoryViewController: UITableViewController {
         let alert = UIAlertController(title: "Add New Category", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
+            
             if let result = textField.text {
-                let newCategory = Category(context: self.context)
+            
+                let newCategory = Category()
                 newCategory.name = result
+                
                 self.categoryArray.append(newCategory)
                 
-                self.saveCategories()
+                self.save(category: newCategory)
             }
         }
         
