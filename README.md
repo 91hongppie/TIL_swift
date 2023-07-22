@@ -547,3 +547,16 @@ let newCell = messageCell as UITableViewCell
 - Core Data를 포함하여 새로 프로젝트를 만든다.
 - 원래 진행하던 프로젝트에 Core Data 파일을 생성한다.
 - 새로운 프로젝트의 AppDelegate에서 // MARK: - Core Data stack 부분을 복사 붙여넣기 한다.
+
+
+
+# dynamic
+
+```swift
+    @objc dynamic var name: String = ""
+```
+
+- 동적 변수
+- 앱이 실행되는 동안 이 속성의 변화를 모니터할 수 있다. 
+- 빌드타임 에러 런타임 에러
+- 
