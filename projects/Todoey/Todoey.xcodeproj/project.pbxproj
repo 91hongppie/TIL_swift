@@ -12,6 +12,7 @@
 		E18DB4A02A69549D00CE88A3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18DB49F2A69549D00CE88A3 /* Category.swift */; };
 		E1C827B02A694E7100AABFA1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E1C827AF2A694E7100AABFA1 /* Realm */; };
 		E1C827B22A694E7100AABFA1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E1C827B12A694E7100AABFA1 /* RealmSwift */; };
+		E1CC9EA42A6C2BB4005C2822 /* SwipeCellKit in Frameworks */ = {isa = PBXBuildFile; productRef = E1CC9EA32A6C2BB4005C2822 /* SwipeCellKit */; };
 		EB2BE4FA239524DB00FB933B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2BE4F9239524DB00FB933B /* AppDelegate.swift */; };
 		EB2BE4FE239524DB00FB933B /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2BE4FD239524DB00FB933B /* ToDoListViewController.swift */; };
 		EB2BE501239524DB00FB933B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB2BE4FF239524DB00FB933B /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CC9EA42A6C2BB4005C2822 /* SwipeCellKit in Frameworks */,
 				E1C827B22A694E7100AABFA1 /* RealmSwift in Frameworks */,
 				E1C827B02A694E7100AABFA1 /* Realm in Frameworks */,
 				EE86F664D80D476F8BD6379D /* Pods_Todoey.framework in Frameworks */,
@@ -56,7 +58,6 @@
 				1EFD1AF8DF251A80B0030169 /* Pods-Todoey.debug.xcconfig */,
 				440E3C32A714CCA690251C24 /* Pods-Todoey.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -154,6 +155,7 @@
 			packageProductDependencies = (
 				E1C827AF2A694E7100AABFA1 /* Realm */,
 				E1C827B12A694E7100AABFA1 /* RealmSwift */,
+				E1CC9EA32A6C2BB4005C2822 /* SwipeCellKit */,
 			);
 			productName = Todoey;
 			productReference = EB2BE4F6239524DB00FB933B /* Todoey.app */;
@@ -185,7 +187,8 @@
 			);
 			mainGroup = EB2BE4ED239524DB00FB933B;
 			packageReferences = (
-				E1C827AE2A694E7100AABFA1 /* XCRemoteSwiftPackageReference "realm-swift.git" */,
+				E1C827AE2A694E7100AABFA1 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				E1CC9EA22A6C2BB4005C2822 /* XCRemoteSwiftPackageReference "SwipeCellKit" */,
 			);
 			productRefGroup = EB2BE4F7239524DB00FB933B /* Products */;
 			projectDirPath = "";
@@ -447,7 +450,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E1C827AE2A694E7100AABFA1 /* XCRemoteSwiftPackageReference "realm-swift.git" */ = {
+		E1C827AE2A694E7100AABFA1 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -455,18 +458,31 @@
 				kind = branch;
 			};
 		};
+		E1CC9EA22A6C2BB4005C2822 /* XCRemoteSwiftPackageReference "SwipeCellKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwipeCellKit/SwipeCellKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		E1C827AF2A694E7100AABFA1 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E1C827AE2A694E7100AABFA1 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			package = E1C827AE2A694E7100AABFA1 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
 		E1C827B12A694E7100AABFA1 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E1C827AE2A694E7100AABFA1 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			package = E1C827AE2A694E7100AABFA1 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		E1CC9EA32A6C2BB4005C2822 /* SwipeCellKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1CC9EA22A6C2BB4005C2822 /* XCRemoteSwiftPackageReference "SwipeCellKit" */;
+			productName = SwipeCellKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
