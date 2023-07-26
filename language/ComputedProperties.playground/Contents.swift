@@ -3,9 +3,13 @@ import Foundation
 let pizzaInches: Int = 10
 
 var numberOfSlices: Int {
-    return pizzaInches - 4
+    get {
+        return pizzaInches - 4
+    }
+    set {
+        print("numberOfSlices now has a new value which is \(newValue)")
+    }
 }
 
-var numberOfSlices2: Int = pizzaInches - 4
-
+numberOfSlices = 12
 print(numberOfSlices)

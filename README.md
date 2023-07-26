@@ -567,6 +567,8 @@ let newCell = messageCell as UITableViewCell
 
 - 엑셀 스프레드 시트와 유사한 역할을 한다.
 
+  ## getter
+
   ```swift
   let pizzaInches: Int = 10
   
@@ -575,6 +577,23 @@ let newCell = messageCell as UITableViewCell
   		return pizzaInches - 4 
     }
   }
+  ```
+
+  ## setter
+
+  ```swift
+  let pizzaInches: Int = 10
+  
+  var numberOfSlices: Int {
+      get {
+          return pizzaInches - 4
+      }
+      set {
+          print("numberOfSlices now has a new value which is \(newValue)")
+      }
+  }
+  
+  numberOfSlices = 12
   ```
 
   
