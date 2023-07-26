@@ -581,6 +581,8 @@ let newCell = messageCell as UITableViewCell
 
   ## setter
 
+  - set 내의 newValue는 고정
+
   ```swift
   let pizzaInches: Int = 10
   
