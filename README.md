@@ -560,3 +560,21 @@ let newCell = messageCell as UITableViewCell
 - 앱이 실행되는 동안 이 속성의 변화를 모니터할 수 있다. 
 - 빌드타임 에러 런타임 에러
 - 
+
+# Computed Properties
+
+- 값이 계속 계산되는 속성을 만들 수 있게 해준다.
+
+- 엑셀 스프레드 시트와 유사한 역할을 한다.
+
+  ```swift
+  let pizzaInches: Int = 10
+  
+  var numberOfSlices: Int {
+    get {
+  		return pizzaInches - 4 
+    }
+  }
+  ```
+
+  
