@@ -598,4 +598,21 @@ let newCell = messageCell as UITableViewCell
   numberOfSlices = 12
   ```
 
+  ## didSet, willSet
+
+  ```swift
+  var pizzaInInches: Int = 10 {
+      willSet {
+          print(pizzaInInches)
+          print(newValue)
+      }
+      didSet {
+          if pizzaInInches >= 18 {
+              print("Invalid size specified, pizzaInInches set to 18.")
+              pizzaInInches = 18
+          }
+      }
+  }
+  ```
+
   
