@@ -616,3 +616,26 @@ let newCell = messageCell as UITableViewCell
   ```
 
   
+
+# Swift Access Levels
+
+1. private
+   - 코드 블록의 중괄호 안에서만 사용이 가능하다.
+2. fileprivate
+   - 속성이나 메서드가 선언된 파일 내에서만 접근 가능
+3. internal
+   - 앱 모듈 어디에서든 속성이나 메서드가 접근이 가능하다.
+   - var, let 변수
+4. public
+   - 다른 모듈에도 액세스가 허용된다.
+5. open
+   - 속성과 메서드 등 모든게 다른 모듈로 액세스될 수 있다.
+
+
+
+보통 1~3만 쓴다
+
+하지만 프레임워크, 라이브러리, SDK 개발을 작업하면 4, 5도 사용할 수 있다.
+
+- 4, 5의 차이점
+  - public은 클래스나 함수가 서브클래스되거나 재정의되지 않게 한다.
