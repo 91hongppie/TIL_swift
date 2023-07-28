@@ -639,3 +639,10 @@ let newCell = messageCell as UITableViewCell
 
 - 4, 5의 차이점
   - open은 다른 모듈에서 오버라이드와 서브클래싱이 가능하지만 public 접근자로 선언된 것은 다른 모듈에서는 오버라이드와 서브클래싱이 불가능하다
+
+
+
+# Swift File VS Cocoa Touch File
+
+- UIViewController, UITableViewController, UIView = Cocoa Touch File
+- Custom Class = Swift File

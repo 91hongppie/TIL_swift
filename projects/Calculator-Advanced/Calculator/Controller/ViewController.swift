@@ -33,13 +33,13 @@ class ViewController: UIViewController {
         
         
         if let calcMethod = sender.currentTitle {
-            if calcMethod == "+/-" {
-                displayValue *= -1
-            } else if calcMethod == "AC" {
-                displayLabel.text = "0"
-            } else if calcMethod == "%" {
-                displayValue *= 0.01
+            let calculator = CalculatorLogic(number: displayValue)
+            
+            guard let result = calculator.calculate(symbol: calcMethod ) else {
+                fatalError("The result of the calculation is nil.")
             }
+            displayValue = result
+            
         }
         
     }
