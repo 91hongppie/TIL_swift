@@ -646,3 +646,21 @@ let newCell = messageCell as UITableViewCell
 
 - UIViewController, UITableViewController, UIView = Cocoa Touch File
 - Custom Class = Swift File
+
+
+
+
+
+# Structs VS Classes
+
+- struct는 클래스처럼 생성할 수 있다.
+- struct의 이름 짓는 방법도 클래스와 같다. 첫글자가 대문자
+- struct는 메서드뿐 아니라 속성도 가질 수 있다.
+- struct는 클래스가 할 수 있는 거의 모든 것을 할 수 있다.
+- struct는 상속 불가하다.
+- 메모리에서 클래스와 다른 장소에 저장된다.
+- struct는 stack에 저장된다.
+-  class는 heap에 저장되고 참조는 stack에 저장된다.
+  - stack에 class가 저장된 heap의 위치를 저장한다.
+- struct는 value type
+- class는 reference type
