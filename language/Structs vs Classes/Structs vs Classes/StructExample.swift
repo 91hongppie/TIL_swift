@@ -13,6 +13,7 @@ struct StructHero {
     
     mutating func reverseName() -> String {
         self.name = String(self.name.reversed())
+        return self.name
     }
 }
 
