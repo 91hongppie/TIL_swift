@@ -664,3 +664,18 @@ let newCell = messageCell as UITableViewCell
   - stack에 class가 저장된 heap의 위치를 저장한다.
 - struct는 value type
 - class는 reference type
+- class의 속성이 var로 선언되어있으면 class를 초기화할 때 let으로 했어도 속성 변경이 가능하다. 하지만 let으로 초기화 된 변수에 class 자체를 다시 할당하거나 하는 변경은 불가능
+- struct는 let 변수에 초기화 했으면 속성이나 메서드 변경 불가능하다.
+
+| struct            | cleass                       |
+| ----------------- | ---------------------------- |
+| Simpler           | Has Inheritance              |
+| Faster            | Works witdh Objective-C code |
+| Deep copies       |                              |
+| True Immutability |                              |
+| No Memory Leaks   |                              |
+| Threadsafe        |                              |
+
+- Apple에서 공식적으로 새로운 사용자 지정 객체를 생성하고 싶을 때에는 기본적으로 struct를 사용해야 한다.
+- 상속이 필요하거나 objective-c로 작업하고 싶을 때만 클래스로 바꾼다.
+- Swift Access Level과 같다. 변수를 private로 생성하고 확장이 필요할 때만 바꾼다.
