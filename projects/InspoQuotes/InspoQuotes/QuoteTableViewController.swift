@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import StoreKit
 
-class QuoteTableViewController: UITableViewController {
+class QuoteTableViewController: UITableViewController,SKPaymentTransactionObserver {
+    
+    
+    
+    let productId = "com.kyuhongjo.InspoQuotes.PremiumQuotes"
     
     var quotesToShow = [
         "Our greatest glory is not in never falling, but in rising every time we fall. — Confucius",
@@ -27,36 +32,40 @@ class QuoteTableViewController: UITableViewController {
         "Your true success in life begins only when you make the commitment to become excellent at what you do. — Brian Tracy",
         "Believe in yourself, take on your challenges, dig deep within yourself to conquer fears. Never let anyone bring you down. You got to keep going. – Chantal Sutherland"
     ]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        SKPaymentQueue.default().add(self)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return quotesToShow.count + 1
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuoteCell", for: indexPath)
-
+        
         // Configure the cell...
         if indexPath.row < quotesToShow.count {
             cell.textLabel?.text = quotesToShow[indexPath.row]
             cell.textLabel?.numberOfLines = 0
         } else {
             cell.textLabel?.text = "Get More Quotes"
-            cell.textLabel?.textColor = UIColor(named: "aqua")
+            cell.textLabel?.textColor = UIColor.cyan
+            
             cell.accessoryType = .disclosureIndicator
+            
         }
         return cell
     }
@@ -74,12 +83,37 @@ class QuoteTableViewController: UITableViewController {
     // MARK: - In-App Purchase Methods
     
     func buyPremiumQuotes() {
+        if SKPaymentQueue.canMakePayments() {
+            // Can make payments
+            
+            let paymentRequest = SKMutablePayment()
+            paymentRequest.productIdentifier = productId
+            SKPaymentQueue.default().add(paymentRequest)
+            
+            
+        } else {
+            // Can't make payments
+            print("User can't make payments")
+        }
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        
+        for transaction in transactions {
+            if transaction.transactionState == .purchased {
+                // User payment successful
+                print("Transaction successful!")
+            } else if transaction.transactionState == .failed {
+                // Payment failed
+                print("Transaction failed!")
+            }
+        }
         
     }
     
     @IBAction func restorePressed(_ sender: UIBarButtonItem) {
         
     }
-
-
+    
+    
 }
