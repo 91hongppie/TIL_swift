@@ -38,18 +38,21 @@ class QuoteTableViewController: UITableViewController,SKPaymentTransactionObserv
         
         
         SKPaymentQueue.default().add(self)
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        if isPurchased() {
+            showPremiumQuotes()
+        }
     }
     
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return quotesToShow.count + 1
+        if isPurchased() {
+            return quotesToShow.count
+        } else {
+            return quotesToShow.count + 1
+        }
     }
     
     
@@ -60,6 +63,8 @@ class QuoteTableViewController: UITableViewController,SKPaymentTransactionObserv
         if indexPath.row < quotesToShow.count {
             cell.textLabel?.text = quotesToShow[indexPath.row]
             cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.textColor = UIColor.black
+            cell.accessoryType = .none
         } else {
             cell.textLabel?.text = "Get More Quotes"
             cell.textLabel?.textColor = UIColor.cyan
@@ -109,12 +114,17 @@ class QuoteTableViewController: UITableViewController,SKPaymentTransactionObserv
                 // User payment successful
                 print("Transaction successful!")
                 
+                showPremiumQuotes()
+                
+                UserDefaults.standard.setValue(true, forKey: productId)
+                
                 SKPaymentQueue.default().finishTransaction(transaction)
                 
             } else if transaction.transactionState == .failed {
                 // Payment failed
                 print("Transaction failed!")
                 
+                showPremiumQuotes()
                 if let error = transaction.error {
                     let errorDescription = error.localizedDescription
                     print("Transaction failed due to error: \(errorDescription)")
@@ -131,5 +141,22 @@ class QuoteTableViewController: UITableViewController,SKPaymentTransactionObserv
         
     }
     
+    func showPremiumQuotes() {
+        
+        quotesToShow.append(contentsOf: premiumQuotes)
+        tableView.reloadData()
+        
+    }
     
+    func isPurchased() -> Bool {
+        let purchaseStatus = UserDefaults.standard.bool(forKey: productId)
+    
+        if purchaseStatus {
+            print("Previously purchased")
+            return true
+        } else {
+            print("Never purchased")
+            return false
+        }
+    }
 }
