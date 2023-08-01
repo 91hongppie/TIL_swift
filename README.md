@@ -694,3 +694,9 @@ let newCell = messageCell as UITableViewCell
 - Discrete data - 이산형 데이터
 - continuous data - 연속형 데이터
 - 두 데이터의 차이는 간격이 있고 없고의 차이
+
+## 비지도 학습
+
+- 비구조적인 데이터에서 구조를 찾도록 학습
+- 클러스터링
+  - 컴퓨터가 데이터와 다양한 특징을 학습하고 데이터가 각각 다른 클러스터에 속하는지 파악하는 것
