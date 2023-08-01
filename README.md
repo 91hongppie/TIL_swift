@@ -679,3 +679,18 @@ let newCell = messageCell as UITableViewCell
 - Apple에서 공식적으로 새로운 사용자 지정 객체를 생성하고 싶을 때에는 기본적으로 struct를 사용해야 한다.
 - 상속이 필요하거나 objective-c로 작업하고 싶을 때만 클래스로 바꾼다.
 - Swift Access Level과 같다. 변수를 private로 생성하고 확장이 필요할 때만 바꾼다.
+
+
+
+# Machine Learning
+
+- 컴퓨터가 명확하게 프로그램되지 않고도 학습할 수 있도록 해주는 연구분야.
+- 기계 학습에 가장 중요한 것은 학습은 두개의 넓은 카테고리로 나뉜다는 것이다.
+- 지도 학습과 비지도 학습이다.
+
+## 지도 학습
+
+- 답을 알려주면서 학습시키는 것
+- Discrete data - 이산형 데이터
+- continuous data - 연속형 데이터
+- 두 데이터의 차이는 간격이 있고 없고의 차이
