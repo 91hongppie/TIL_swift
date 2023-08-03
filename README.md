@@ -719,4 +719,4 @@ let newCell = messageCell as UITableViewCell
 
 
 - 앱을 이용해 모델을 훈련하는 동안 앱 데이터나 사용자가 생성한 데이터를 사용할 수 없다.
-- 
+
