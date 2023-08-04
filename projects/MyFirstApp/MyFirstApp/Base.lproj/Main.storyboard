@@ -28,10 +28,10 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qxb-xl-ap1"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qxb-xl-ap1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="반갑습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cV-fe-klB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="반갑습니당." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cV-fe-klB">
                                 <rect key="frame" x="93.666666666666686" y="259" width="200" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="D5k-bG-vYh"/>
@@ -52,7 +52,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="textLabel" destination="3cV-fe-klB" id="oBK-Ge-l1x"/>
+                        <outlet property="mainLabel" destination="3cV-fe-klB" id="oBK-Ge-l1x"/>
+                        <outlet property="myButton" destination="CZX-mP-xOf" id="3Eo-Jm-ssy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -720,3 +720,32 @@ let newCell = messageCell as UITableViewCell
 
 - 앱을 이용해 모델을 훈련하는 동안 앱 데이터나 사용자가 생성한 데이터를 사용할 수 없다.
 
+# Literal
+
+- 컬러 리터럴 사용하는 방법
+
+  ```swift
+  #colorLiteral()
+  ```
+
+- 이미지 리터럴 사용하는 방법
+
+  ```swift
+  #imageLiteral()
+  ```
+
+  
+
+# 어트리뷰트
+
+## IBOutlet
+
+- IB = Interface Builder
+- 인터페이스 빌더에 대한 outlet이다.
+- 코드상의 어떤 설정을 스토리보드로 전달하기 위한 키워드
+
+## IBAction
+
+- IB = Interface Builder
+- 인터페이스 빌더에 대한 액션이 발생했을 때 실행하는 함수이다. 
+- 스토리보드상에 이벤트가 일어날 경우 어떤 함수를 호출하여 실행시킬 것인지 알려주는 키워드
