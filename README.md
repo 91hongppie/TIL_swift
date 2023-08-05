@@ -749,3 +749,82 @@ let newCell = messageCell as UITableViewCell
 - IB = Interface Builder
 - 인터페이스 빌더에 대한 액션이 발생했을 때 실행하는 함수이다. 
 - 스토리보드상에 이벤트가 일어날 경우 어떤 함수를 호출하여 실행시킬 것인지 알려주는 키워드
+
+
+
+
+
+# 프레임워크 VS 라이브러리
+
+- 프레임워크
+  - 개발자가 이미 짜여진 룰을 따라 작업을 하는 것
+- 라이브러리
+  - 미리 만들어놓은 필요부분을 사용하는 것
+- 공통점
+  - 프로그램을 효율적으로(빨리) 만들기 위해, 다른 사람이 만들어 놓은 코드를 사용하는 것
+
+# UIKit
+
+# Foundation
+
+- import Foundation이 왜 필요할까?
+
+- Swift 언어
+
+  - 언어의 기본적인 기능 제공
+  - print() 함수
+  - Int / String / Double 등 기본 타입(Basic Type)
+  - 조건문(If) / 반복문(for/while)
+  - 컬렉션 Array / Dictionary / Set
+  - 이외에 기타 Swift 문법적인 기능 들
+  - Data / Date 타입도 있으나(Foundation이 없으면 사용 못함)  (Foundation에 있는 NSData / NSDate를 감싸는 형태의 타입)
+
+- Foundation
+
+  - Objective-C 언어와 관련된 기능 제공
+  - NSString 등 Objective-C 관련 타입들
+  - NSObject클래스 (추상 클래스 관련)
+  - Objective-C 관련, 컬렉션 NSArray / NSMutableArray / NSDictionary / NSSet 등
+
+  - 앱을 만들때 반드시 필요한 기능들
+  - NSData / NSDate 타입 (데이터와 날짜 관련)
+  - 런루프(RunLoog)
+  - Selector
+  - 런루프(RunLoop) - Timer / 알림 등
+  - 멀티쓰레드 - GCD(Grand Central Dispatch) / NSThread / Thread 등
+  - 네트워크 - URL 등
+  - JSON 등
+  - 앱 지역화 관련
+  - UIKit이 Foundation 을 감싸고 있다. - UIKit만 import 하면 Foundation에 있는 기능도 사용할 수 있다.
+
+
+
+- 4 Layer
+  1. Cocoa Touch Framework  = 앱 개발 기초 / 필수적인 기능 등
+     - UIKit
+       - 터치 / 모션 / 키패드 입력과 같은 사용자 상호작용 이벤트 처리
+       - 카메라 / 디바이스 API
+       - 뷰 / 윈도우 관리 / 시스템뷰와 뷰컨트롤러 제공
+       - 프린트 / PDF 변환 API
+       - UI애니메이션 등
+     - AddressBookUI : 주소록 접근 관련
+     - EventKitUI : 달력과 일정에 접근 관련
+     - GameKit : 게임 센터 관련
+     - MapKit : 앱에 추가하는 지도 관련
+     - NotificationCenter : 노티피케이션 센터 관련
+  2. Media Framework = 다양한 미디어 기능 구현 필요 기능 등
+     - 사진과 동영상 관련
+     - CoreGraphics : 2D 화면 그리기
+     - AVFoundation : 오디오, 비디오의 재생 관련
+  3. Core Services Framework = 시스템 서비스 제공 데이터 접근 등
+     - Foundation
+       - 문자열 / 날짜 처리
+       - 런루프 / GCD / 쓰레드 / URL
+     - Webkit : HTML 관련
+     - CloudKit : iCloud 연동
+     - CoreLocation : 위치 / 방향 정보
+     - StoreKit : In-App Purchase 구현
+  4. Core OS Framework = 보안 / 하드웨어 연동 등
+     - CoreBluetooth : 블루투스 연결 / 비콘 등 관련
+     - LocalAuthentication : TouchID / 사용자 인증
+     - Security : 키체인 /인증서 관련
