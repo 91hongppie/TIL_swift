@@ -29,6 +29,9 @@
                                 <state key="normal" title="ROLL">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="rollButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ppz-Yk-Aeu"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dice Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcv-a9-rws">
                                 <rect key="frame" x="121.66666666666669" y="139" width="150" height="30"/>
@@ -43,13 +46,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ere-jn-N5i">
                                 <rect key="frame" x="20" y="341.66666666666669" width="353" height="169"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4eP-kn-gep">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black1" translatesAutoresizingMaskIntoConstraints="NO" id="4eP-kn-gep">
                                         <rect key="frame" x="0.0" y="0.0" width="169" height="169"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="4eP-kn-gep" secondAttribute="height" multiplier="1:1" id="C4E-RA-N5t"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AAY-WP-5gT">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black1" translatesAutoresizingMaskIntoConstraints="NO" id="AAY-WP-5gT">
                                         <rect key="frame" x="184" y="0.0" width="169" height="169"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="AAY-WP-5gT" secondAttribute="height" multiplier="1:1" id="nAl-FS-aqM"/>
@@ -71,6 +74,10 @@
                             <constraint firstItem="Bcv-a9-rws" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="y6O-xq-4pQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstImageView" destination="4eP-kn-gep" id="XMi-aI-bDg"/>
+                        <outlet property="secondImageView" destination="AAY-WP-5gT" id="iUb-dY-07R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -78,6 +85,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="black1" width="399" height="399"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
