@@ -828,3 +828,7 @@ let newCell = messageCell as UITableViewCell
      - CoreBluetooth : 블루투스 연결 / 비콘 등 관련
      - LocalAuthentication : TouchID / 사용자 인증
      - Security : 키체인 /인증서 관련
+
+# enum
+
+- enum 타입은 파일을 새로 만들어서 생성한다.
