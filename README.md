@@ -832,3 +832,8 @@ let newCell = messageCell as UITableViewCell
 # enum
 
 - enum 타입은 파일을 새로 만들어서 생성한다.
+
+# AppDelegate.swift
+
+- macOS의 command line tool을 생성했을 때 있는 main.swift 파일을 대신한다.
+- 앱이 실행될 때 가장 처음에 실행된다.
