@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     // 앱의 화면에 들어오면 처음 실행되는 함수
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // 1) 첫번째/두번째 이미지뷰에 준비(묵) 이미지를 띄워야 함
         comImageView.image = #imageLiteral(resourceName: "ready")
         myImageView.image = #imageLiteral(resourceName: "ready")
@@ -38,10 +39,10 @@ class ViewController: UIViewController {
 
     @IBAction func rpsButtonTapped(_ sender: UIButton) {
         // 가위 / 바위 / 보를 선택해서 그 정보를 저장해야됨
-//        guard let title = sender.currentTitle else {
-//            return
-//        }
-        let title = sender.currentTitle!
+        guard let title = sender.currentTitle else {
+            return
+        }
+//        let title = sender.currentTitle!
         
         switch title {
         case "가위":
