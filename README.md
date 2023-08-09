@@ -835,5 +835,17 @@ let newCell = messageCell as UITableViewCell
 
 # AppDelegate.swift
 
-- macOS의 command line tool을 생성했을 때 있는 main.swift 파일을 대신한다.
+- macOS의 command line  을 생성했을 때 있는 main.swift 파일을 대신한다.
 - 앱이 실행될 때 가장 처음에 실행된다.
+
+
+
+# Swift 공부하기 유용한 앱
+
+- UIKitViewer
+  - ios 앱을 만들면서 다루게 될 UIKIt 예시가 정리되어있는 앱
+  - 앱을 켜서 여러 UI들을 세팅해 볼수있다.
+- UIKit Lab
+  - UIKitViewer와 비슷하다.
+- SF Symbols
+  - 애플에서 만들어놓은 Symbols를 모두 볼 수 있다.
