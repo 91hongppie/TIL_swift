@@ -849,3 +849,11 @@ let newCell = messageCell as UITableViewCell
   - UIKitViewer와 비슷하다.
 - SF Symbols
   - 애플에서 만들어놓은 Symbols를 모두 볼 수 있다.
+
+
+
+# 공부해야할 것
+
+1. 앱의 생명주기
+2. ViewController의 생명주기
+3. 뷰의 Drawing Cycle
