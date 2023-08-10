@@ -838,8 +838,6 @@ let newCell = messageCell as UITableViewCell
 - macOS의 command line  을 생성했을 때 있는 main.swift 파일을 대신한다.
 - 앱이 실행될 때 가장 처음에 실행된다.
 
-
-
 # Swift 공부하기 유용한 앱
 
 - UIKitViewer
@@ -850,10 +848,63 @@ let newCell = messageCell as UITableViewCell
 - SF Symbols
   - 애플에서 만들어놓은 Symbols를 모두 볼 수 있다.
 
-
-
 # 공부해야할 것
 
 1. 앱의 생명주기
 2. ViewController의 생명주기
 3. 뷰의 Drawing Cycle
+
+# 문법
+
+- weak 
+
+  - 메모리 관리를 할 때 가리키는 상대방의 Reference Count를 올라가지 않게 한다.
+
+- override
+
+  - 재정의 했다는 뜻 
+  - 상위 객체에 정의된 함수를 하위 객체에서 재정의
+
+- 함수
+
+  - 함수의 이름은 소문자로 시작하고 클래스나 구조체의 이름은 대문자로 시작한다.
+
+- Guard let
+
+  - ```swift
+    guard let title = sender.currentTitle else { return }
+
+  - sender.currentTitle이 nil일 경우 else에 들어가 return 되고 다음 코드는 실행되지 않는다.
+
+  - ```swift
+    guard let myNumString = numberLabel.text, let myNumber = Int(myNumString) else { return }
+    ```
+
+  - 위 코드처럼 두 조건을 한번에 검증할 수 있다.
+
+- switch
+
+  - enum 타입에 대한 switch 문에서는 모든 조건의 case가 있다면 default 문이 필요가 없다.
+  - 일반 string 타입에 대한 switch 문에서는 default가 필요하다.
+
+- for vs while
+
+  - for 는 반복 횟수가 정해져 있을때 사용한다.
+
+- if let
+
+  - ```swift
+    if  let input = userInput {
+      if let number = Int(input) {
+        ...
+      }
+    }
+    ```
+
+  - ```swift
+    if let input = userInput, let number = Int(input) {
+      ...
+    }
+    ```
+
+  - 두 코드는 같다.
