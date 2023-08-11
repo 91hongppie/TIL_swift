@@ -11,11 +11,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var mainLabel: UILabel!
     
+    @IBOutlet weak var slider: UISlider!
     
-    
-    
-    
-    
+    let step: Float = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,17 +23,26 @@ class ViewController: UIViewController {
     
     func configureUI() {
         mainLabel.text = "초를 선택하세요"
+        slider.value = 0.5
     }
 
 
     
     @IBAction func sliderChanged(_ sender: UISlider) {
+        let seconds = Int(sender.value * 60)
+        mainLabel.text = "\(seconds) 초"
+        
     }
 
     @IBAction func startButtonTapped(_ sender: UIButton) {
+        // 1초씩 지나갈때마다 무언가를 실행
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
+        
+//        slider.setValue(0.5, animated: true)
+//        slider.value = 0.5
+        configureUI()
     }
     
 
