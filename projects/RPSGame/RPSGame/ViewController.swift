@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var comChoiceLabel: UILabel!
     @IBOutlet weak var myChoiceLabel: UILabel!
     
+    @IBOutlet weak var nextButton: UIButton!
     var comChoice: Rps = Rps(rawValue: Int.random(in: 0...2))!
     var myChoice: Rps = Rps.rock
     
