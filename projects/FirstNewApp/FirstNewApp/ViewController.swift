@@ -37,16 +37,14 @@ class ViewController: UIViewController {
     
     @IBAction func sliderChanged(_ sender: UISlider) {
         
-        let seconds = Int(sender.value * 60)
-        mainLabel.text = "\(seconds) 초"
-        number = seconds
+        number = Int(sender.value * 60)
+        mainLabel.text = "\(number) 초"
     }
 
     @IBAction func startButtonTapped(_ sender: UIButton) {
         // 1초씩 지나갈때마다 무언가를 실행
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [self] _ in
-            
             
             if number > 0 {
                 number -= 1
@@ -58,12 +56,9 @@ class ViewController: UIViewController {
                 configureUI()
                 AudioServicesPlayAlertSound(SystemSoundID(1322))
             }
-            
-            
-            
-            
-            
         }
+        
+
      
     }
     
