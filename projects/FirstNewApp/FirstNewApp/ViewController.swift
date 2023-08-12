@@ -44,8 +44,9 @@ class ViewController: UIViewController {
     @IBAction func startButtonTapped(_ sender: UIButton) {
         // 1초씩 지나갈때마다 무언가를 실행
         timer?.invalidate()
+        
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [self] _ in
-            
+
             if number > 0 {
                 number -= 1
                 slider.value = Float(number) / Float(60)
@@ -57,7 +58,7 @@ class ViewController: UIViewController {
                 AudioServicesPlayAlertSound(SystemSoundID(1322))
             }
         }
-        
+
 
      
     }
