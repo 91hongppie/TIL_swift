@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-        
+    
     // MARK: - 이메일 입력하는 텍스트 뷰
     private lazy var emailTextFieldView: UIView = {
         let view = UIView()
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         // 스펠링 체크 여부
         tf.spellCheckingType = .no
         tf.keyboardType = .emailAddress
-//        tf.addTarget(self, action: #selector(textFieldEditingChange(_:)), for: .editingChanged)
+        //        tf.addTarget(self, action: #selector(textFieldEditingChange(_:)), for: .editingChanged)
         return tf
     }()
     
@@ -81,10 +81,10 @@ class ViewController: UIViewController {
         tf.spellCheckingType = .no
         tf.isSecureTextEntry = true
         tf.keyboardType = .emailAddress
-//        tf.addTarget(self, action: #selector(textFieldEditingChange(_:)), for: .editingChanged)
+        //        tf.addTarget(self, action: #selector(textFieldEditingChange(_:)), for: .editingChanged)
         return tf
     }()
-
+    
     // 패스워드에 "표시" 버튼 비밀번호 가리기 기능
     private let passwordSecureButton: UIButton = {
         let button = UIButton(type: .custom)
@@ -106,7 +106,7 @@ class ViewController: UIViewController {
         button.setTitle("로그인", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.isEnabled = false
-//        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        //        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -121,6 +121,9 @@ class ViewController: UIViewController {
     
     private let textViewHeight: CGFloat = 48
     
+    lazy var emailInfoLabelCenterYConstraint = emailInfoLabel.centerYAnchor.constraint(equalTo: emailTextFieldView.centerYAnchor)
+    lazy var passwordInfoLabelCenterYConstraint = passwordInfoLabel.centerYAnchor.constraint(equalTo: passwordTextFieldView.centerYAnchor)
+    
     lazy var stackView: UIStackView = {
         let st = UIStackView(arrangedSubviews: [emailTextFieldView, passwordTextFieldView, loginButton])
         st.spacing = 18
@@ -132,6 +135,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         
         makeUI()
     }
@@ -150,7 +156,7 @@ class ViewController: UIViewController {
         passwordSecureButton.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
         passwordResetButton.translatesAutoresizingMaskIntoConstraints = false
-
+        
         /*
          emailInfoLabel.leadingAnchor.constraint(equalTo: emailTextFieldView.leadingAnchor, constant: 8).isActive = true
          emailInfoLabel.trailingAnchor.constraint(equalTo: emailTextFieldView.trailingAnchor, constant: 8).isActive = true
@@ -160,7 +166,8 @@ class ViewController: UIViewController {
         NSLayoutConstraint.activate([
             emailInfoLabel.leadingAnchor.constraint(equalTo: emailTextFieldView.leadingAnchor, constant: 8),
             emailInfoLabel.trailingAnchor.constraint(equalTo: emailTextFieldView.trailingAnchor, constant: 8),
-            emailInfoLabel.centerYAnchor.constraint(equalTo: emailTextFieldView.centerYAnchor),
+            //            emailInfoLabel.centerYAnchor.constraint(equalTo: emailTextFieldView.centerYAnchor),
+            emailInfoLabelCenterYConstraint,
             
             emailTextField.leadingAnchor.constraint(equalTo: emailTextFieldView.leadingAnchor, constant: 8),
             emailTextField.trailingAnchor.constraint(equalTo: emailTextFieldView.trailingAnchor, constant: 8),
@@ -169,7 +176,8 @@ class ViewController: UIViewController {
             
             passwordInfoLabel.leadingAnchor.constraint(equalTo: passwordTextFieldView.leadingAnchor, constant: 8),
             passwordInfoLabel.trailingAnchor.constraint(equalTo: passwordTextFieldView.trailingAnchor, constant: 8),
-            passwordInfoLabel.centerYAnchor.constraint(equalTo: passwordTextFieldView.centerYAnchor),
+            //            passwordInfoLabel.centerYAnchor.constraint(equalTo: passwordTextFieldView.centerYAnchor),
+            passwordInfoLabelCenterYConstraint,
             
             passwordTextField.topAnchor.constraint(equalTo: passwordTextFieldView.topAnchor, constant: 15),
             passwordTextField.bottomAnchor.constraint(equalTo: passwordTextFieldView.bottomAnchor, constant: 2),
@@ -194,10 +202,13 @@ class ViewController: UIViewController {
     }
     
     @objc func passwordSecureModeSetting() {
-//        print("표시 버튼이 눌렸습니다.")
+        //        print("표시 버튼이 눌렸습니다.")
         passwordTextField.isSecureTextEntry.toggle()
         
     }
+    
+    
+    
     
     @objc func resetButtonTapped() {
         //        print("리셋버튼이 눌렸습니다.")
@@ -220,6 +231,52 @@ class ViewController: UIViewController {
             print("완료되었음")
         }
         
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == emailTextField {
+            emailTextFieldView.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+            emailInfoLabel.font = UIFont.systemFont(ofSize: 11)
+            emailInfoLabelCenterYConstraint.constant = -13
+        }
+        
+        if textField == passwordTextField {
+            passwordTextFieldView.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+            passwordInfoLabel.font = UIFont.systemFont(ofSize: 11)
+            passwordInfoLabelCenterYConstraint.constant = -13
+            
+        }
+        
+        UIView.animate(withDuration: 0.3) {
+            self.stackView.layoutIfNeeded()
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == emailTextField {
+            emailTextFieldView.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+            
+            if emailTextField.text == "" {
+                emailInfoLabel.font = UIFont.systemFont(ofSize: 18)
+                emailInfoLabelCenterYConstraint.constant = 0
+            }
+        }
+        if textField == passwordTextField {
+            passwordTextFieldView.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+            
+            if passwordTextField.text == "" {
+                passwordInfoLabel.font = UIFont.systemFont(ofSize: 18)
+                passwordInfoLabelCenterYConstraint.constant = 0
+            }
+        }
+        
+        UIView.animate(withDuration: 0.3) {
+            self.stackView.layoutIfNeeded()
+        }
     }
 }
 
