@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         // 스펠링 체크 여부
         tf.spellCheckingType = .no
         tf.keyboardType = .emailAddress
-        //        tf.addTarget(self, action: #selector(textFieldEditingChange(_:)), for: .editingChanged)
+        tf.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         return tf
     }()
     
@@ -81,7 +81,7 @@ class ViewController: UIViewController {
         tf.spellCheckingType = .no
         tf.isSecureTextEntry = true
         tf.keyboardType = .emailAddress
-        //        tf.addTarget(self, action: #selector(textFieldEditingChange(_:)), for: .editingChanged)
+        tf.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         return tf
     }()
     
@@ -106,7 +106,7 @@ class ViewController: UIViewController {
         button.setTitle("로그인", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.isEnabled = false
-        //        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -232,6 +232,15 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    @objc func loginButtonTapped() {
+        print("로그인 버튼이 눌렸습니다.  ")
+    }
+    
 }
 
 extension ViewController: UITextFieldDelegate {
@@ -267,7 +276,7 @@ extension ViewController: UITextFieldDelegate {
         }
         if textField == passwordTextField {
             passwordTextFieldView.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-            
+            // 빈칸이면 원래로 되돌리기
             if passwordTextField.text == "" {
                 passwordInfoLabel.font = UIFont.systemFont(ofSize: 18)
                 passwordInfoLabelCenterYConstraint.constant = 0
@@ -277,6 +286,22 @@ extension ViewController: UITextFieldDelegate {
         UIView.animate(withDuration: 0.3) {
             self.stackView.layoutIfNeeded()
         }
+    }
+    
+    @objc func textFieldEditingChanged(_ textField: UITextField) {
+        if textField.text?.count == 1 {
+            if textField.text?.first == " " {
+                textField.text = ""
+                return
+            }
+        }
+        guard let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
+            loginButton.backgroundColor = .clear
+            loginButton.isEnabled = false
+            return
+        }
+        loginButton.backgroundColor = .red
+        loginButton.isEnabled = true
     }
 }
 
