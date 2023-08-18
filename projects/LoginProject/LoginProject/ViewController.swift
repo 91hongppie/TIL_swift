@@ -200,6 +200,9 @@ final class ViewController: UIViewController {
             passwordResetButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             passwordResetButton.heightAnchor.constraint(equalToConstant: textViewHeight),
         ])
+        
+        view.safeAreaLayoutGuide.leadingAnchor
+        view.leadingAnchor
     }
     
     @objc func passwordSecureModeSetting() {
