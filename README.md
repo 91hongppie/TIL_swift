@@ -934,3 +934,21 @@ let newCell = messageCell as UITableViewCell
 |      운영체제와 독립적 / 브라우저의 엔진에 의해 돌아감       |         앱을 만드는 것은 운영체제(iOS)와 밀접한 연관         |
 
 ​	
+
+# Class
+
+- class는 일반적으로 앞에 final을 붙여줘야한다.
+  - class는 struct보다 느리다.
+  - 동적 dispatch 때문에
+  - 하지만 final을 붙이면 더 이상 상속을 하지 못하게 막는다.
+  - 메서드가 다이렉트 디스패치가 일어나도록 한다.
+
+
+
+# MARK
+
+```swift
+// MARK: - 킹정하는 부분
+```
+
+- 코드 스니펫으로 지정 가능하다
