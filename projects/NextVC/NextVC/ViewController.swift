@@ -38,9 +38,11 @@ class ViewController: UIViewController {
     
     // 2) 코드로 스토리보드 객체를 생성해서, 화면 이동
     @IBAction func storyboardWithCodeButtonTapped(_ sender: UIButton) {
-
+        let secondVC = storyboard?.instantiateViewController(withIdentifier: "secondVC") as! SecondViewController
+        secondVC.modalPresentationStyle = .fullScreen
+        secondVC.someString = "아빠 상어"
         
-        
+        present(secondVC, animated: true)
         
         
     }
