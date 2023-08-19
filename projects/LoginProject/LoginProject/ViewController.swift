@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     // MARK: - 이메일 입력하는 텍스트 뷰
     private lazy var emailTextFieldView: UIView = {
@@ -133,6 +133,7 @@ class ViewController: UIViewController {
         return st
     }()
     
+    // MARK: - 뷰디드로드
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -242,9 +243,9 @@ class ViewController: UIViewController {
     }
     
 }
-
+// MARK: - 확장
 extension ViewController: UITextFieldDelegate {
-    
+
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == emailTextField {
