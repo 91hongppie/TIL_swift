@@ -55,10 +55,29 @@ class ViewController: UIViewController {
 
     }
     
+    var num = 3
+    
+    // 버튼에서 직접적으로 연결한 segue에서만 실행된다.
+    // 화면에 연결한 간접 segue에서는 실행되지 않는다.
+    // 간접 segue에서는 performSegue를 실행하는 곳에서 조건을 걸어주면 된다.
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if num > 5 {
+            print("어이 소코마데다")
+            return false
+        } else {
+            print("야레야레")
+            return true
+        }
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toThirdVC" {
             let thirdVC = segue.destination as! ThirdViewController
             thirdVC.someString = "원피스"
+        } else if segue.identifier == "toFourthVC" {
+            let fourthVC = segue.destination as! FourthViewController
+            fourthVC.someString = "라프텔"
         }
     }
     
