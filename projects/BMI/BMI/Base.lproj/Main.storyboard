@@ -82,6 +82,10 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fao-Jo-IfO"/>
+                                    <segue destination="czZ-dy-GgG" kind="presentation" modalPresentationStyle="fullScreen" id="kRb-hp-au0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -95,21 +99,27 @@
                             <constraint firstItem="gVY-zR-Aeh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eXh-C9-07f"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calculateButton" destination="gVY-zR-Aeh" id="6VJ-Fd-oz1"/>
+                        <outlet property="heightTextField" destination="Dh3-Eq-Mnp" id="53i-xr-sup"/>
+                        <outlet property="mainLabel" destination="G3s-1j-IOa" id="96C-yC-Igp"/>
+                        <outlet property="weightTextField" destination="Wj6-PP-Z8B" id="2QK-Lb-1FC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-317" y="13"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="QvU-j6-00c">
             <objects>
-                <viewController id="czZ-dy-GgG" sceneMemberID="viewController">
+                <viewController id="czZ-dy-GgG" customClass="SecondViewController" customModule="BMI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="quf-90-JKR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="it1-RG-TPe">
-                                <rect key="frame" x="96.666666666666686" y="189" width="200" height="128"/>
+                                <rect key="frame" x="96.666666666666686" y="130" width="200" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI 결과값" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWi-m4-cxm">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="24"/>
@@ -138,7 +148,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tu4-lI-aXc">
-                                <rect key="frame" x="36" y="743" width="321" height="45"/>
+                                <rect key="frame" x="36" y="777" width="321" height="45"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="3dy-iv-Thz"/>
@@ -148,6 +158,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="czZ-dy-GgG" eventType="touchUpInside" id="fto-Ai-3xg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cd4-1m-fUe"/>
@@ -160,10 +173,15 @@
                             <constraint firstItem="Cd4-1m-fUe" firstAttribute="bottom" secondItem="Tu4-lI-aXc" secondAttribute="bottom" constant="30" id="zi4-BK-bSo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adviceLabel" destination="NdX-lX-GDr" id="AOW-Ta-RQg"/>
+                        <outlet property="backButton" destination="Tu4-lI-aXc" id="Ibz-jd-AIh"/>
+                        <outlet property="bmiNumberLabel" destination="CZv-k9-g3u" id="Ohj-Fm-AOK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="04Y-q6-gge" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="428" y="13"/>
+            <point key="canvasLocation" x="460" y="13"/>
         </scene>
     </scenes>
     <resources>
