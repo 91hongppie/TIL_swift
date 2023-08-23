@@ -966,3 +966,17 @@ let newCell = messageCell as UITableViewCell
 |                                                              | 결론적으로 오토레이아웃 결과<br />(화면크기 별로) 프레임으로 다 계산됨 |
 
 - 스토리보드(Storyboard), 코드(programmatically) 둘 다 가능
+
+# 디자인 패턴 / MVC 패턴
+
+- 디자인 패턴
+  - 공통의 문제에 검증된, 정형화된 해결책 - 개발패턴
+  - 지속적이고 효율적인 유지보수, 지속적인 기능 개발과 효율성을 위한 템플릿
+  - 건축으로 비유하면 건축 공법
+  - 앱의 아키텍처
+    - 예) Singleton 패턴, Delegate 패턴, MVC, MVVM, MVP...
+- MVC (Model - View - Controller) 디자인 패턴
+  - Model - 비즈니스 로직 (화면과 전혀 관련이 없는 로직과 데이터 관련)
+  - View - UI 관련. 즉, 사용자 화면 표시(뷰컨트롤러의 명령을 받아 화면 표시)
+  - Controller - 뷰컨트롤러, 모델의 정보를 어떻게 뷰에 표시할지를 해석해서 전달
+
