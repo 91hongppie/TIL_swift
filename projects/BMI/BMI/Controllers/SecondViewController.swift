@@ -14,16 +14,21 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var adviceLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
     
-    var bmiManager: BMICalculatorManager?
+    var bmi: BMI?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         makeUI()
+        
+        guard let bmi = bmi else { return }
+        
+        bmiNumberLabel.text = "\(bmi.value)"
+        adviceLabel.text = bmi.advice
+        bmiNumberLabel.backgroundColor = bmi.matchColor
     }
     
     func makeUI() {
-        
         bmiNumberLabel.clipsToBounds = true
         bmiNumberLabel.layer.cornerRadius = 8
         bmiNumberLabel.backgroundColor = .gray
@@ -32,25 +37,9 @@ class SecondViewController: UIViewController {
         
         backButton.clipsToBounds = true
         backButton.layer.cornerRadius = 5
-        
-        guard let bmiManager = bmiManager else { return }
-        
-        
-        bmiNumberLabel.text = String(bmiManager.getBMIResult())
-        
-        adviceLabel.text = bmiManager.getBMIAdviceString()
-        bmiNumberLabel.backgroundColor = bmiManager.getBackgroundColor()
-        
-        
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
-        
         dismiss(animated: true)
     }
-    
-    
-    
-    
-
 }
