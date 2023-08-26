@@ -1027,3 +1027,57 @@ let newCell = messageCell as UITableViewCell
   - 메모리에서 없어진 것은 아님
 
 - 전체적으로 시점이 중요 ( 모든 것을 한번에 이해하기는 어려움 / 실제로 부딪히면서 익힐 필요 )
+
+## 앱의 생명주기
+
+- 앱의 생명주기
+  - 앱의 비활성화 
+  - 다른앱으로 또는 백그라운드로 전환
+  - 종료 시점을 파악하기 위함
+- 뷰컨트롤러의 생명 주기
+  - 하나의 앱에서 화면 전환 시점을 파악하기 위함
+- Drawing 주기
+  - 하나의 화면에서, (애니메이션이라던지) 다시 그리는 시점을 파악하기 위함
+- 시점의 파악
+  - 이미 애플이 잘 구현해 놓았고, 내부 메커니즘에 의해 함수들을 (자동으로) 호출
+  - 해당 올바른 시점의 함수들을 재정의해서 필요한 내용들을 구현하기만 하면됨
+
+### 앱의 생명주기 컨셉 이해하기
+
+- 앱의 생명 주기란 개념이 왜 필요할까?
+- 아이폰 앱 게임 중 -> 전화 옴 -> 앱은 자동으로 '통화화면으로' 전환 (실행중이던 앱은? 잠시 비활성화 상태로...)
+- 게임 중이던 모든 데이터는? 저장이 안돼서 날아갈 수도 있음
+- 앱의 실행(메모리에 올라감)부터 -> 앱이 백그라운드로 / 앱의 종료까지를 포괄적으로 표현하는 개념
+- 앱의 실행이 시작되서, 앱이 종료(메모리에서 내려감)되기까지의 주기가 존재
+- 실제로는 단순하지는 않음(여러 단계가 존재
+- (상태 변화의) 해당 시점에 호출되는 함수들이 있음
+  - 예시) 앱이 실행중이다가, 다른 앱으로 전환되는 시점에 (특정) 함수가 호출됨( 이 함수 호출 시점에 게임 데이터를 저장하면? 게임 데이터가 날아가지 않을 수 있음)
+
+## 씬의 생명주기
+
+### SceneDelegate.swift
+
+- 씬의 대리자 역할 / 기존 델리게이트 패턴과 살짝 다른 개념
+- 다른 씬으로 넘어가거나, 그런 시점들을 파악하기 위한 대리자 (Foreground/Background)
+- 씬(멀티태스킹의 창)의 개념이 도입되면서 앱 델리게이트의 역할에서 몇가지 개념을 씬델리게이트로 보내버림
+
+## 앱의 시작과정
+
+### 씬 델리게이트 도입 전
+
+1. User taps app icon
+2. main()
+3. UIApplicationMain() = 앱 객체 생성
+4. Load main UI file = 화면 준비
+5. First Initialization
+   - Application: willFinishLaunchingWithOptions: (실행)
+6. Restore UI state
+   - Various methods (상호작용)
+7. Final Initialization
+   - Application: didFinishLaunchingWithOptions: (실행)
+
+8. Activate the app
+   - applicationDidBecomeActive: (실행)
+9. Event Loop = 런루프를 생성
+   - handle events (상호작용)
+10. Switch to a different app
