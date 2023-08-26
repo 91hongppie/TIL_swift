@@ -988,6 +988,10 @@ let newCell = messageCell as UITableViewCell
 
 ## 뷰컨트롤러의 생명주기
 
+- 뷰컨트롤러의 생명 주기가 왜 필요할까?
+  - 화면 전환에 있어 내부적인 메커니즘으로 반드시 호출되는 함수들이 있다.
+  - 화면 전환에서 적절한 시점에 필요한 기능을 넣기 위해
+  - 큰 그림으로 먼저 이해하기
 - viewDidLoad()
   - 앱의 화면에 들어오면, 가장 먼저 실행시키는 함수)
 - 내부적인 메커니즘
@@ -1001,6 +1005,7 @@ let newCell = messageCell as UITableViewCell
 - loadView
   - 뷰를 메모리에 올리는 과정
   - 뷰를 바꿀 수 있는 시점 (코드로 뷰를 짠 경우)
+  - 스토리보드로 뷰를 만들었을 때는 호출하면 안된다. ( 화면이 안나옴 )
 - viewDidLoad
   - 스토리보드상의 뷰들과의 연결이 끝난 시점
   - 뷰가 생성되었을 때 한번만 호출
@@ -1008,6 +1013,9 @@ let newCell = messageCell as UITableViewCell
   - 실제 스크린에 뷰가 나타나기 전에 호출
   - 뷰가 화면에 나타날때마다 계속 호출
 - 추가 메커니즘 존재
+  - updateViewConstraints
+  - viewWillLayoutSubviews
+  - viewDidLayoutSubviews
 - viewDidAppear
   - 실제 스크린에 뷰가 나타난 후에 호출
   - (ex) 애니메이션 시작, 타이머 앱 - 초 시작 ...
