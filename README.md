@@ -1081,3 +1081,52 @@ let newCell = messageCell as UITableViewCell
 9. Event Loop = 런루프를 생성
    - handle events (상호작용)
 10. Switch to a different app
+
+## Drawing 주기
+
+### Drawing Cycle 컨셉 이해하기
+
+- 화면을 그리는 일은 Thread1(메인쓰레드)에서 담당
+
+- 앱이 시작될때 앱을 담당하는 메인 런루프(반복문)가 생김
+- 이벤트 처리를 담당 -> 어떤 함수를 실행시킬 것인지 선택/실행
+- 함수 등의 실행의 결과를 화면에 보여줘야함 -> 화면 다시 그림( 뷰를 전체적으로 다시 업데이트 )
+
+
+
+
+
+1. setNeedsupdateConstraints() / updateConstraintsIfNeeded() - 코드 단에서 실행
+   - setNeedsupdateConstraints()
+     - 다음 싸이클에 오토레이아웃 조정해줘
+   - updateConstraintsIfNeeded()
+     - 0.016초 못기다리겠으니까, 지금 당장 오토레이아웃 조정해줘
+2. **updateConstraints**
+   - 뷰를 다시 그리는 것과 연관된 부분(시점)
+3. setNeedsLayout() / layoutIfNeeded() - 코드 단에서 실행
+   - setNeedsLayout()
+     - 다음 싸이클에 위치 / 크기 조정해줘
+   - layoutIfNeeded()
+     - 0.016초 못기다리겠으니까, 지금 당장 위치/크기 조정해줘
+4. **intrinsicContentSize**
+   - 제약: 오토레이아웃 업데이트
+   - 제약을 업데이트하는 과정
+   - 동적인 오토레이아웃의 변경 시에는 제약 조건을 변경 / 즉, 필요한 경우에 정의
+5. **layoutSubviews**
+   - (하위뷰의) 레이아웃: 위치 / 크기 (재)조명
+   - 배치를 다시하기
+   - 하위 뷰들의 위치 / 크기를 계산하고 배치하는 과정
+   - frame 기준으로 알 수 있는 시점 / 하위 뷰들의 frame 등 직접 설정 가능
+   - (ex) 화면을 스크롤하면 자동으로 호출
+6. setNeedsDisplay() - 코드 단에서 실행
+   - setNeedsDisplay()
+     - 다음 싸이클에 그림 다시 그려줘
+7. **drawRect**
+   - 그리기: 실제 내부 컨텐츠 (다시) 그리기 (색상, 이미지, 텍스트 등)
+   - 다시 그리기
+   - (ex) 백그라운드 색상 변경
+
+### layoutIfNeeded()
+
+- 0.016초 못기다리겠으니까 지금 당장 위치/크기 조정해줘
+- layoutSubviews라는 배치를 다시하라는 메서드를 자동으로 지금 당장 호출한다.
