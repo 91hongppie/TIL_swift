@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var calculateButton: UIButton!
     
-    var bmiManager = BMICalculatorManager()
+    private var bmiManager = BMICalculatorManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +38,6 @@ class ViewController: UIViewController {
     
     @IBAction func calculateButtonTapped(_ sender: UIButton) {
         // BMI결과값을 뽑아냄
-        guard let height = heightTextField.text,
-              let weight = weightTextField.text else { return }
-        
-        bmiManager.calculateBMI(height: height, weight: weight)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -59,7 +55,8 @@ class ViewController: UIViewController {
         
         if segue.identifier == "toSecondVC" {
             let secondVC = segue.destination as! SecondViewController
-            secondVC.bmiManager = bmiManage
+            
+            secondVC.bmi = bmiManager.getBMI(height: heightTextField.text!, weight: weightTextField.text!)
             // 계산된 결과값을 다음화면으로 전달
             
         }

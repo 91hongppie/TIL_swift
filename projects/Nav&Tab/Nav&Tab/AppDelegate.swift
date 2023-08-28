@@ -2,7 +2,11 @@
 //  AppDelegate.swift
 //  Nav&Tab
 //
+<<<<<<< HEAD
 //  Created by Kyuhong Jo on 2023/08/28.
+=======
+//  Created by Allen H on 2022/01/10.
+>>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 //
 
 import UIKit
