@@ -3,7 +3,6 @@
 	archiveVersion = 1;
 	classes = {
 	};
-<<<<<<< HEAD
 	objectVersion = 56;
 	objects = {
 
@@ -29,37 +28,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		E1B869DE2A9CB1D40091C0E5 /* Frameworks */ = {
-=======
-	objectVersion = 55;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		472BFAE627C7564700160556 /* Tab2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472BFAE527C7564700160556 /* Tab2ViewController.swift */; };
-		4741BDA827C68E7F00A6A826 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4741BDA727C68E7F00A6A826 /* AppDelegate.swift */; };
-		4741BDAA27C68E7F00A6A826 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4741BDA927C68E7F00A6A826 /* SceneDelegate.swift */; };
-		4741BDAC27C68E7F00A6A826 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4741BDAB27C68E7F00A6A826 /* ViewController.swift */; };
-		4741BDAF27C68E7F00A6A826 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4741BDAD27C68E7F00A6A826 /* Main.storyboard */; };
-		4741BDB127C68E8100A6A826 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4741BDB027C68E8100A6A826 /* Assets.xcassets */; };
-		4741BDB427C68E8100A6A826 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4741BDB227C68E8100A6A826 /* LaunchScreen.storyboard */; };
-		4741BDBC27C693C700A6A826 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4741BDBB27C693C700A6A826 /* SecondViewController.swift */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXFileReference section */
-		472BFAE527C7564700160556 /* Tab2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab2ViewController.swift; sourceTree = "<group>"; };
-		4741BDA427C68E7F00A6A826 /* Nav&Tab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nav&Tab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4741BDA727C68E7F00A6A826 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4741BDA927C68E7F00A6A826 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4741BDAB27C68E7F00A6A826 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4741BDAE27C68E7F00A6A826 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4741BDB027C68E8100A6A826 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4741BDB327C68E8100A6A826 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4741BDB527C68E8100A6A826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4741BDBB27C693C700A6A826 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		4741BDA127C68E7F00A6A826 /* Frameworks */ = {
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -69,7 +37,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-<<<<<<< HEAD
 		E1B869D82A9CB1D40091C0E5 = {
 			isa = PBXGroup;
 			children = (
@@ -82,25 +49,10 @@
 			isa = PBXGroup;
 			children = (
 				E1B869E12A9CB1D40091C0E5 /* Nav&Tab.app */,
-=======
-		4741BD9B27C68E7F00A6A826 = {
-			isa = PBXGroup;
-			children = (
-				4741BDA627C68E7F00A6A826 /* Nav&Tab */,
-				4741BDA527C68E7F00A6A826 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		4741BDA527C68E7F00A6A826 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4741BDA427C68E7F00A6A826 /* Nav&Tab.app */,
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		E1B869E32A9CB1D40091C0E5 /* Nav&Tab */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,20 +63,6 @@
 				E1B869ED2A9CB1D60091C0E5 /* Assets.xcassets */,
 				E1B869EF2A9CB1D60091C0E5 /* LaunchScreen.storyboard */,
 				E1B869F22A9CB1D60091C0E5 /* Info.plist */,
-=======
-		4741BDA627C68E7F00A6A826 /* Nav&Tab */ = {
-			isa = PBXGroup;
-			children = (
-				4741BDA727C68E7F00A6A826 /* AppDelegate.swift */,
-				4741BDA927C68E7F00A6A826 /* SceneDelegate.swift */,
-				4741BDAB27C68E7F00A6A826 /* ViewController.swift */,
-				4741BDBB27C693C700A6A826 /* SecondViewController.swift */,
-				472BFAE527C7564700160556 /* Tab2ViewController.swift */,
-				4741BDAD27C68E7F00A6A826 /* Main.storyboard */,
-				4741BDB027C68E8100A6A826 /* Assets.xcassets */,
-				4741BDB227C68E8100A6A826 /* LaunchScreen.storyboard */,
-				4741BDB527C68E8100A6A826 /* Info.plist */,
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 			);
 			path = "Nav&Tab";
 			sourceTree = "<group>";
@@ -132,7 +70,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-<<<<<<< HEAD
 		E1B869E02A9CB1D40091C0E5 /* Nav&Tab */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1B869F52A9CB1D60091C0E5 /* Build configuration list for PBXNativeTarget "Nav&Tab" */;
@@ -140,15 +77,6 @@
 				E1B869DD2A9CB1D40091C0E5 /* Sources */,
 				E1B869DE2A9CB1D40091C0E5 /* Frameworks */,
 				E1B869DF2A9CB1D40091C0E5 /* Resources */,
-=======
-		4741BDA327C68E7F00A6A826 /* Nav&Tab */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4741BDB827C68E8100A6A826 /* Build configuration list for PBXNativeTarget "Nav&Tab" */;
-			buildPhases = (
-				4741BDA027C68E7F00A6A826 /* Sources */,
-				4741BDA127C68E7F00A6A826 /* Frameworks */,
-				4741BDA227C68E7F00A6A826 /* Resources */,
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 			);
 			buildRules = (
 			);
@@ -156,17 +84,12 @@
 			);
 			name = "Nav&Tab";
 			productName = "Nav&Tab";
-<<<<<<< HEAD
 			productReference = E1B869E12A9CB1D40091C0E5 /* Nav&Tab.app */;
-=======
-			productReference = 4741BDA427C68E7F00A6A826 /* Nav&Tab.app */;
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-<<<<<<< HEAD
 		E1B869D92A9CB1D40091C0E5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
@@ -181,49 +104,23 @@
 			};
 			buildConfigurationList = E1B869DC2A9CB1D40091C0E5 /* Build configuration list for PBXProject "Nav&Tab" */;
 			compatibilityVersion = "Xcode 14.0";
-=======
-		4741BD9C27C68E7F00A6A826 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
-				TargetAttributes = {
-					4741BDA327C68E7F00A6A826 = {
-						CreatedOnToolsVersion = 13.0;
-					};
-				};
-			};
-			buildConfigurationList = 4741BD9F27C68E7F00A6A826 /* Build configuration list for PBXProject "Nav&Tab" */;
-			compatibilityVersion = "Xcode 13.0";
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-<<<<<<< HEAD
 			mainGroup = E1B869D82A9CB1D40091C0E5;
 			productRefGroup = E1B869E22A9CB1D40091C0E5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				E1B869E02A9CB1D40091C0E5 /* Nav&Tab */,
-=======
-			mainGroup = 4741BD9B27C68E7F00A6A826;
-			productRefGroup = 4741BDA527C68E7F00A6A826 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				4741BDA327C68E7F00A6A826 /* Nav&Tab */,
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-<<<<<<< HEAD
 		E1B869DF2A9CB1D40091C0E5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -231,22 +128,12 @@
 				E1B869F12A9CB1D60091C0E5 /* LaunchScreen.storyboard in Resources */,
 				E1B869EE2A9CB1D60091C0E5 /* Assets.xcassets in Resources */,
 				E1B869EC2A9CB1D40091C0E5 /* Main.storyboard in Resources */,
-=======
-		4741BDA227C68E7F00A6A826 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4741BDB427C68E8100A6A826 /* LaunchScreen.storyboard in Resources */,
-				4741BDB127C68E8100A6A826 /* Assets.xcassets in Resources */,
-				4741BDAF27C68E7F00A6A826 /* Main.storyboard in Resources */,
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-<<<<<<< HEAD
 		E1B869DD2A9CB1D40091C0E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,49 +141,24 @@
 				E1B869E92A9CB1D40091C0E5 /* ViewController.swift in Sources */,
 				E1B869E52A9CB1D40091C0E5 /* AppDelegate.swift in Sources */,
 				E1B869E72A9CB1D40091C0E5 /* SceneDelegate.swift in Sources */,
-=======
-		4741BDA027C68E7F00A6A826 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4741BDBC27C693C700A6A826 /* SecondViewController.swift in Sources */,
-				4741BDAC27C68E7F00A6A826 /* ViewController.swift in Sources */,
-				4741BDA827C68E7F00A6A826 /* AppDelegate.swift in Sources */,
-				472BFAE627C7564700160556 /* Tab2ViewController.swift in Sources */,
-				4741BDAA27C68E7F00A6A826 /* SceneDelegate.swift in Sources */,
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-<<<<<<< HEAD
 		E1B869EA2A9CB1D40091C0E5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E1B869EB2A9CB1D40091C0E5 /* Base */,
-=======
-		4741BDAD27C68E7F00A6A826 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4741BDAE27C68E7F00A6A826 /* Base */,
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		E1B869EF2A9CB1D60091C0E5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E1B869F02A9CB1D60091C0E5 /* Base */,
-=======
-		4741BDB227C68E8100A6A826 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4741BDB327C68E8100A6A826 /* Base */,
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -304,22 +166,13 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-<<<<<<< HEAD
 		E1B869F32A9CB1D60091C0E5 /* Debug */ = {
-=======
-		4741BDB627C68E8100A6A826 /* Debug */ = {
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-<<<<<<< HEAD
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-=======
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -363,11 +216,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-<<<<<<< HEAD
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-=======
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -377,22 +226,13 @@
 			};
 			name = Debug;
 		};
-<<<<<<< HEAD
 		E1B869F42A9CB1D60091C0E5 /* Release */ = {
-=======
-		4741BDB727C68E8100A6A826 /* Release */ = {
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-<<<<<<< HEAD
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-=======
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -430,11 +270,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-<<<<<<< HEAD
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-=======
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -444,21 +280,14 @@
 			};
 			name = Release;
 		};
-<<<<<<< HEAD
 		E1B869F62A9CB1D60091C0E5 /* Debug */ = {
-=======
-		4741BDB927C68E8100A6A826 /* Debug */ = {
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-<<<<<<< HEAD
 				DEVELOPMENT_TEAM = 24Y7TSVQ6L;
-=======
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Nav&Tab/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -472,7 +301,6 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tom.Nav-Tab";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -482,27 +310,13 @@
 			name = Debug;
 		};
 		E1B869F72A9CB1D60091C0E5 /* Release */ = {
-=======
-				PRODUCT_BUNDLE_IDENTIFIER = "com.allenschool.Nav-Tab";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		4741BDBA27C68E8100A6A826 /* Release */ = {
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-<<<<<<< HEAD
 				DEVELOPMENT_TEAM = 24Y7TSVQ6L;
-=======
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Nav&Tab/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -516,64 +330,36 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tom.Nav-Tab";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-=======
-				PRODUCT_BUNDLE_IDENTIFIER = "com.allenschool.Nav-Tab";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-<<<<<<< HEAD
 		E1B869DC2A9CB1D40091C0E5 /* Build configuration list for PBXProject "Nav&Tab" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E1B869F32A9CB1D60091C0E5 /* Debug */,
 				E1B869F42A9CB1D60091C0E5 /* Release */,
-=======
-		4741BD9F27C68E7F00A6A826 /* Build configuration list for PBXProject "Nav&Tab" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4741BDB627C68E8100A6A826 /* Debug */,
-				4741BDB727C68E8100A6A826 /* Release */,
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-<<<<<<< HEAD
 		E1B869F52A9CB1D60091C0E5 /* Build configuration list for PBXNativeTarget "Nav&Tab" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E1B869F62A9CB1D60091C0E5 /* Debug */,
 				E1B869F72A9CB1D60091C0E5 /* Release */,
-=======
-		4741BDB827C68E8100A6A826 /* Build configuration list for PBXNativeTarget "Nav&Tab" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4741BDB927C68E8100A6A826 /* Debug */,
-				4741BDBA27C68E8100A6A826 /* Release */,
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-<<<<<<< HEAD
 	rootObject = E1B869D92A9CB1D40091C0E5 /* Project object */;
-=======
-	rootObject = 4741BD9C27C68E7F00A6A826 /* Project object */;
->>>>>>> 3fa86db34a5490edaebb550e82af62b188a1f2a9
 }
