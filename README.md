@@ -1167,3 +1167,10 @@ let newCell = messageCell as UITableViewCell
     - 동작 - 테이블뷰에서 일어나는 일
 
  
+
+## 테이블뷰 sellForRowAt에서 indexPath
+
+- indexPath.section
+  - 그룹의 번호
+- indexPath.row
+  - 그룹 내의 행의 번호
