@@ -19,6 +19,7 @@ final class ViewController: UIViewController {
         tableView.dataSource = self
         
         setupTableViewConstraints()
+    
     }
     
     // 테이블뷰의 오토레이아웃 설정
