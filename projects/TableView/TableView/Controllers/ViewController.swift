@@ -15,15 +15,30 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 델리게이트 패턴의 대리자 설정
         tableView.dataSource = self
         tableView.delegate = self
+        
+        // 셀의 높이 설정
         tableView.rowHeight = 120
         
+        title = "영화목록"
+        
         movieDataManager.makeMovieData()
-//        moviesArray = movieDataManager.getMovieData()
+        // moviesArray = movieDataManager.getMovieData()
     }
+    
+    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
+        
+        movieDataManager.updateMovieData()
+        
+        tableView.reloadData()
+    }
+    
 }
 
 
