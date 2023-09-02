@@ -44,6 +44,7 @@ final class ViewController: UIViewController {
     
     func setupTableView() {
         tableView.dataSource = self
+        tableView.delegate = self
         
         tableView.rowHeight = 60
         
@@ -84,11 +85,24 @@ extension ViewController: UITableViewDataSource {
 //        cell.mainImageView.image = member.memberImage
 //        cell.memberNameLabel.text = member.name
 //        cell.addressLabel.text = member.address
+
         cell.member = memberListManager[indexPath.row]
         cell.selectionStyle = .none
         
         return cell
     }
+}
+
+extension ViewController: UITableViewDelegate {
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // 다음 화면으로 넘어가는 코드
+        let detailVC = DetailViewController()
+        
+        let memberArray = memberListManager.getMembersList()
+        detailVC.member = memberArray[indexPath.row]
+        
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
