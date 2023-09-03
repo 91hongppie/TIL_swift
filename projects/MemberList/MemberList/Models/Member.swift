@@ -7,6 +7,12 @@
 
 import UIKit
 
+// AnyObject: 클래스에서만 채택을 할수있는 프로토콜이라는 뜻
+protocol MemberDelegate: AnyObject {
+    func addNewMember(_ member: Member)
+    func update(index: Int, _ member: Member)
+}
+
 struct Member {
     
     lazy var memberImage: UIImage? = {

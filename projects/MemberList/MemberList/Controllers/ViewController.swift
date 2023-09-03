@@ -20,9 +20,9 @@ final class ViewController: UIViewController {
         return button
     }()
     
-    override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
-    }
+    // override func viewWillAppear(_ animated: Bool) {
+    //     tableView.reloadData()
+    // }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +85,7 @@ final class ViewController: UIViewController {
         let detailVC = DetailViewController()
         
         // 다음 화면의 대리자 설정 (다음 화면의 대리자는 지금 현재의 뷰컨트롤러)
-        //detailVC.delegate = self
+        detailVC.delegate = self
         
         // 화면이동
         navigationController?.pushViewController(detailVC, animated: true)
@@ -124,7 +124,22 @@ extension ViewController: UITableViewDelegate {
         
         let memberArray = memberListManager.getMembersList()
         detailVC.member = memberArray[indexPath.row]
-        
+        detailVC.delegate = self
         navigationController?.pushViewController(detailVC, animated: true)
     }
+}
+
+
+extension ViewController: MemberDelegate {
+    func addNewMember(_ member: Member) {
+        memberListManager.makeNewMember(member)
+        tableView.reloadData()
+    }
+    
+    func update(index: Int, _ member: Member) {
+        memberListManager.updateMemberInfo(index: index, member)
+        tableView.reloadData()
+    }
+    
+
 }
