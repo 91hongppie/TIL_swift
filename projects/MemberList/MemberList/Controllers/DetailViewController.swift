@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 final class DetailViewController: UIViewController {
     
@@ -15,7 +16,8 @@ final class DetailViewController: UIViewController {
     var member: Member?
     
     override func loadView() {
-        // super.loadView 이런 것은 필요없음 완전히 재정의하는 구간이기 때문에
+        // super.loadView 이런 것은 필요없음 완전히 재정의하는 구간이기 때문에\
+        
         view = detailView
     }
     
@@ -26,7 +28,7 @@ final class DetailViewController: UIViewController {
         super.viewDidLoad()
         setupData()
         setupButtonAction()
-        // Do any additional setup after loading the view.
+        setupTapGestures()
     }
     
     // 멤버를 뷰에 전달⭐️ (뷰에서 알아서 화면 셋팅)
@@ -38,6 +40,35 @@ final class DetailViewController: UIViewController {
     func setupButtonAction() {
         detailView.saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
     }
+    
+    //MARK: - 이미지뷰가 눌렸을때의 동작 설정
+    
+    // 제스쳐 설정 (이미지뷰가 눌리면, 실행)
+    func setupTapGestures() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchUpImageView))
+        detailView.mainImageView.addGestureRecognizer(tapGesture)
+        detailView.mainImageView.isUserInteractionEnabled = true
+    }
+    
+    @objc func touchUpImageView() {
+        print("이미지뷰 터치")
+        setupImagePicker()
+    }
+    
+    func setupImagePicker() {
+        // 기본설정 셋팅
+        var configuration = PHPickerConfiguration()
+        configuration.selectionLimit = 0
+        configuration.filter = .any(of: [.images, .videos])
+        
+        // 기본설정을 가지고, 피커뷰컨트롤러 생성
+        let picker = PHPickerViewController(configuration: configuration)
+        // 피커뷰 컨트롤러의 대리자 설정
+        picker.delegate = self
+        // 피커뷰 띄우기
+        self.present(picker, animated: true, completion: nil)
+    }
+    
     
     @objc func saveButtonTapped() {
         
@@ -96,5 +127,25 @@ final class DetailViewController: UIViewController {
         
         // (일처리를 다한 후에) 전화면으로 돌아가기
         self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension DetailViewController: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        // 피커뷰 dismiss
+        picker.dismiss(animated: true)
+        
+        let itemProvider = results.first?.itemProvider
+        
+        if let itemProvider = itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self) {
+            itemProvider.loadObject(ofClass: UIImage.self) { (image, error) in
+                DispatchQueue.main.async {
+                    // 이미지뷰에 표시
+                    self.detailView.mainImageView.image = image as? UIImage
+                }
+            }
+        } else {
+            print("이미지 못 불러왔음!!!!")
+        }
     }
 }
