@@ -1174,3 +1174,19 @@ let newCell = messageCell as UITableViewCell
   - 그룹의 번호
 - indexPath.row
   - 그룹 내의 행의 번호
+
+
+
+# 델리게이트 패턴 VS Notification
+
+## 델리게이트 패턴
+
+1. 1:1
+2. 쌍방향의 의사소통
+3. 함수 실행 후 리턴값(응답)이 있음
+
+## Notification
+
+1. 1:N
+2. 라디오 방송의 개념
+3. 신호를 발생 시키면 받아서 특정 함수 실행 가능, 리턴값의 개념이 없다(응답 없음)

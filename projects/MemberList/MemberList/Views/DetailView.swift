@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class DetailView: UIView {
     
     //MARK: - 멤버 저장속성 구현
@@ -244,6 +245,7 @@ class DetailView: UIView {
         super.init(frame: frame)
         backgroundColor = .white
         setupStackView()
+        setUpNotification()
         setuMemberIdTextField()
         
     }
@@ -256,6 +258,11 @@ class DetailView: UIView {
         self.addSubview(stackView)
     }
     
+    func setUpNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(moveUpAction), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(moveDownAction), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+ 
     func setuMemberIdTextField() {
         memberIdTextField.delegate = self
     }
@@ -296,6 +303,32 @@ class DetailView: UIView {
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         ])
     }
+    
+    //MARK: - 키보드가 나타날때와 내려갈때의 애니메이션 셋팅
+    @objc func moveUpAction() {
+        stackViewTopConstraint.constant = -20
+        UIView.animate(withDuration: 0.2) {
+            self.layoutIfNeeded()
+        }
+    }
+    
+    @objc func moveDownAction() {
+        stackViewTopConstraint.constant = 10
+        UIView.animate(withDuration: 0.2) {
+            self.layoutIfNeeded()
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.endEditing(true)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    
 }
 
 //MARK: - 텍스트필드 델리게이트 구현
