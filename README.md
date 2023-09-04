@@ -1254,7 +1254,32 @@ let newCell = messageCell as UITableViewCell
   - Server Error
   - 서버는 리퀘스트 처리 실패 ( 서버 에러 ) - 서버 내부의 문제
 
+### URL query
 
+- GET 요청을 보낼 때 URL 뒤에 붙이는 정보
+- key=value의 형태
+- ?로 시작, &로 추가
+- body에 넣어서 보내는 것도 가능하다
 
+### 데이터 전송 방법
 
+- 쿼리 파라미터를 통한 데이터 전송
+  - GET
+- 메세지 바디를 통한 데이터 전송
+  - POST / PUT / PATCH
+
+## REST API
+
+- 요청방식에 대한 약속
+- 어떤 주소 / 무엇을 요청 / 결과를 어떻게 주는지
+- REST한 형식의 API ( 예전엔 SOAP )
+  - https://(사이트 주소)/movielists -> 상영중 영화목록 요청 GET
+  - https://(사이트 주소)/movielists?open=tomorrow - 내일 상영할 영화목록 요청 GET
+  - https://(사이트 주소)/movie-reservation - 영화 예약 POST
+  - 이런식으로 모든 사람이 알아보기 쉽게 하는 것
+- 참고 자료
+  - REST API가 뭔가요? (얄팍한 코딩사전)
+    - https://youtu.be/iOueE9AXDQQ?si=VBAht7W36RVuQxRu
+  - 그런  REST API로 괜찮은가 (네이버 d2)
+    - https://www.youtube.com/watch?v=RP_f5dMoHFc
 
