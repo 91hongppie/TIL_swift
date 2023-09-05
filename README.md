@@ -1283,3 +1283,14 @@ let newCell = messageCell as UITableViewCell
   - 그런  REST API로 괜찮은가 (네이버 d2)
     - https://www.youtube.com/watch?v=RP_f5dMoHFc
 
+# iOS의 네트워킹
+
+## iOS 데이터 요청의 4단계
+
+1. URL
+2. URLSession(브라우저 키고)
+3. dataTask(url입력)
+4. 시작(resume)
+
+
+
