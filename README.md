@@ -1297,3 +1297,7 @@ let newCell = messageCell as UITableViewCell
 - 브라우저의 하나의 탭이라고 생각하면 된다.
 - 세션 == 연결 상태 유지
 - 일정 시간동안 같은 브라우저(사용자)로부터 들어오는 연결 상태를 일정하게 유지시키는 기술(상태)
+
+## JSONDecoder
+
+- JSONDecoder.decode(변형하고 싶은 형태, from: 데이터) 메서드
