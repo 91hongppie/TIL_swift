@@ -3,8 +3,14 @@
    version = "3.0">
    <TimelineItems>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/tom.jo/Desktop/learning/TIL_swift/language/network.playground#CharacterRangeLen=48&amp;CharacterRangeLoc=534&amp;EndingColumnNumber=56&amp;EndingLineNumber=20&amp;StartingColumnNumber=8&amp;StartingLineNumber=20&amp;Timestamp=715606932.477442"
+         documentLocation = "file:///Users/tom.jo/Desktop/learning/TIL_swift/language/network.playground#CharacterRangeLen=172&amp;CharacterRangeLoc=557&amp;EndingColumnNumber=4&amp;EndingLineNumber=23&amp;StartingColumnNumber=5&amp;StartingLineNumber=17&amp;Timestamp=715687398.45428"
          selectedRepresentationIndex = "0">
+      </LoggerValueHistoryTimelineItem>
+   </TimelineItems>
+   <TimelineItems>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "documentLocation"
+         selectedRepresentationIndex = "selectedRepresentationIndex">
       </LoggerValueHistoryTimelineItem>
    </TimelineItems>
    <TimelineItems>
