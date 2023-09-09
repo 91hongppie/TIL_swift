@@ -32,7 +32,7 @@ func getImages(with urlString: String) -> (UIImage?) {
 
 
 
-//getImages(with: "https://bit.ly/32ps0DI")    // 무조건 nil로 리턴함 ⭐️
+// getImages(with: "https://bit.ly/32ps0DI")    // 무조건 nil로 리턴함 ⭐️
 
 
 
@@ -62,6 +62,16 @@ func properlyGetImages(with urlString: String, completionHandler: @escaping (UII
         
     }.resume()
     
+}
+
+
+properlyGetImages(with: "https://bit.ly/32ps0DI") { image in
+    
+    // 처리 관련 코드
+    
+    DispatchQueue.main.async {
+        // UI 관련 작업을 하면 된다.
+    }
 }
 
 

@@ -1524,3 +1524,45 @@ let newCell = messageCell as UITableViewCell
   - URLSession은 내부적으로 비동기 처리된 함수임 - 메인쓰레드가 아닌 다른쓰레드에서 작업이 진행된다.
 
   
+
+- 컴플리션핸들러의 존재이유 - 올바른 콜백함수의 사용
+
+  - 다른 쓰레드에서 일을 시작시키고, 작업이 끝날때까지 (1번 쓰레드 입장에서) "안기다린다."
+
+  - 결국 비동기 작업이 명확하게 끝나는 시점을 알고, 어떤 작업을 할 필요
+
+  - 데이터를 리턴으로 전달하면 안되고, 클로저로 전달해야함
+
+  - 잘못된 함수 설계
+
+    - 비동기적인 작업을 해야하는 함수를 설계할때 return을 통해서 데이터를 전달하려면 항상  nil이 반환
+
+      ```swift
+      func getImages(..., c..: String) -> UIImage? {
+        ...
+        URLSession.shared.dataTask(..) {
+          ...
+        }.resume()
+        ...
+        ...
+        return photoImage // 함수 내부의 일이 끝나기 전에 return 하므로 무조건 nil로 반환
+      }
+      ```
+
+  - 제대로된 함수 설계
+
+    - 비동기적인 작업을 해야하는 함수는 항상 클로저를 호출할 수 있도록 함수를 설계해야함
+
+      ```swift
+      func getImages(..., c..: @escaping(UIImage?)) -> Void {
+        ...
+        URLSession.shared.dataTask(..) {
+          ...
+          completion(photoImage) // 함수 내부의 일이 끝나면 completion 클로저 호출
+        }.resume()
+        ...
+        ...
+      }
+      ```
+
+  - 
