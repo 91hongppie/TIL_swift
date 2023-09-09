@@ -1450,3 +1450,77 @@ let newCell = messageCell as UITableViewCell
 ### 동시 큐는 왜 필요할까?
 
 - 각자 독립적이지만 유사한 여러개의 작업을 처리할때 사용
+
+# GCD의 개념
+
+## 큐(Queue)의 종류
+
+### 디스패치큐(GCD)에 대해서
+
+1. DispatchQueue(GCD) 디스패치큐
+
+   - 메인큐
+
+     - DispatchQueue.main
+     - 메인큐 = 메인쓰레드(1번 쓰레드)
+     - 유일한 한개, 직렬, 실제는 그냥 메인 쓰레드(1번 쓰레드를 의미)
+
+   - 글로벌큐
+
+     - DispatchQueue.global()
+
+     - 종류가 여러개, 기본설정 동시(Concurrent), QoS(6종류, Quality of Service, 서비스 품질)
+
+       | 서비스품질 수준  | 사용 상황                                                    | 소요 시간                                     |
+       | ---------------- | ------------------------------------------------------------ | --------------------------------------------- |
+       | .userInteractive | 유저와 직접적 인터랙티브: UI업데이트 관련(직접 X), 애니메이션, UI반응관련 어떤 것이든<br />(사용자와 직접 상호 작용하는 작업에 권장, 작업이 빨리 처리되지 않으면 상황이 멈춘 것처럼 보일만한) | 거의 즉시                                     |
+       | .userInitiated   | 유저가 즉시 필요하긴 하지만, 비동기적으로 처리된 작업<br />(ex. 앱내에서 pdf파일을 여는 것과 같은, 로컬 데이터베이스 읽기) | 몇초                                          |
+       | .default         | 일반적인 작업                                                | -                                             |
+       | .utility         | 보통 Progresx Indicator와 함께 길게 실행되는 작업, 계산<br />(ex. IO, Networking, 지속적인 데이터 feeds) | 몇초에서 몇분                                 |
+       | .background      | 유저가 직접적으로 인지하지 않고(시간이 안중요한) 작업<br />(ex. 데이터 미리 가져오기, 데이터베이스 유지보수, 원격 서버 동기화 및 백업 수행) | 몇분이상<br />(속도보다는 에너지 효율성 증시) |
+       | .unspecified     | Legacy API 지원<br />(스레드를 서비스 품질에서 제외시키는)   | -                                             |
+
+       
+
+     - DispatchQueue.global()
+
+       - 글로벌큐 중에 디폴트큐
+
+     - DispatchQueue.global(qos: .utility)
+
+       - 글로벌큐 중에 유틸리티 큐
+
+   - 프라이빗(Custom)큐
+
+     - DispatchQueue(label: "...")
+     - 커스텀으로 만드는 큐, 기본설정 직렬(serial), QoS(설정가능)
+
+2. OperationQueue - 오퍼레이션큐
+   - 메인큐
+     - OperationQueue.main
+   - 프라이빗(Custom)큐
+     - OperationQueue()
+
+# GDC 사용시 주의사항
+
+## 반드시 메인큐에서 처리해야하는 작업
+
+- 메인  Thread: 화면을 다시 그리는 역할
+
+  - UI관련 일들은 다시 메인쓰레드로 보낼 필요
+
+  ```swift
+  DispatchQueue.global(qos: .utility).async {
+    ...
+    ... // 비동기적인 작업들 ===> 네트워크 통신 (데이터 다운로드)
+    ...
+    DispatchQueue.main.async(
+      // UI와 관련된 작업
+    	imageview?.image = photoImage
+    )
+  }
+  ```
+
+  - URLSession은 내부적으로 비동기 처리된 함수임 - 메인쓰레드가 아닌 다른쓰레드에서 작업이 진행된다.
+
+  

@@ -11,7 +11,9 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 let mainQueue = DispatchQueue.main
 
 
-
+mainQueue.async {
+     
+}
 
 //: ### 2) 글로벌큐
 // 6가지의 Qos를 가지고 있는 글로벌(전역) 대기열
