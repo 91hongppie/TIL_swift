@@ -16,7 +16,7 @@ let serialQueue = DispatchQueue(label: "serial")
 for i in 1...20 {
     DispatchQueue.global().async {
         print("\(i)")
-        //array.append("\(i)")    //  <===== 동시큐에서 실행하면 동시다발적으로 배열의 메모리에 접근
+//        array.append("\(i)")    //  <===== 동시큐에서 실행하면 동시다발적으로 배열의 메모리에 접근
         
         serialQueue.async {        // 올바른 처리 ⭐️
             array.append("\(i)")
