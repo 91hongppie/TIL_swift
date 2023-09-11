@@ -104,11 +104,11 @@ now + 86400
 
 // 스위프트 내부에 미리 정의된 타임존 확인해보기
 
-//for localeName in TimeZone.knownTimeZoneIdentifiers {
-//    print(localeName)
-//}
+for localeName in TimeZone.knownTimeZoneIdentifiers {
+    print(localeName)
+}
 
-//TimeZone.current
+TimeZone.current
 
 
 

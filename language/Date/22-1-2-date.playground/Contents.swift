@@ -161,7 +161,7 @@ enum Weekday: Int {
     // ⭐️ 타입 계산속성
     static var today: Weekday {
         let weekday: Int = Calendar.current.component(.weekday, from: Date())  // 요일을 나타내는 정수
-        return Weekday(rawValue: weekday)!
+        return Weekday(rawValue: weekday )!
     }
 }
 
