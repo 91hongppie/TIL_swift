@@ -107,9 +107,6 @@ case .failure(let error):
     print(error)
 }
 
-
-
-
 /*:
  ---
  * Result타입의 다양한 활용
