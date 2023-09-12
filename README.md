@@ -1658,3 +1658,9 @@ let newCell = messageCell as UITableViewCell
 
 - 장점
   - 실제 함수 정의 시에 에러 타입을 명시적 선언 / 타입캐스팅 불필요
+
+# 네트워킹
+
+## TCP/IP 프로토콜
+
+- 인터네의 모든 것은 HTTP로 이루어져 있다.
