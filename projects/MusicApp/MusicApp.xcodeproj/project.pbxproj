@@ -20,7 +20,6 @@
 		478D7F1B28168D3B009D0CCD /* MusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478D7F1928168D3B009D0CCD /* MusicCell.swift */; };
 		478D7F1C28168D3B009D0CCD /* MusicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 478D7F1A28168D3B009D0CCD /* MusicCell.xib */; };
 		47CF05162817B0BE00FE26FF /* MusicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF05152817B0BE00FE26FF /* MusicCollectionViewCell.swift */; };
-		E1C6682D2AB5949500E7EE47 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6682C2AB5949500E7EE47 /* NetworkingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		478D7F1928168D3B009D0CCD /* MusicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCell.swift; sourceTree = "<group>"; };
 		478D7F1A28168D3B009D0CCD /* MusicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicCell.xib; sourceTree = "<group>"; };
 		47CF05152817B0BE00FE26FF /* MusicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCollectionViewCell.swift; sourceTree = "<group>"; };
-		E1C6682C2AB5949500E7EE47 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				478D7F0C28167703009D0CCD /* NetworkManager.swift */,
-				E1C6682C2AB5949500E7EE47 /* NetworkingManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -206,7 +203,6 @@
 				478D7F0D28167703009D0CCD /* NetworkManager.swift in Sources */,
 				478D7F1828168B50009D0CCD /* SearchResultViewController.swift in Sources */,
 				478D7EFD2816752E009D0CCD /* ViewController.swift in Sources */,
-				E1C6682D2AB5949500E7EE47 /* NetworkingManager.swift in Sources */,
 				478D7F1B28168D3B009D0CCD /* MusicCell.swift in Sources */,
 				47CF05162817B0BE00FE26FF /* MusicCollectionViewCell.swift in Sources */,
 				478D7F0F28167D02009D0CCD /* Music.swift in Sources */,

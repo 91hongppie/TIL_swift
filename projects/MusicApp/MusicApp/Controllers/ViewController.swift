@@ -32,7 +32,7 @@ final class ViewController: UIViewController {
         setupTableView()
         setupDatas()
     }
-    
+
     // 서치바 셋팅
     func setupSearchBar() {
         self.title = "Music Search"

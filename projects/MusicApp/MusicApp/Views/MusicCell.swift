@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MusicCell: UITableViewCell {s
+final class MusicCell: UITableViewCell {
 
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var songNameLabel: UILabel!
