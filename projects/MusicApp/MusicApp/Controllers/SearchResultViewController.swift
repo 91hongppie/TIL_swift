@@ -46,13 +46,13 @@ final class SearchResultViewController: UIViewController {
         // 컬렉션뷰의 스크롤 방향 설정
         flowLayout.scrollDirection = .vertical
         
-        let collectionCellWidth = (UIScreen.main.bounds.width - CVCell.spacingWitdh * (CVCell.cellColumns - 1)) / CVCell.cellColumns
+        let collectionCellWidth = (UIScreen.main.bounds.width - CVCell.spacingWidth * (CVCell.cellColumns - 1)) / CVCell.cellColumns
         
         flowLayout.itemSize = CGSize(width: collectionCellWidth, height: collectionCellWidth)
         // 아이템 사이 간격 설정
-        flowLayout.minimumInteritemSpacing = CVCell.spacingWitdh
+        flowLayout.minimumInteritemSpacing = CVCell.spacingWidth
         // 아이템 위아래 사이 간격 설정
-        flowLayout.minimumLineSpacing = CVCell.spacingWitdh
+        flowLayout.minimumLineSpacing = CVCell.spacingWidth
         
         // 컬렉션뷰의 속성에 할당
         collectionView.collectionViewLayout = flowLayout
