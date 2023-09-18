@@ -4,6 +4,7 @@
 //
 //  Created by Kyuhong Jo on 2023/09/18.
 //
+//
 
 import Foundation
 import CoreData
@@ -15,9 +16,9 @@ extension ToDoData {
         return NSFetchRequest<ToDoData>(entityName: "ToDoData")
     }
 
-    @NSManaged public var memoText: String?
-    @NSManaged public var date: Date?
     @NSManaged public var color: Int64
+    @NSManaged public var date: Date?
+    @NSManaged public var memoText: String?
 
     var dateString: String? {
         let myFormatter = DateFormatter()

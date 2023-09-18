@@ -17,10 +17,10 @@
 		E1EDEDA12AB886F7003A5CFF /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EDEDA02AB886F7003A5CFF /* MyColor.swift */; };
 		E1EDEDA32AB88716003A5CFF /* UIColor_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EDEDA22AB88716003A5CFF /* UIColor_Extension.swift */; };
 		E1EDEDA52AB8873A003A5CFF /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EDEDA42AB8873A003A5CFF /* CoreDataManager.swift */; };
-		E1EDEDAA2AB8879C003A5CFF /* ToDoData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EDEDA92AB8879C003A5CFF /* ToDoData+CoreDataClass.swift */; };
-		E1EDEDAC2AB887BF003A5CFF /* ToDoData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EDEDAB2AB887BF003A5CFF /* ToDoData+CoreDataProperties.swift */; };
 		E1EDEDAE2AB887D5003A5CFF /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EDEDAD2AB887D5003A5CFF /* ToDoCell.swift */; };
 		E1EDEDB02AB88804003A5CFF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EDEDAF2AB88804003A5CFF /* DetailViewController.swift */; };
+		E1EDEDB72AB897F9003A5CFF /* ToDoData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EDEDB52AB897F9003A5CFF /* ToDoData+CoreDataClass.swift */; };
+		E1EDEDB82AB897F9003A5CFF /* ToDoData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EDEDB62AB897F9003A5CFF /* ToDoData+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,10 +36,10 @@
 		E1EDEDA02AB886F7003A5CFF /* MyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
 		E1EDEDA22AB88716003A5CFF /* UIColor_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Extension.swift; sourceTree = "<group>"; };
 		E1EDEDA42AB8873A003A5CFF /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		E1EDEDA92AB8879C003A5CFF /* ToDoData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E1EDEDAB2AB887BF003A5CFF /* ToDoData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E1EDEDAD2AB887D5003A5CFF /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 		E1EDEDAF2AB88804003A5CFF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E1EDEDB52AB897F9003A5CFF /* ToDoData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E1EDEDB62AB897F9003A5CFF /* ToDoData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +107,9 @@
 		E1EDED9E2AB88676003A5CFF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E1EDEDB52AB897F9003A5CFF /* ToDoData+CoreDataClass.swift */,
+				E1EDEDB62AB897F9003A5CFF /* ToDoData+CoreDataProperties.swift */,
 				E1EDEDA42AB8873A003A5CFF /* CoreDataManager.swift */,
-				E1EDEDA92AB8879C003A5CFF /* ToDoData+CoreDataClass.swift */,
-				E1EDEDAB2AB887BF003A5CFF /* ToDoData+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,9 +197,9 @@
 				E1EDEDB02AB88804003A5CFF /* DetailViewController.swift in Sources */,
 				E17598042AB6FDA50077752F /* ViewController.swift in Sources */,
 				E17598002AB6FDA50077752F /* AppDelegate.swift in Sources */,
+				E1EDEDB82AB897F9003A5CFF /* ToDoData+CoreDataProperties.swift in Sources */,
+				E1EDEDB72AB897F9003A5CFF /* ToDoData+CoreDataClass.swift in Sources */,
 				E1EDEDA32AB88716003A5CFF /* UIColor_Extension.swift in Sources */,
-				E1EDEDAC2AB887BF003A5CFF /* ToDoData+CoreDataProperties.swift in Sources */,
-				E1EDEDAA2AB8879C003A5CFF /* ToDoData+CoreDataClass.swift in Sources */,
 				E1EDEDA12AB886F7003A5CFF /* MyColor.swift in Sources */,
 				E17598022AB6FDA50077752F /* SceneDelegate.swift in Sources */,
 				E1EDEDA52AB8873A003A5CFF /* CoreDataManager.swift in Sources */,

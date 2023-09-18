@@ -71,7 +71,7 @@ final class DetailViewController: UIViewController {
         // 기존데이터가 없을때
         } else {
             self.title = "새로운 메모 생성하기"
-            
+            saveButton.setTitle("SAVE", for: .normal)
             mainTextView.text = "텍스트를 여기에 입력하세요."
             mainTextView.textColor = .lightGray
             setupColorTheme(color: .red)
