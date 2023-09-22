@@ -26,6 +26,7 @@ struct Music: Codable {
     let previewUrl: String?
     let imageUrl: String?
     private let releaseDate: String?
+    var isSaved: Bool = false
     
     // 네트워크에서 주는 이름을 변환하는 방법 (원시값)
     // (서버: trackName ===> songName)

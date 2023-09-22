@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22G90" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MusicSaved" representedClassName="MusicSaved" syncable="YES">
+        <attribute name="albumName" optional="YES" attributeType="String"/>
+        <attribute name="artistName" optional="YES" attributeType="String"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String"/>
+        <attribute name="myMessage" optional="YES" attributeType="String"/>
+        <attribute name="previewUrl" optional="YES" attributeType="String"/>
+        <attribute name="releaseDate" optional="YES" attributeType="String"/>
+        <attribute name="savedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="somgName" optional="YES" attributeType="String"/>
+    </entity>
+</model>

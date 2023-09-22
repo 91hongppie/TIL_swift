@@ -20,6 +20,7 @@
 		478D7F1B28168D3B009D0CCD /* MusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478D7F1928168D3B009D0CCD /* MusicCell.swift */; };
 		478D7F1C28168D3B009D0CCD /* MusicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 478D7F1A28168D3B009D0CCD /* MusicCell.xib */; };
 		47CF05162817B0BE00FE26FF /* MusicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF05152817B0BE00FE26FF /* MusicCollectionViewCell.swift */; };
+		E7DDD9702ABE1C0600B159E3 /* MusicSaved.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7DDD96E2ABE1C0600B159E3 /* MusicSaved.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		478D7F1928168D3B009D0CCD /* MusicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCell.swift; sourceTree = "<group>"; };
 		478D7F1A28168D3B009D0CCD /* MusicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicCell.xib; sourceTree = "<group>"; };
 		47CF05152817B0BE00FE26FF /* MusicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCollectionViewCell.swift; sourceTree = "<group>"; };
+		E7DDD96F2ABE1C0600B159E3 /* MusicSaved.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MusicSaved.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				478D7F0128167530009D0CCD /* Assets.xcassets */,
 				478D7F0328167530009D0CCD /* LaunchScreen.storyboard */,
 				478D7F0628167530009D0CCD /* Info.plist */,
+				E7DDD96E2ABE1C0600B159E3 /* MusicSaved.xcdatamodeld */,
 			);
 			path = MusicApp;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				478D7F0D28167703009D0CCD /* NetworkManager.swift in Sources */,
+				E7DDD9702ABE1C0600B159E3 /* MusicSaved.xcdatamodeld in Sources */,
 				478D7F1828168B50009D0CCD /* SearchResultViewController.swift in Sources */,
 				478D7EFD2816752E009D0CCD /* ViewController.swift in Sources */,
 				478D7F1B28168D3B009D0CCD /* MusicCell.swift in Sources */,
@@ -428,6 +432,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E7DDD96E2ABE1C0600B159E3 /* MusicSaved.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E7DDD96F2ABE1C0600B159E3 /* MusicSaved.xcdatamodel */,
+			);
+			currentVersion = E7DDD96F2ABE1C0600B159E3 /* MusicSaved.xcdatamodel */;
+			path = MusicSaved.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 478D7EED2816752E009D0CCD /* Project object */;
 }
