@@ -21,11 +21,11 @@ class ViewController: UIViewController {
         self.viewModel = MusicViewModel()
         
         // 데이터 변경이 완료된 후, 클로저에서 어떤 일을 할지 정의 (할당)
-        self.viewModel.onCompleted = { [weak self] _ in
+        self.viewModel.onCompleted = { [unowned self] _ in
             DispatchQueue.main.async {
-                self?.albumNameLabel.text = self?.viewModel.albumNameString
-                self?.songNameLabel.text = self?.viewModel.songNameString
-                self?.artistNameLabel.text = self?.viewModel.artistNameString
+                self.albumNameLabel.text = self.viewModel.albumNameString
+                self.songNameLabel.text = self.viewModel.songNameString
+                self.artistNameLabel.text = self.viewModel.artistNameString
             }
         }
     }
