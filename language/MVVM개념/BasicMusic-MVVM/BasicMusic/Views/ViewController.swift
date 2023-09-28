@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         guard viewModel.music != nil else { return }
         
         // 원칙 ========================================
-        //다음 화면의 뷰컨트롤러가 가져야 하는 뷰모델 ⭐️
+        //다음 화면의 뷰컨트롤러가 가져야 하는 뷰모델을 전달해줘야한다. ⭐️
         let detailVM = DetailViewModel()
         
         //뷰모델이 가져야 하는 데이터 ⭐️
