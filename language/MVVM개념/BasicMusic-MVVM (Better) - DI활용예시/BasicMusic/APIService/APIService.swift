@@ -15,6 +15,7 @@ protocol NetworkType {
 
 // 일부러 싱글톤으로 안 만듦
 class APIService: NetworkType {
+    
     func fetchMusic(completion: @escaping (Result<[Music], NetworkError>) -> Void) {
         let urlString = "https://itunes.apple.com/search?media=music&term=jazz"
         let url = URL(string: urlString)!

@@ -111,7 +111,7 @@ class BMIViewModel {
     // 다음화면으로 이동 ⭐️
     private func goToNextVC(storyBoard: UIStoryboard?, fromCurrentVC: UIViewController, animated: Bool) {
         
-        // 스토리보드 생성 + 커스텀 생성자 ⭐️⭐️⭐️
+        // 스토리보드로 생성 + 커스텀 생성자 ⭐️⭐️⭐️
         guard let secondVC = storyBoard?
             .instantiateViewController(identifier: "SecondViewController", creator: { coder in
                 SecondViewController(coder: coder, viewModel: self) })
