@@ -16,6 +16,7 @@
 		91F732DC29C48AE800C9BD8F /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F732DB29C48AE800C9BD8F /* Music.swift */; };
 		91F732DF29C49F4900C9BD8F /* MusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F732DE29C49F4900C9BD8F /* MusicViewModel.swift */; };
 		91F732E429C4AC9500C9BD8F /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F732E329C4AC9500C9BD8F /* APIService.swift */; };
+		E72A2F002AC68AE600BF9CCA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A2EFF2AC68AE600BF9CCA /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		91F732DB29C48AE800C9BD8F /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		91F732DE29C49F4900C9BD8F /* MusicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewModel.swift; sourceTree = "<group>"; };
 		91F732E329C4AC9500C9BD8F /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		E72A2EFF2AC68AE600BF9CCA /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				91F732C229C47BDB00C9BD8F /* AppDelegate.swift */,
 				91F732C429C47BDB00C9BD8F /* SceneDelegate.swift */,
+				E72A2EFE2AC68AD700BF9CCA /* Utils */,
 				91F732E229C4AC8000C9BD8F /* APIService */,
 				91F732D829C48A8500C9BD8F /* Models */,
 				91F732DD29C49F1200C9BD8F /* ViewModels */,
@@ -106,6 +109,14 @@
 				91F732E329C4AC9500C9BD8F /* APIService.swift */,
 			);
 			path = APIService;
+			sourceTree = "<group>";
+		};
+		E72A2EFE2AC68AD700BF9CCA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E72A2EFF2AC68AE600BF9CCA /* Observable.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 				91F732DF29C49F4900C9BD8F /* MusicViewModel.swift in Sources */,
 				91F732C729C47BDB00C9BD8F /* ViewController.swift in Sources */,
 				91F732C329C47BDB00C9BD8F /* AppDelegate.swift in Sources */,
+				E72A2F002AC68AE600BF9CCA /* Observable.swift in Sources */,
 				91F732DC29C48AE800C9BD8F /* Music.swift in Sources */,
 				91F732C529C47BDB00C9BD8F /* SceneDelegate.swift in Sources */,
 				91F732E429C4AC9500C9BD8F /* APIService.swift in Sources */,

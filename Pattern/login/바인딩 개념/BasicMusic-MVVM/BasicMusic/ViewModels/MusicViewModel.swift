@@ -12,28 +12,8 @@ class MusicViewModel {
     var timer: Timer?
     
     // 핵심 데이터(모델) ⭐️⭐️⭐️ (뷰모델이 가지고 있음)
-    var music: Music? {
-        didSet {
-            onCompleted(self.music)
-        }
-    }
-    
-    // 뷰를 위한 데이터 (Output)
-    var albumNameString: String? {
-        return music?.albumName
-    }
-    
-    var songNameString: String? {
-        return music?.songName
-    }
-    
-    var artistNameString: String? {
-        return music?.artistName
-    }
-    
-    // 데이터가 변했을때 알려주는 클로저 할당
-    var onCompleted: (Music?) -> Void = { _ in }
-    
+    var music: 클래스로감싸진데이터<Music> = 클래스로감싸진데이터(Music(songName: nil, artistName: nil, albumName: nil, imageUrl: nil))
+        
     
     // Input
     func handleStartButtonTapped() {
@@ -57,8 +37,8 @@ class MusicViewModel {
                 case .success(let musics):
                     // 데이터 생성 완료 (API를 통해 다운로드 -> 파싱 완료된)
                     // 음악 데이터를 랜덤으로 ⭐️⭐️⭐️
-                    self?.music = musics.randomElement()
-                    
+                    let randomMusic = musics.randomElement()!
+                    self?.music.데이터값 = randomMusic
                 case .failure(let error):
                     switch error {
                         case .dataError:
