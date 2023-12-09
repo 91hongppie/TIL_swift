@@ -17,6 +17,8 @@
 		E7AA33122AE7BB190014C419 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7AA33112AE7BB190014C419 /* Assets.xcassets */; };
 		E7AA33152AE7BB190014C419 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7AA33132AE7BB190014C419 /* LaunchScreen.storyboard */; };
 		E7AA332A2AE7BB660014C419 /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AA33292AE7BB660014C419 /* ConversationsController.swift */; };
+		E7AE59602B2428C40045AFD5 /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE595F2B2428C40045AFD5 /* InputContainerView.swift */; };
+		E7AE59622B2464940045AFD5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE59612B2464940045AFD5 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		E7AA33142AE7BB190014C419 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7AA33162AE7BB190014C419 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7AA33292AE7BB660014C419 /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
+		E7AE595F2B2428C40045AFD5 /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
+		E7AE59612B2464940045AFD5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,8 @@
 		E7AA33272AE7BB390014C419 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E7AE595F2B2428C40045AFD5 /* InputContainerView.swift */,
+				E7AE59612B2464940045AFD5 /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,12 +213,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7AA330D2AE7BB190014C419 /* ViewController.swift in Sources */,
+				E7AE59602B2428C40045AFD5 /* InputContainerView.swift in Sources */,
 				E7AA33092AE7BB190014C419 /* AppDelegate.swift in Sources */,
 				E7AA332A2AE7BB660014C419 /* ConversationsController.swift in Sources */,
 				E7AA330B2AE7BB190014C419 /* SceneDelegate.swift in Sources */,
 				E715B4BC2B0CEE6E00645150 /* RegistrationController.swift in Sources */,
 				E715B4BA2B0CEE6400645150 /* LoginController.swift in Sources */,
 				E715B4BE2B0CF15F00645150 /* Extensions.swift in Sources */,
+				E7AE59622B2464940045AFD5 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
