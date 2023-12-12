@@ -1,17 +1,17 @@
 //
 //  InputContainerView.swift
-//  FireChat
+//  FireChatReview
 //
-//  Created by Kyuhong Jo on 12/9/23.
+//  Created by Kyuhong Jo on 12/12/23.
 //
 
 import UIKit
 
 class InputContainerView: UIView {
-    
     init(image: UIImage?, textField: UITextField) {
         super.init(frame: .zero)
         setHeight(height: 50)
+        
         let iv = UIImageView()
         iv.image = image
         iv.tintColor = .white
@@ -26,13 +26,14 @@ class InputContainerView: UIView {
         textField.centerY(inView: self)
         textField.anchor(left: iv.rightAnchor, bottom: bottomAnchor, right: rightAnchor, paddingLeft: 8, paddingBottom: -8)
         
-        let dividerView = UIView()
-        dividerView.backgroundColor = .white
-        addSubview(dividerView)
-        dividerView.anchor(left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingLeft: 0, height: 0.75)
+        let divideView = UIView()
+        divideView.backgroundColor = .white
+        addSubview(divideView)
+        divideView.anchor(left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingLeft: 0, height: 0.75)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
