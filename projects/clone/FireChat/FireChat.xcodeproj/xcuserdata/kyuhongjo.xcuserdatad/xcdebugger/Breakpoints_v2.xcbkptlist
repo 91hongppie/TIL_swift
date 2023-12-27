@@ -14,8 +14,8 @@
             filePath = "FireChat/Controller/ConversationsController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "ConversationsController"
             landmarkType = "3">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "FireChat/Controller/ConversationsController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "configureUI()"
             landmarkType = "7">
          </BreakpointContent>
