@@ -67,6 +67,9 @@
 		E7DCBBA42BCE45F800DD95D0 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = E7DCBBA32BCE45F800DD95D0 /* JGProgressHUD */; };
 		E7DCBBA62BCE4E1300DD95D0 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DCBBA52BCE4E1300DD95D0 /* NewMessageController.swift */; };
 		E7DCBBA82BCE51D400DD95D0 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DCBBA72BCE51D400DD95D0 /* UserCell.swift */; };
+		E7EDC6AC2BD0BECF0058D338 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EDC6AB2BD0BECF0058D338 /* Constants.swift */; };
+		E7EDC6AE2BD0D6B90058D338 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EDC6AD2BD0D6B90058D338 /* ConversationCell.swift */; };
+		E7EDC6B02BD0D9090058D338 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EDC6AF2BD0D9090058D338 /* ConversationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +100,9 @@
 		E7DCBBA02BCE3EF700DD95D0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E7DCBBA52BCE4E1300DD95D0 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		E7DCBBA72BCE51D400DD95D0 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		E7EDC6AB2BD0BECF0058D338 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E7EDC6AD2BD0D6B90058D338 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
+		E7EDC6AF2BD0D9090058D338 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				E78199152BCCD75E00B20F42 /* Extension.swift */,
+				E7EDC6AB2BD0BECF0058D338 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -215,6 +222,7 @@
 			children = (
 				E781991F2BCD096600B20F42 /* Authentication */,
 				E70F21492BCFB0BC0080C95B /* MessageViewModel.swift */,
+				E7EDC6AF2BD0D9090058D338 /* ConversationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -227,6 +235,7 @@
 				E7DCBBA72BCE51D400DD95D0 /* UserCell.swift */,
 				E70F21432BCFA1370080C95B /* CustomInputAccessoryView.swift */,
 				E70F21452BCFAB500080C95B /* MessageCell.swift */,
+				E7EDC6AD2BD0D6B90058D338 /* ConversationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E78198F92BCCC44D00B20F42 /* ViewController.swift in Sources */,
+				E7EDC6AC2BD0BECF0058D338 /* Constants.swift in Sources */,
 				E781991E2BCD095500B20F42 /* RegistrationViewModel.swift in Sources */,
 				E78199182BCCE36F00B20F42 /* InputContainerView.swift in Sources */,
 				E7DCBBA12BCE3EF700DD95D0 /* AuthService.swift in Sources */,
@@ -384,12 +394,14 @@
 				E70F21392BCF77E90080C95B /* User.swift in Sources */,
 				E70F213B2BCF78550080C95B /* Service.swift in Sources */,
 				E70F21462BCFAB500080C95B /* MessageCell.swift in Sources */,
+				E7EDC6B02BD0D9090058D338 /* ConversationViewModel.swift in Sources */,
 				E78198F72BCCC44D00B20F42 /* SceneDelegate.swift in Sources */,
 				E78199142BCCD46E00B20F42 /* RegistrationController.swift in Sources */,
 				E78199122BCCD46400B20F42 /* LoginController.swift in Sources */,
 				E781991C2BCCFFAC00B20F42 /* LoginViewModel.swift in Sources */,
 				E70F21422BCF82CB0080C95B /* ChatController.swift in Sources */,
 				E781991A2BCCE58700B20F42 /* CustomTextField.swift in Sources */,
+				E7EDC6AE2BD0D6B90058D338 /* ConversationCell.swift in Sources */,
 				E70F21482BCFAE420080C95B /* Message.swift in Sources */,
 				E7DCBBA62BCE4E1300DD95D0 /* NewMessageController.swift in Sources */,
 				E70F21442BCFA1370080C95B /* CustomInputAccessoryView.swift in Sources */,

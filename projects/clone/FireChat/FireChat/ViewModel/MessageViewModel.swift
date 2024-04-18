@@ -28,7 +28,12 @@ struct MessageViewModel {
     }
     
     var shouldHideProfileImage: Bool {
-        return message.isFromCurrentUser
+        return message.isFromCurrentUser 
+    }
+    
+    var profileImageUrl: URL? {
+        guard let user = message.user else { return nil }
+        return URL(string: user.profileImageUrl)
     }
 
     init(message: Message) {
