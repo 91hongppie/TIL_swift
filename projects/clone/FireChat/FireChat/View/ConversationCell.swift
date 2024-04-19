@@ -77,8 +77,6 @@ class ConversationCell: UITableViewCell {
         guard let conversation = conversation else { return }
         let viewModel = ConversationViewModel(conversation: conversation)
         
-        print(conversation.message)
-        
         usernameLabel.text = conversation.user.username
         messageTextLabel.text = conversation.message.text
         
