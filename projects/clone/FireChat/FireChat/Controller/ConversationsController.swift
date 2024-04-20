@@ -156,13 +156,22 @@ extension ConversationsController: UITableViewDelegate {
 
 extension ConversationsController: NewMessageControllerDelegate {
     func controller(_ controller: NewMessageController, wantsToStartChatWith user: User) {
-        controller.dismiss(animated: true)
+        dismiss(animated: true)
         showChatController(forUser: user)
     }
 }
 
+// MARK: - ProfileControllerDelegate
+
 extension ConversationsController: ProfileControllerDelegate {
     func handleLogout() {
         logout()
+    }
+}
+
+extension ConversationsController: AuthenticationDelegate {
+    func authenticationComplete() {
+        configureUI()
+        fetchConversations()
     }
 }
