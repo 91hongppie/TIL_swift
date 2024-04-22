@@ -15,6 +15,7 @@
 		E70F21642BCFD7130080C95B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E70F21622BCFD7130080C95B /* LaunchScreen.storyboard */; };
 		E70F21732BCFD7B60080C95B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70F21722BCFD7B60080C95B /* LoginController.swift */; };
 		E70F21752BCFE2F50080C95B /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70F21742BCFE2F50080C95B /* RegistrationController.swift */; };
+		E779176A2BD690480054A44C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77917692BD690480054A44C /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E70F21652BCFD7130080C95B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E70F21722BCFD7B60080C95B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		E70F21742BCFE2F50080C95B /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		E77917692BD690480054A44C /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		E70F216B2BCFD71C0080C95B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E77917692BD690480054A44C /* Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				E70F215C2BCFD7120080C95B /* ViewController.swift in Sources */,
 				E70F21732BCFD7B60080C95B /* LoginController.swift in Sources */,
 				E70F21582BCFD7120080C95B /* AppDelegate.swift in Sources */,
+				E779176A2BD690480054A44C /* Extension.swift in Sources */,
 				E70F21752BCFE2F50080C95B /* RegistrationController.swift in Sources */,
 				E70F215A2BCFD7120080C95B /* SceneDelegate.swift in Sources */,
 			);
