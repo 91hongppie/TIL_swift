@@ -10,6 +10,8 @@ import UIKit
 class LoginController: UIViewController {
     // MARK: - Properties
     
+    private var viewModel = LoginViewModel()
+    
     private let iconImage: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "bubble.right")
@@ -17,99 +19,14 @@ class LoginController: UIViewController {
         return iv
     }()
     
-    private lazy var emailContainerView: UIView = {
-        let view = UIView()
-        
-        let iv = UIImageView()
-        iv.image = #imageLiteral(resourceName: "ic_mail_outline_white_2x")
-        iv.tintColor = .white
-        iv.alpha = 0.87
-        view.addSubview(iv)
-        
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        iv.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 8).isActive = true
-        iv.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8).isActive = true
-        iv.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        iv.widthAnchor.constraint(equalToConstant: 24).isActive = true
-        
-        let textField = emailTextField
-        
-        view.addSubview(textField)
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        textField.leftAnchor.constraint(equalTo: iv.rightAnchor, constant: 8).isActive = true
-        textField.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8).isActive = true
-        textField.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+    private lazy var emailContainerView = InputContainerView(#imageLiteral(resourceName: "ic_mail_outline_white_2x"), emailTextField)
     
-        let dividerView = UIView()
-        dividerView.backgroundColor = .white
-        
-        view.addSubview(dividerView)
-        dividerView.translatesAutoresizingMaskIntoConstraints = false
-        dividerView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 8).isActive = true
-        dividerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        dividerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        dividerView.heightAnchor.constraint(equalToConstant: 0.75).isActive = true
-        
-        return view
-    }()
+    private lazy var passwordContainerView = InputContainerView(#imageLiteral(resourceName: "ic_lock_outline_white_2x"), passwordTextField)
     
-    private lazy var passwordContainerView: UIView = {
-        let view = UIView()
-        
-        let iv = UIImageView()
-        iv.image = #imageLiteral(resourceName: "ic_lock_outline_white_2x")
-        iv.tintColor = .white
-        iv.alpha = 0.87
-        view.addSubview(iv)
-        
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        iv.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 8).isActive = true
-        iv.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8).isActive = true
-        iv.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        iv.widthAnchor.constraint(equalToConstant: 24).isActive = true
-        
-        let textField = passwordTextField
-        
-        view.addSubview(textField)
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        textField.leftAnchor.constraint(equalTo: iv.rightAnchor, constant: 8).isActive = true
-        textField.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8).isActive = true
-        textField.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-    
-        let dividerView = UIView()
-        dividerView.backgroundColor = .white
-        
-        view.addSubview(dividerView)
-        dividerView.translatesAutoresizingMaskIntoConstraints = false
-        dividerView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 8).isActive = true
-        dividerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        dividerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        dividerView.heightAnchor.constraint(equalToConstant: 0.75).isActive = true
-        
-        return view
-    }()
-    
-    private let emailTextField: UITextField = {
-        let tv = UITextField()
-        tv.borderStyle = .none
-        tv.font = UIFont.systemFont(ofSize: 16)
-        tv.textColor = .white
-        tv.keyboardAppearance = .dark
-        tv.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [.foregroundColor: UIColor.white])
-        return tv
-    }()
+    private let emailTextField = CustomTextField(placeholder: "Email")
     
     private let passwordTextField: UITextField = {
-        let tv = UITextField()
-        tv.borderStyle = .none
-        tv.font = UIFont.systemFont(ofSize: 16)
-        tv.textColor = .white
-        tv.keyboardAppearance = .dark
-        tv.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [.foregroundColor: UIColor.white])
+        let tv = CustomTextField(placeholder: "Password")
         tv.isSecureTextEntry = true
         return tv
     }()
@@ -147,10 +64,28 @@ class LoginController: UIViewController {
     
     // MARK: - Selectors
     
+    func checkFormStatus() {
+        if viewModel.formIsValid {
+            loginButton.isEnabled = true
+            loginButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        } else {
+            loginButton.isEnabled = false
+            loginButton.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+        }
+    }
+    
+    @objc func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else if sender == passwordTextField {
+            viewModel.password = sender.text
+        }
+        checkFormStatus()
+    }
+    
     @objc func handleShowSignUp() {
         let controller = RegistrationController()
         navigationController?.pushViewController(controller, animated: true)
-        
     }
     
     func configureUI() {
@@ -182,6 +117,9 @@ class LoginController: UIViewController {
         dontHaveAccountButton.translatesAutoresizingMaskIntoConstraints = false
         dontHaveAccountButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         dontHaveAccountButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
     
     // MARK: - Helpers

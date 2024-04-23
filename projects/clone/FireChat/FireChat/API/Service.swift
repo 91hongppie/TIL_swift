@@ -12,7 +12,6 @@ import FirebaseAuth
 struct Service {
     
     static func fetchUsers(completion: @escaping([User]) -> Void) {
-        var users = [User]()
         COLLECTION_USERS.getDocuments { snapshot, error in
             guard var users = snapshot?.documents.map({ User(dictionary: $0.data()) }) else { return }
             
