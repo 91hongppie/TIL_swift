@@ -9,10 +9,15 @@ import UIKit
 
 private let reuseIdentifier = "UserCell"
 
+protocol NewConversationControllerDelegate: class {
+    func controller(_ controller: NewConversationController, wantsToStartChatWith user: User)
+}
+
 class NewConversationController: UITableViewController {
     // MARK: - Properties
     
     private var users = [User]()
+    weak var delegate: NewConversationControllerDelegate?
     
     // MARK: - Lifecycle
     
@@ -60,5 +65,12 @@ extension NewConversationController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
+    }
+}
+
+extension NewConversationController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = users[indexPath.row]
+        delegate?.controller(self, wantsToStartChatWith: user)
     }
 }

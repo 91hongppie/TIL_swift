@@ -2,7 +2,7 @@
 //  ChatController.swift
 //  FireChat
 //
-//  Created by Kyuhong Jo on 4/17/24.
+//  Created by Kyuhong Jo on 4/25/24.
 //
 
 import UIKit
@@ -14,9 +14,6 @@ class ChatController: UICollectionViewController {
     // MARK: - Properties
     
     private let user: User
-    private var messages = [Message]()
-    var fromCurrentUser = false
-
     
     private lazy var customInputView: CustomInputAccessoryView = {
         let iv = CustomInputAccessoryView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
@@ -39,8 +36,6 @@ class ChatController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        fetchMessages()
-        
     }
     
     override var inputAccessoryView: UIView? {
@@ -55,41 +50,30 @@ class ChatController: UICollectionViewController {
 //        super.viewWillAppear(animated)
 //    }
     
-    // MARK: - API
-    
-    func fetchMessages() {
-        showLoader(true)
-        
-        Service.fetchMessages(forUser: user) { messages in
-            self.showLoader(false)
-            
-            self.messages = messages
-            self.collectionView.reloadData()
-            self.collectionView.scrollToItem(at: [0, self.messages.count - 1], at: .bottom, animated: true)
-        }
-    }
-    
-    // MARK: - Helpers
+    // MARK: - Selectors
     
     func configureUI() {
-        collectionView.backgroundColor = .white
         configureNavigationBar(withTitle: user.username, prefersLargeTitles: false)
+
         
-        collectionView.register(MessageCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.alwaysBounceVertical = true
         collectionView.keyboardDismissMode = .interactive
+        
     }
+    
+    // MARK: - API
+    
+    // MARK: - Helpers
 }
 
 extension ChatController {
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return messages.count
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MessageCell
-        cell.message = messages[indexPath.row]
-        cell.message?.user = user
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! UICollectionViewCell
         return cell
     }
 }
@@ -98,29 +82,20 @@ extension ChatController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .init(top: 16, left: 0, bottom: 16, right: 0)
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
-        let estimatedSizeCell = MessageCell(frame: frame)
-        estimatedSizeCell.message = messages[indexPath.row]
-        estimatedSizeCell.layoutIfNeeded()
-        
-        let targetSize = CGSize(width: view.frame.width, height: 1000)
-        let estimatedSize = estimatedSizeCell.systemLayoutSizeFitting(targetSize)
-        
-        return .init(width: view.frame.width, height: estimatedSize.height)
-    }
+    
 }
 
-extension ChatController: CustomInputAccessoryViewDelegate {
+extension ChatController: CustomInputAccessoryDelegate {
     func inputView(_ inputView: CustomInputAccessoryView, wantsToSend message: String) {
-        
         Service.uploadMessage(message, to: user) { error in
             if let error = error {
                 print("DEBUG: Failed to upload message with error \(error.localizedDescription)")
                 return
             }
-            inputView.clearMessageText()
             
+            inputView.clearMessageText()
         }
     }
+    
+    
 }

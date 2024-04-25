@@ -16,7 +16,8 @@ class ConversationController: UIViewController {
     // MARK: - Properties
     
     private let tableView = UITableView()
-    
+    private var conversations = [Conversation]()
+    private var conversationsDictionary = [String: Conversation]()
     
     private let addNewConversationButton: UIButton = {
         let button = UIButton(type: .system)
@@ -44,9 +45,22 @@ class ConversationController: UIViewController {
     
     // MARK: - Selectors
     
+    func fetchConversations() {
+        Service.fetchConversations { conversations in
+            self.conversations = conversations
+            self.tableView.reloadData()
+        }
+    }
+    
+    func showChatController(forUser user: User) {
+        let controller = ChatController(user: user)
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     func presentLoginScreen() {
         DispatchQueue.main.async {
             let controller = LoginController()
+            controller.delegate = self
             let nav = UINavigationController(rootViewController: controller)
             nav.modalPresentationStyle = .fullScreen
             self.present(nav, animated: true)
@@ -64,6 +78,7 @@ class ConversationController: UIViewController {
     
     @objc func showNewConversations() {
         let controller = NewConversationController()
+        controller.delegate = self
         let nav = UINavigationController(rootViewController: controller)
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true)
@@ -122,4 +137,19 @@ extension ConversationController: UITableViewDataSource {
 
 extension ConversationController: UITableViewDelegate {
     
+}
+
+extension ConversationController: NewConversationControllerDelegate {
+    func controller(_ controller: NewConversationController, wantsToStartChatWith user: User) {
+        dismiss(animated: true)
+        showChatController(forUser: user)
+    }
+}
+
+extension ConversationController: AuthenticationDelegate {
+    func authenticationComplete() {
+        dismiss(animated: true)
+        configureUI()
+        fetchConversations()
+    }
 }

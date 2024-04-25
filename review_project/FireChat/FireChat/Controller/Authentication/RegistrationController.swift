@@ -13,6 +13,7 @@ class RegistrationController: UIViewController {
     
     private var profileImage: UIImage?
     private var viewModel = RegistrationViewModel()
+    weak var delegate: AuthenticationDelegate?
 
     
     private let alreadyHaveAccountButton: UIButton = {
