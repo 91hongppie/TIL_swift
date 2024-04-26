@@ -56,8 +56,10 @@
 		E75B191E2BDA2C240009EABB /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75B191D2BDA2C240009EABB /* ChatController.swift */; };
 		E75B19202BDA33700009EABB /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75B191F2BDA33700009EABB /* Message.swift */; };
 		E75B19222BDA37470009EABB /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75B19212BDA37470009EABB /* CustomInputAccessoryView.swift */; };
+		E7634B0B2BDB822300A964D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7634B0A2BDB822300A964D5 /* GoogleService-Info.plist */; };
+		E7634B0D2BDB848400A964D5 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7634B0C2BDB848400A964D5 /* MessageCell.swift */; };
+		E7634B0F2BDB876F00A964D5 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7634B0E2BDB876F00A964D5 /* MessageViewModel.swift */; };
 		E779176A2BD690480054A44C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77917692BD690480054A44C /* Extension.swift */; };
-		E798E6512BD7BBA20014E180 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E798E6502BD7BBA20014E180 /* GoogleService-Info.plist */; };
 		E798E6532BD7C1540014E180 /* NewConversationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E798E6522BD7C1540014E180 /* NewConversationController.swift */; };
 		E798E6552BD7C8050014E180 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E798E6542BD7C8050014E180 /* User.swift */; };
 		E798E6572BD7C8780014E180 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E798E6562BD7C8780014E180 /* UserCell.swift */; };
@@ -86,8 +88,10 @@
 		E75B191D2BDA2C240009EABB /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		E75B191F2BDA33700009EABB /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E75B19212BDA37470009EABB /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputAccessoryView.swift; sourceTree = "<group>"; };
+		E7634B0A2BDB822300A964D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E7634B0C2BDB848400A964D5 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		E7634B0E2BDB876F00A964D5 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		E77917692BD690480054A44C /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		E798E6502BD7BBA20014E180 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E798E6522BD7C1540014E180 /* NewConversationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationController.swift; sourceTree = "<group>"; };
 		E798E6542BD7C8050014E180 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E798E6562BD7C8780014E180 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -170,7 +174,7 @@
 				E70F215D2BCFD7120080C95B /* Main.storyboard */,
 				E70F21602BCFD7130080C95B /* Assets.xcassets */,
 				E70F21622BCFD7130080C95B /* LaunchScreen.storyboard */,
-				E798E6502BD7BBA20014E180 /* GoogleService-Info.plist */,
+				E7634B0A2BDB822300A964D5 /* GoogleService-Info.plist */,
 				E70F21652BCFD7130080C95B /* Info.plist */,
 			);
 			path = FireChat;
@@ -208,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				E74A437E2BD767730048BF5C /* Authentication */,
+				E7634B0E2BDB876F00A964D5 /* MessageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 				E74A437C2BD7611D0048BF5C /* InputContainerView.swift */,
 				E798E6562BD7C8780014E180 /* UserCell.swift */,
 				E75B19212BDA37470009EABB /* CustomInputAccessoryView.swift */,
+				E7634B0C2BDB848400A964D5 /* MessageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -349,7 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E70F21642BCFD7130080C95B /* LaunchScreen.storyboard in Resources */,
-				E798E6512BD7BBA20014E180 /* GoogleService-Info.plist in Resources */,
+				E7634B0B2BDB822300A964D5 /* GoogleService-Info.plist in Resources */,
 				E70F21612BCFD7130080C95B /* Assets.xcassets in Resources */,
 				E70F215F2BCFD7120080C95B /* Main.storyboard in Resources */,
 			);
@@ -363,8 +369,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E74A437B2BD75FFF0048BF5C /* CustomTextField.swift in Sources */,
+				E7634B0D2BDB848400A964D5 /* MessageCell.swift in Sources */,
 				E74A437D2BD7611D0048BF5C /* InputContainerView.swift in Sources */,
 				E70F215C2BCFD7120080C95B /* ViewController.swift in Sources */,
+				E7634B0F2BDB876F00A964D5 /* MessageViewModel.swift in Sources */,
 				E75B19202BDA33700009EABB /* Message.swift in Sources */,
 				E70F21732BCFD7B60080C95B /* LoginController.swift in Sources */,
 				E798E6532BD7C1540014E180 /* NewConversationController.swift in Sources */,
