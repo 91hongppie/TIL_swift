@@ -36,6 +36,7 @@ class ConversationController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        fetchConversations()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +49,7 @@ class ConversationController: UIViewController {
     func fetchConversations() {
         Service.fetchConversations { conversations in
             self.conversations = conversations
+            print(conversations, "컨버세이션스")
             self.tableView.reloadData()
         }
     }
@@ -109,7 +111,7 @@ class ConversationController: UIViewController {
     func configureTableView() {
         tableView.backgroundColor = .white
         tableView.rowHeight = 80
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(ConversationCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.tableFooterView = UIView()
         tableView.delegate = self
         tableView.dataSource = self
@@ -124,11 +126,12 @@ class ConversationController: UIViewController {
 
 extension ConversationController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return conversations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! ConversationCell
+        cell.conversation = conversations[indexPath.row]
         return cell
     }
     
@@ -136,7 +139,9 @@ extension ConversationController: UITableViewDataSource {
 }
 
 extension ConversationController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
 }
 
 extension ConversationController: NewConversationControllerDelegate {

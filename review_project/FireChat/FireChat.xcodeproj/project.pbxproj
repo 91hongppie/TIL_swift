@@ -15,6 +15,8 @@
 		E70F21642BCFD7130080C95B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E70F21622BCFD7130080C95B /* LaunchScreen.storyboard */; };
 		E70F21732BCFD7B60080C95B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70F21722BCFD7B60080C95B /* LoginController.swift */; };
 		E70F21752BCFE2F50080C95B /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70F21742BCFE2F50080C95B /* RegistrationController.swift */; };
+		E72EFAC12BDCD5EA0016B53D /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EFAC02BDCD5EA0016B53D /* ConversationCell.swift */; };
+		E72EFAC32BDCD75F0016B53D /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EFAC22BDCD75F0016B53D /* ConversationViewModel.swift */; };
 		E74A437B2BD75FFF0048BF5C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A437A2BD75FFF0048BF5C /* CustomTextField.swift */; };
 		E74A437D2BD7611D0048BF5C /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A437C2BD7611D0048BF5C /* InputContainerView.swift */; };
 		E74A43802BD7678B0048BF5C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A437F2BD7678B0048BF5C /* LoginViewModel.swift */; };
@@ -79,6 +81,8 @@
 		E70F21652BCFD7130080C95B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E70F21722BCFD7B60080C95B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		E70F21742BCFE2F50080C95B /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		E72EFAC02BDCD5EA0016B53D /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
+		E72EFAC22BDCD75F0016B53D /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		E74A437A2BD75FFF0048BF5C /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E74A437C2BD7611D0048BF5C /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		E74A437F2BD7678B0048BF5C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 			children = (
 				E74A437E2BD767730048BF5C /* Authentication */,
 				E7634B0E2BDB876F00A964D5 /* MessageViewModel.swift */,
+				E72EFAC22BDCD75F0016B53D /* ConversationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				E798E6562BD7C8780014E180 /* UserCell.swift */,
 				E75B19212BDA37470009EABB /* CustomInputAccessoryView.swift */,
 				E7634B0C2BDB848400A964D5 /* MessageCell.swift */,
+				E72EFAC02BDCD5EA0016B53D /* ConversationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 				E798E6552BD7C8050014E180 /* User.swift in Sources */,
 				E74A43912BD7AC260048BF5C /* AuthService.swift in Sources */,
 				E798E6572BD7C8780014E180 /* UserCell.swift in Sources */,
+				E72EFAC12BDCD5EA0016B53D /* ConversationCell.swift in Sources */,
 				E798E65E2BD7CF180014E180 /* Service.swift in Sources */,
 				E75B19222BDA37470009EABB /* CustomInputAccessoryView.swift in Sources */,
 				E74A43822BD76A3C0048BF5C /* RegistrationViewModel.swift in Sources */,
@@ -388,6 +395,7 @@
 				E70F215A2BCFD7120080C95B /* SceneDelegate.swift in Sources */,
 				E75B191E2BDA2C240009EABB /* ChatController.swift in Sources */,
 				E74A43C92BD7AFA10048BF5C /* ConversationController.swift in Sources */,
+				E72EFAC32BDCD75F0016B53D /* ConversationViewModel.swift in Sources */,
 				E74A43802BD7678B0048BF5C /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

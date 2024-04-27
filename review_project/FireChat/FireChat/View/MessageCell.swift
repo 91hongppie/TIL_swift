@@ -61,6 +61,7 @@ class MessageCell: UICollectionViewCell {
         bubbleContainer.topAnchor.constraint(equalTo: topAnchor).isActive = true
         bubbleContainer.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         bubbleContainer.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        bubbleContainer.layer.cornerRadius = 15
         
         bubbleLeftAnchor = bubbleContainer.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 12)
         bubbleLeftAnchor.isActive = true
@@ -69,6 +70,7 @@ class MessageCell: UICollectionViewCell {
         bubbleRightAnchor.isActive = true
         
         bubbleContainer.addSubview(textView)
+        textView.translatesAutoresizingMaskIntoConstraints = false
         textView.topAnchor.constraint(equalTo: bubbleContainer.topAnchor, constant: 4).isActive = true
         textView.bottomAnchor.constraint(equalTo: bubbleContainer.bottomAnchor, constant: -4).isActive = true
         textView.leftAnchor.constraint(equalTo: bubbleContainer.leftAnchor, constant: 12).isActive = true

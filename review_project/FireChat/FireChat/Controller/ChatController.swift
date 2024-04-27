@@ -82,7 +82,6 @@ extension ChatController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MessageCell
         cell.message = messages[indexPath.row]
         cell.message?.user = user
-        print(messages[indexPath.row], "아이아이")
         return cell
     }
 }

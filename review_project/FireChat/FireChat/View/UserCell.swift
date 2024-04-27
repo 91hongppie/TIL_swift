@@ -70,6 +70,10 @@ class UserCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override var intrinsicContentSize: CGSize {
+        return .zero
+    }
+    
     // MARK: - Helpers
     
     func configure() {
