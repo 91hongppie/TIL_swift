@@ -47,6 +47,7 @@ class LoginController: UIViewController {
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         button.layer.cornerRadius = 5
         button.isEnabled = false
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
@@ -69,6 +70,20 @@ class LoginController: UIViewController {
     }
     
     // MARK: - Selectors
+    
+    @objc func handleLogin() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        AuthService.shared.logUserIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                return
+            }
+            
+            self.dismiss(animated: true)
+            self.delegate?.authenticationComplete()
+        }
+    }
     
     func checkFormStatus() {
         if viewModel.formIsValid {
@@ -94,6 +109,8 @@ class LoginController: UIViewController {
         controller.delegate = delegate
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    // MARK: - Helpers
     
     func configureUI() {
         
@@ -128,6 +145,4 @@ class LoginController: UIViewController {
         emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
-    
-    // MARK: - Helpers
 }

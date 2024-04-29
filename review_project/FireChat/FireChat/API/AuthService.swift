@@ -23,6 +23,10 @@ struct RegistrationCredentials {
 struct AuthService {
     static let shared = AuthService()
     
+    func logUserIn(withEmail email: String, password: String, completion: @escaping(AuthDataResult?, Error?) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password, completion: completion)
+    }
+    
     func createUser(credentials: RegistrationCredentials, completion: ((Error?) -> Void)?) {
         
         guard let imageData = credentials.profileImage.jpegData(compressionQuality: 0.3) else { return }

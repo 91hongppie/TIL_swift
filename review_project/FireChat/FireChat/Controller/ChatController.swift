@@ -48,18 +48,6 @@ class ChatController: UICollectionViewController {
         return true
     }
     
-    // MARK: - Selectors
-    
-    func configureUI() {
-        configureNavigationBar(withTitle: user.username, prefersLargeTitles: false)
-
-        
-        collectionView.register(MessageCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        collectionView.alwaysBounceVertical = true
-        collectionView.keyboardDismissMode = .interactive
-        
-    }
-    
     // MARK: - API
     
     func fetchMessages() {
@@ -71,6 +59,16 @@ class ChatController: UICollectionViewController {
     }
     
     // MARK: - Helpers
+    
+    func configureUI() {
+        configureNavigationBar(withTitle: user.username, prefersLargeTitles: false)
+
+        
+        collectionView.register(MessageCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.alwaysBounceVertical = true
+        collectionView.keyboardDismissMode = .interactive
+        
+    }
 }
 
 extension ChatController {
@@ -111,10 +109,7 @@ extension ChatController: CustomInputAccessoryDelegate {
                 print("DEBUG: Failed to upload message with error \(error.localizedDescription)")
                 return
             }
-            
             inputView.clearMessageText()
         }
     }
-    
-    
 }

@@ -123,6 +123,7 @@ class RegistrationController: UIViewController {
             }
         
             print("completed Sign Up")
+            self.dismiss(animated: true)
         }
         
     }
@@ -136,6 +137,8 @@ class RegistrationController: UIViewController {
     @objc func handleShowLogin() {
         navigationController?.popViewController(animated: true)
     }
+    
+    // MARK: - Helpers
     
     func configureUI() {
         view.addSubview(alreadyHaveAccountButton)
@@ -162,8 +165,6 @@ class RegistrationController: UIViewController {
         stack.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -32).isActive = true
     
     }
-    
-    // MARK: - Helpers
     
     func configureNotificationObserver() {
         emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)

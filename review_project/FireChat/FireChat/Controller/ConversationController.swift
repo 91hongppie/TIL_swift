@@ -37,6 +37,7 @@ class ConversationController: UIViewController {
         super.viewDidLoad()
         configureUI()
         fetchConversations()
+        authenticateUser()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,8 +49,11 @@ class ConversationController: UIViewController {
     
     func fetchConversations() {
         Service.fetchConversations { conversations in
-            self.conversations = conversations
-            print(conversations, "컨버세이션스")
+            conversations.forEach({ conversation in
+                self.conversationsDictionary[conversation.user.email] = conversation
+                
+            })
+            self.conversations = Array(self.conversationsDictionary.values)
             self.tableView.reloadData()
         }
     }
@@ -66,6 +70,14 @@ class ConversationController: UIViewController {
             let nav = UINavigationController(rootViewController: controller)
             nav.modalPresentationStyle = .fullScreen
             self.present(nav, animated: true)
+        }
+    }
+    
+    func authenticateUser() {
+        if Auth.auth().currentUser?.uid == nil {
+            presentLoginScreen()
+        } else {
+            print("DEBUG: User id is \(Auth.auth().currentUser?.uid)")
         }
     }
     
@@ -87,8 +99,15 @@ class ConversationController: UIViewController {
     }
     
     @objc func showProfile() {
-        logout()
+        // .insetGrouped = tableViewCell의 너비를 전체로 하지 않는다.
+        let controller = ProfileController(style: .insetGrouped)
+        controller.delegate = self
+        let nav = UINavigationController(rootViewController: controller)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true)
     }
+    
+    // MARK: - Helpers
     
     func configureUI() {
         view.backgroundColor = .white
@@ -120,12 +139,13 @@ class ConversationController: UIViewController {
         tableView.frame = view.frame
     }
     
-    // MARK: - Helpers
+    
 }
 
 
 extension ConversationController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return conversations.count
     }
     
@@ -140,7 +160,9 @@ extension ConversationController: UITableViewDataSource {
 
 extension ConversationController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let user = conversations[indexPath.row].user
+        let controller = ChatController(user: user)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
@@ -156,5 +178,11 @@ extension ConversationController: AuthenticationDelegate {
         dismiss(animated: true)
         configureUI()
         fetchConversations()
+    }
+}
+
+extension ConversationController: ProfileControllerDelegate {
+    func handleLogout() {
+        logout()
     }
 }

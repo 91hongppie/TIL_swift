@@ -34,16 +34,6 @@ class NewConversationController: UITableViewController {
         dismiss(animated: true)
     }
     
-    func configureUI() {
-        configureNavigationBar(withTitle: "New Message", prefersLargeTitles: false)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleDismissal))
-        
-        tableView.tableFooterView = UIView()
-        tableView.register(UserCell.self, forCellReuseIdentifier: reuseIdentifier)
-        tableView.rowHeight = 80
-        
-    }
-    
     // MARK: - API
 
     func fetchUsers() {
@@ -54,6 +44,16 @@ class NewConversationController: UITableViewController {
     }
     
     // MARK: - Helpers
+    
+    func configureUI() {
+        configureNavigationBar(withTitle: "New Message", prefersLargeTitles: false)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleDismissal))
+        
+        tableView.tableFooterView = UIView()
+        tableView.register(UserCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.rowHeight = 80
+        
+    }
 }
 
 extension NewConversationController {
