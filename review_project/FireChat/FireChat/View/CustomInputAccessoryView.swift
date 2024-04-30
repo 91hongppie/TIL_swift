@@ -103,8 +103,11 @@ class CustomInputAccessoryView: UIView {
     // MARK: - Helpers
     
     func clearMessageText() {
-        messageInputTextView.text = nil
-        placeholderLabel.isHidden = false
+        DispatchQueue.main.async {
+            self.messageInputTextView.text = nil
+            self.placeholderLabel.isHidden = false
+        }
+        
     }
     
 }

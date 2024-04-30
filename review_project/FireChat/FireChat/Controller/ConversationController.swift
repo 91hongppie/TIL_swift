@@ -64,13 +64,11 @@ class ConversationController: UIViewController {
     }
     
     func presentLoginScreen() {
-        DispatchQueue.main.async {
             let controller = LoginController()
             controller.delegate = self
             let nav = UINavigationController(rootViewController: controller)
             nav.modalPresentationStyle = .fullScreen
             self.present(nav, animated: true)
-        }
     }
     
     func authenticateUser() {
