@@ -48,7 +48,7 @@
 		E770CB3C2BE0C83B000E89C9 = {
 			isa = PBXGroup;
 			children = (
-				E770CB472BE0C83B000E89C9 /* SelebSchool */,
+				E770CB472BE0C83B000E89C9 /* CelebSchool */,
 				E770CB462BE0C83B000E89C9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +61,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E770CB472BE0C83B000E89C9 /* SelebSchool */ = {
+		E770CB472BE0C83B000E89C9 /* CelebSchool */ = {
 			isa = PBXGroup;
 			children = (
 				E770CB5E2BE0D825000E89C9 /* View */,
@@ -76,7 +76,7 @@
 				E770CB532BE0C83C000E89C9 /* LaunchScreen.storyboard */,
 				E770CB562BE0C83C000E89C9 /* Info.plist */,
 			);
-			path = SelebSchool;
+			path = CelebSchool;
 			sourceTree = "<group>";
 		};
 		E770CB5C2BE0D80C000E89C9 /* ViewModel */ = {
@@ -154,7 +154,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E770CB402BE0C83B000E89C9 /* Build configuration list for PBXProject "SelebSchool" */;
+			buildConfigurationList = E770CB402BE0C83B000E89C9 /* Build configuration list for PBXProject "CelebSchool" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -362,7 +362,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kyuhongjo.SelebSchool;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyuhongjo.CelebSchool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -391,7 +391,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kyuhongjo.SelebSchool;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyuhongjo.CelebSchool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -402,7 +402,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E770CB402BE0C83B000E89C9 /* Build configuration list for PBXProject "SelebSchool" */ = {
+		E770CB402BE0C83B000E89C9 /* Build configuration list for PBXProject "CelebSchool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E770CB572BE0C83C000E89C9 /* Debug */,
