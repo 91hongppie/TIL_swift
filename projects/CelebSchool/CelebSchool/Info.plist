@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleURLTypes</key>
+	<array/>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -17,6 +19,17 @@
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
 					<string>Main</string>
+                    <key>GIDClientID</key>
+                    <string>284869503910-qigbbidtc4i7su8pn1r92f68qu8q1m93.apps.googleusercontent.com</string>
+                    <key>CFBundleURLTypes</key>
+                    <array>
+                      <dict>
+                        <key>CFBundleURLSchemes</key>
+                        <array>
+                          <string>com.googleusercontent.apps.284869503910-qigbbidtc4i7su8pn1r92f68qu8q1m93</string>
+                        </array>
+                      </dict>
+                    </array>
 				</dict>
 			</array>
 		</dict>

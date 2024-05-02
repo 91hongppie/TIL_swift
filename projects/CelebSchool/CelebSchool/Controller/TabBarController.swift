@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class TabBarController: UITabBarController {
     
@@ -38,12 +39,23 @@ class TabBarController: UITabBarController {
     }
 
     func addVC() {
+        
+        
         let firstVC = HomeController()
         firstVC.tabBarItem = UITabBarItem(title: "홈", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName:"house.fill"))
         
         let secondVC = MyInfoController()
         secondVC.tabBarItem = UITabBarItem(title: "내 정보", image: UIImage(systemName: "person.crop.circle"), selectedImage: UIImage(systemName:"person.crop.circle.fill"))
         
-        self.viewControllers = [firstVC, secondVC]
+        let thirdVC = SettingController()
+        thirdVC.tabBarItem = UITabBarItem(title: "설정", image: UIImage(systemName: "gearshape"), selectedImage: UIImage(systemName: "gearshape.fill"))
+        
+        if let uid = Auth.auth().currentUser?.uid {
+            Service.fetchUser(withUid: uid) { user in
+                secondVC.user = user
+            }
+        }
+    
+        self.viewControllers = [firstVC, secondVC, thirdVC]
     }
 }

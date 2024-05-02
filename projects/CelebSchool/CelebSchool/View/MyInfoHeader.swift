@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 protocol MyInfoHeaderDelegate: class {
     func handleLogin()
@@ -17,14 +19,19 @@ class MyInfoHeader: UIView {
     
     weak var delegate: MyInfoHeaderDelegate?
     
-    private let settingButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "gear"), for: .normal)
-        button.tintColor = .systemPink
-        return button
+    var user: User? {
+        didSet { updateConfigure() }
+    }
+    
+    private lazy var fullnameLabel: UILabel = {
+        let label = UILabel()
+        label.text = user?.fullname
+        label.textColor = .black
+        label.font = .boldSystemFont(ofSize: 16)
+        return label
     }()
     
-    private let loginButton: UIButton = {
+    private lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("로그인 하러가기", for: .normal)
         button.tintColor = .black
@@ -52,14 +59,21 @@ class MyInfoHeader: UIView {
     
     // MARK: - Helpers
     
+    func updateConfigure() {
+        DispatchQueue.main.async {
+            self.loginButton.isHidden = true
+            
+            self.addSubview(self.fullnameLabel)
+            self.fullnameLabel.translatesAutoresizingMaskIntoConstraints = false
+            self.fullnameLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 50).isActive = true
+            self.fullnameLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
+        }
+    }
+    
     func configureUI() {
-        backgroundColor = .systemPurple
+        backgroundColor = .white
 
         
-        addSubview(settingButton)
-        settingButton.translatesAutoresizingMaskIntoConstraints = false
-        settingButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
-        settingButton.leftAnchor.constraint(equalTo: rightAnchor, constant: -40).isActive = true
         
         addSubview(loginButton)
         loginButton.translatesAutoresizingMaskIntoConstraints = false
