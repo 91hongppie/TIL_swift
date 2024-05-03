@@ -51,7 +51,7 @@ class TabBarController: UITabBarController {
         thirdVC.tabBarItem = UITabBarItem(title: "설정", image: UIImage(systemName: "gearshape"), selectedImage: UIImage(systemName: "gearshape.fill"))
         
         if let uid = Auth.auth().currentUser?.uid {
-            Service.fetchUser(withUid: uid) { user in
+            Service.shared.fetchUser(withUid: uid) { user in
                 secondVC.user = user
             }
         }

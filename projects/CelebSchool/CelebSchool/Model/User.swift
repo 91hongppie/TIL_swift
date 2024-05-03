@@ -11,11 +11,12 @@ struct User {
     let uid: String
     let email: String
     let fullname: String
-    
+    let google: String
     
     init(dictionary: [String: Any]) {
         self.uid = dictionary["uid"] as? String ?? ""
         self.email = dictionary["email"] as? String ?? ""
         self.fullname = dictionary["fullname"] as? String ?? ""
+        self.google = dictionary["google"] as? String ?? ""
     }
 }

@@ -7,23 +7,36 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 import GoogleSignIn
 
 class MyInfoController: UITableViewController {
     // MARK: - Properties
     
     var user: User? {
-        didSet { headerView.user = user }
+        didSet {
+            headerView.user = user
+//            updateConfigureUI()
+        }
+        
     }
     
     private let headerView = MyInfoHeader(frame: .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 200))
     
     private let googleLogInButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("구글 연동", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
-        button.addTarget(self, action: #selector(connectGoogle), for: .touchUpInside)
         
+        
+        button.setTitle(" 구글 연동하기", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.contentMode = .scaleAspectFit
+        let image = #imageLiteral(resourceName: "logo_google")
+        button.setImage(image, for: .normal)
+        button.backgroundColor = .white
+        
+        button.configuration?.imagePadding = 10
+        
+        button.addTarget(self, action: #selector(connectGoogle), for: .touchUpInside)
         return button
     }()
     
@@ -38,6 +51,8 @@ class MyInfoController: UITableViewController {
     // MARK: - Selectors
     
     @objc func connectGoogle() {
+        print(123)
+        
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
             guard error == nil else { return }
             
@@ -47,11 +62,33 @@ class MyInfoController: UITableViewController {
             
             let user = signInResult?.user
             let idToken = user?.idToken?.tokenString
-            let accessToken = user?.accessToken.tokenString
             let refreshToken = user?.refreshToken.tokenString
-            
-            print(email)
-            print(name)
+    
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            let dictionary = [
+                "google": email
+            ]
+            guard let accessToken = user?.accessToken.tokenString else { return }
+            let token = "Bearer \(accessToken)"
+            guard let url = URL(string: "https://www.googleapis.com/youtube/v3/channels?mine=true&key={API_KEY}") else { return }
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+            request.addValue(token, forHTTPHeaderField: "Authorization")
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    print("DEBUG: failed to get youtube")
+                    return
+                }
+                print(data)
+                guard let data = data else { return }
+                let json = try? JSONSerialization.jsonObject(with: data, options: [])
+                print("\(json)")
+            }.resume()
+            Service.shared.updateUser(withUid: uid, newData: dictionary) {
+                Service.shared.fetchUser(withUid: uid) { user in
+                    self.user = user
+                }
+            }
         }
     }
     
@@ -59,7 +96,14 @@ class MyInfoController: UITableViewController {
     
     // MARK: - Helpers
     
+    func updateConfigureUI() {
+        guard let google = user?.google else { return }
+        googleLogInButton.setTitle(" \(google)", for: .normal)
+    }
+    
     func configureUI() {
+        
+        
         view.backgroundColor = .white
         
         headerView.delegate = self
@@ -67,10 +111,15 @@ class MyInfoController: UITableViewController {
         
         tableView.contentInsetAdjustmentBehavior = .automatic
         
-        googleLogInButton.frame.size = CGSize(width: 150, height: 48)
-        googleLogInButton.center = view.center
-        view.addSubview(googleLogInButton)
+        let stack = UIStackView(arrangedSubviews: [googleLogInButton])
+        stack.axis = .vertical
+        stack.spacing = 5
         
+        view.addSubview(stack)
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
+        stack.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 32).isActive = true
+        stack.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 32).isActive = true
     }
     
 }
@@ -89,7 +138,7 @@ extension MyInfoController: MyInfoHeaderDelegate {
 extension MyInfoController: LoginControllerDelegate {
     func completedSignIn() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        Service.fetchUser(withUid: uid) { user in
+        Service.shared.fetchUser(withUid: uid) { user in
             self.user = user
         }
         dismiss(animated: true)
