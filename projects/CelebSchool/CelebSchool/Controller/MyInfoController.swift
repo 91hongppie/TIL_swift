@@ -70,7 +70,7 @@ class MyInfoController: UITableViewController {
             ]
             guard let accessToken = user?.accessToken.tokenString else { return }
             let token = "Bearer \(accessToken)"
-            guard let url = URL(string: "https://www.googleapis.com/youtube/v3/subscriptions?part=snippet&mine=true&key=AIzaSyCjJO6o9OZZDWO97K9T0tdVuPBnqVwwY_M") else { return }
+            guard let url = URL(string: "https://www.googleapis.com/youtube/v3/subscriptions?part=snippet&mine=true&key={API_KEY}") else { return }
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
             request.addValue(token, forHTTPHeaderField: "Authorization")
