@@ -52,14 +52,12 @@ class MyInfoController: UITableViewController {
     
     @objc func connectGoogle() {
         print(123)
-        
-        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
+        GIDSignIn.sharedInstance.signIn(withPresenting: self, hint: nil, additionalScopes: ["https://www.googleapis.com/auth/youtube.readonly"]) { signInResult, error in
             guard error == nil else { return }
             
             // If sign in succeeded, display the app's main content View.
             let email = signInResult?.user.profile?.email ?? ""
             let name = signInResult?.user.profile?.name ?? ""
-            
             let user = signInResult?.user
             let idToken = user?.idToken?.tokenString
             let refreshToken = user?.refreshToken.tokenString
@@ -68,9 +66,10 @@ class MyInfoController: UITableViewController {
             let dictionary = [
                 "google": email
             ]
+            
             guard let accessToken = user?.accessToken.tokenString else { return }
             let token = "Bearer \(accessToken)"
-            guard let url = URL(string: "https://www.googleapis.com/youtube/v3/subscriptions?part=snippet&mine=true&key=AIzaSyCjJO6o9OZZDWO97K9T0tdVuPBnqVwwY_M") else { return }
+            guard let url = URL(string: "https://www.googleapis.com/youtube/v3/subscriptions?part=snippet&mine=true&key={API_KEY}") else { return }
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
             request.addValue(token, forHTTPHeaderField: "Authorization")
@@ -90,6 +89,44 @@ class MyInfoController: UITableViewController {
                 }
             }
         }
+//        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
+//            guard error == nil else { return }
+//            
+//            // If sign in succeeded, display the app's main content View.
+//            let email = signInResult?.user.profile?.email ?? ""
+//            let name = signInResult?.user.profile?.name ?? ""
+//            
+//            let user = signInResult?.user
+//            let idToken = user?.idToken?.tokenString
+//            let refreshToken = user?.refreshToken.tokenString
+//    
+//            guard let uid = Auth.auth().currentUser?.uid else { return }
+//            let dictionary = [
+//                "google": email
+//            ]
+//            
+//            guard let accessToken = user?.accessToken.tokenString else { return }
+//            let token = "Bearer \(accessToken)"
+//            guard let url = URL(string: "https://www.googleapis.com/youtube/v3/subscriptions?part=snippet&mine=true&key=AIzaSyCjJO6o9OZZDWO97K9T0tdVuPBnqVwwY_M") else { return }
+//            var request = URLRequest(url: url)
+//            request.httpMethod = "GET"
+//            request.addValue(token, forHTTPHeaderField: "Authorization")
+//            URLSession.shared.dataTask(with: request) { data, response, error in
+//                if let error = error {
+//                    print("DEBUG: failed to get youtube")
+//                    return
+//                }
+//                print(data)
+//                guard let data = data else { return }
+//                let json = try? JSONSerialization.jsonObject(with: data, options: [])
+//                print("\(json)")
+//            }.resume()
+//            Service.shared.updateUser(withUid: uid, newData: dictionary) {
+//                Service.shared.fetchUser(withUid: uid) { user in
+//                    self.user = user
+//                }
+//            }
+//        }
     }
     
     // MARK: - API
