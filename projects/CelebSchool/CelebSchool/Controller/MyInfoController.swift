@@ -51,7 +51,6 @@ class MyInfoController: UITableViewController {
     // MARK: - Selectors
     
     @objc func connectGoogle() {
-        print(123)
 
         GIDSignIn.sharedInstance.signIn(withPresenting: self, hint: nil, additionalScopes: ["https://www.googleapis.com/auth/youtube.readonly"]) { signInResult, error in
             guard error == nil else { return }
@@ -71,27 +70,41 @@ class MyInfoController: UITableViewController {
             guard let accessToken = user?.accessToken.tokenString else { return }
             let token = "Bearer \(accessToken)"
             guard let API_KEY = Environment.youtubeAPIKey else { return }
-            guard let url = URL(string: "https://www.googleapis.com/youtube/v3/subscriptions?part=snippet&mine=true&key=\(API_KEY)") else { return }
+            guard let url = URL(string: "https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&mine=true&key=\(API_KEY)") else { return }
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
-            print(Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String)
 
             request.addValue(token, forHTTPHeaderField: "Authorization")
             URLSession.shared.dataTask(with: request) { data, response, error in
-                if let error = error {
+                if let _ = error {
                     print("DEBUG: failed to get youtube")
                     return
                 }
-                print(data)
+                
                 guard let data = data else { return }
-                let json = try? JSONSerialization.jsonObject(with: data, options: [])
-                print("\(json)")
-            }.resume()
-            Service.shared.updateUser(withUid: uid, newData: dictionary) {
-                Service.shared.fetchUser(withUid: uid) { user in
-                    self.user = user
+                
+                guard let json = try? JSONDecoder().decode(ChannelListResponse.self, from: data) else { return }
+                let subscriberNums = Int(json.items[0].statistics.subscriberCount) ?? 0
+                let channelName = json.items[0].snippet.title
+                let thumbnailURLString = json.items[0].snippet.thumbnails.default.url
+                let channelId = json.items[0].id
+        
+                let dictionary = ["google": [
+                    "email": email,
+                    "subscriberNums": subscriberNums,
+                    "channelName": channelName,
+                    "thumbnailURLString": thumbnailURLString,
+                    "channelId": channelId
+                ]]
+                print(dictionary)
+                Service.shared.updateUser(withUid: uid, newData: dictionary) {
+                    Service.shared.fetchUser(withUid: uid) { user in
+                        self.user = user
+                    }
                 }
-            }
+            }.resume()
+            
+            
         }
 //        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
 //            guard error == nil else { return }

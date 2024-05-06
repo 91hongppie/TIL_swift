@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E73AD6562BE8D9690024BE86 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73AD6552BE8D9690024BE86 /* Constant.swift */; };
+		E73AD65A2BE915390024BE86 /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73AD6592BE915390024BE86 /* Google.swift */; };
 		E744DAB92BE38C8800697B36 /* InsertInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744DAB82BE38C8800697B36 /* InsertInfoController.swift */; };
 		E744DABB2BE38F1200697B36 /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744DABA2BE38F1200697B36 /* InputContainerView.swift */; };
 		E744DABD2BE3965300697B36 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E744DABC2BE3965300697B36 /* CustomTextField.swift */; };
@@ -66,6 +67,7 @@
 /* Begin PBXFileReference section */
 		E72BA64E2BE8D6C800732065 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		E73AD6552BE8D9690024BE86 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		E73AD6592BE915390024BE86 /* Google.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Google.swift; sourceTree = "<group>"; };
 		E744DAB82BE38C8800697B36 /* InsertInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertInfoController.swift; sourceTree = "<group>"; };
 		E744DABA2BE38F1200697B36 /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		E744DABC2BE3965300697B36 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				E744DAC42BE3B55100697B36 /* User.swift */,
+				E73AD6592BE915390024BE86 /* Google.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				E79AE8192BE245E300504CAD /* HomeController.swift in Sources */,
 				E744DAC52BE3B55100697B36 /* User.swift in Sources */,
 				E79AE81B2BE245EE00504CAD /* MyInfoController.swift in Sources */,
+				E73AD65A2BE915390024BE86 /* Google.swift in Sources */,
 				E744DABD2BE3965300697B36 /* CustomTextField.swift in Sources */,
 				E7602A8F2BE2437200293CD6 /* AppDelegate.swift in Sources */,
 				E7602A912BE2437200293CD6 /* SceneDelegate.swift in Sources */,
@@ -521,6 +525,7 @@
 				DEVELOPMENT_TEAM = V86PDK37VD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CelebSchool/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -551,6 +556,7 @@
 				DEVELOPMENT_TEAM = V86PDK37VD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CelebSchool/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
