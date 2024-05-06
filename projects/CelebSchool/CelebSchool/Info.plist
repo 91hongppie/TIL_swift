@@ -5,14 +5,16 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string></string>
 			<key>CFBundleURLSchemes</key>
-			<array/>
+			<array>
+				<string>$(REVERSE_GOOGLE_CLIENT_URL)</string>
+			</array>
 		</dict>
 	</array>
+	<key>GIDClientID</key>
+	<string>$(GOOGLE_CLIENT_URL)</string>
+	<key>youtubeAPIKey</key>
+	<string>$(YOUTUBE_API_KEY)</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -27,7 +29,7 @@
 						<dict>
 							<key>CFBundleURLSchemes</key>
 							<array>
-								<string>com.googleusercontent.apps.284869503910-qigbbidtc4i7su8pn1r92f68qu8q1m93</string>
+								<string>$(REVERSE_GOOGLE_CLIENT_URL)</string>
 							</array>
 						</dict>
 					</array>
@@ -41,16 +43,5 @@
 			</array>
 		</dict>
 	</dict>
-    <key>GIDClientID</key>
-    <string>284869503910-qigbbidtc4i7su8pn1r92f68qu8q1m93.apps.googleusercontent.com</string>
-    <key>CFBundleURLTypes</key>
-    <array>
-      <dict>
-        <key>CFBundleURLSchemes</key>
-        <array>
-          <string>com.googleusercontent.apps.284869503910-qigbbidtc4i7su8pn1r92f68qu8q1m93</string>
-        </array>
-      </dict>
-    </array>
 </dict>
 </plist>

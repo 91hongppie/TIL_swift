@@ -52,6 +52,7 @@ class MyInfoController: UITableViewController {
     
     @objc func connectGoogle() {
         print(123)
+
         GIDSignIn.sharedInstance.signIn(withPresenting: self, hint: nil, additionalScopes: ["https://www.googleapis.com/auth/youtube.readonly"]) { signInResult, error in
             guard error == nil else { return }
             
@@ -69,9 +70,12 @@ class MyInfoController: UITableViewController {
             
             guard let accessToken = user?.accessToken.tokenString else { return }
             let token = "Bearer \(accessToken)"
-            guard let url = URL(string: "https://www.googleapis.com/youtube/v3/subscriptions?part=snippet&mine=true&key={API_KEY}") else { return }
+            guard let API_KEY = Environment.youtubeAPIKey else { return }
+            guard let url = URL(string: "https://www.googleapis.com/youtube/v3/subscriptions?part=snippet&mine=true&key=\(API_KEY)") else { return }
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
+            print(Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String)
+
             request.addValue(token, forHTTPHeaderField: "Authorization")
             URLSession.shared.dataTask(with: request) { data, response, error in
                 if let error = error {
