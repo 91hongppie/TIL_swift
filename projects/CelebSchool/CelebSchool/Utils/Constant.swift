@@ -10,4 +10,5 @@ import Foundation
 
 struct Environment {
     static let youtubeAPIKey = Bundle.main.object(forInfoDictionaryKey: "youtubeAPIKey")
+    static let clientId = Bundle.main.object(forInfoDictionaryKey: "GIDClientID")
 }

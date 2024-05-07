@@ -52,6 +52,7 @@ class TabBarController: UITabBarController {
         
         if let uid = Auth.auth().currentUser?.uid {
             Service.shared.fetchUser(withUid: uid) { user in
+                print(user, "우우우우")
                 secondVC.user = user
             }
         }

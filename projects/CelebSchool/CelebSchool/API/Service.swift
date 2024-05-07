@@ -19,7 +19,6 @@ struct Service {
                 print("DEBUG: Failed fetchUser")
                 return
             }
-            
             guard let dictionary = snapshot?.data() else { return }
             let user = User(dictionary: dictionary)
             completion(user)

@@ -16,7 +16,7 @@ class MyInfoController: UITableViewController {
     var user: User? {
         didSet {
             headerView.user = user
-//            updateConfigureUI()
+            //            updateConfigureUI()
         }
         
     }
@@ -50,8 +50,53 @@ class MyInfoController: UITableViewController {
     
     // MARK: - Selectors
     
-    @objc func connectGoogle() {
+    @objc func refreshAccessToken() {
+        guard let CLIENT_ID = Environment.clientId else { return }
+        guard let API_KEY = Environment.youtubeAPIKey else { return }
+        guard let REFRESH_TOKEN = self.user?.google.refreshToken else { return }
+        
+      
+        // 여기서 뭐가 문젠지 찾아보려고 파라미터 하나씩 지워보다가 client_secret 지웠을 때 성공함..
+        guard let url = URL(string: "https://oauth2.googleapis.com/token?grant_type=refresh_token&refresh_token=\(REFRESH_TOKEN)&client_id=\(CLIENT_ID)") else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
+        
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let _ = error {
+                print("Failed refresh access token")
+                return
+            }
+            guard let data = data else { return }
+            
+            guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { return }
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            guard let newAccessToken = json["access_token"] else { return }
+            var dictionary = ["google": [
+                "email": self.user?.google.email,
+                "subscriberNums": self.user?.google.subscriberNums,
+                "channelName": self.user?.google.channelName,
+                "thumbnailURLString": self.user?.google.thumbnailURLString,
+                "channelId": self.user?.google.channelId,
+                "refreshToken": self.user?.google.refreshToken,
+                "accessToken": newAccessToken
+            ]
+            ]
+            Service.shared.updateUser(withUid: uid, newData: dictionary) {
+                Service.shared.fetchUser(withUid: uid) { user in
+                    self.user = user
+                }
+            }
+            
+        }.resume()
+    
+    }
+    
+    @objc func connectGoogle() {
+        
         GIDSignIn.sharedInstance.signIn(withPresenting: self, hint: nil, additionalScopes: ["https://www.googleapis.com/auth/youtube.readonly"]) { signInResult, error in
             guard error == nil else { return }
             
@@ -60,20 +105,18 @@ class MyInfoController: UITableViewController {
             let name = signInResult?.user.profile?.name ?? ""
             let user = signInResult?.user
             let idToken = user?.idToken?.tokenString
-            let refreshToken = user?.refreshToken.tokenString
-    
+            guard let refreshToken = user?.refreshToken.tokenString else { return }
+            
             guard let uid = Auth.auth().currentUser?.uid else { return }
-            let dictionary = [
-                "google": email
-            ]
             
             guard let accessToken = user?.accessToken.tokenString else { return }
+            
             let token = "Bearer \(accessToken)"
             guard let API_KEY = Environment.youtubeAPIKey else { return }
             guard let url = URL(string: "https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&mine=true&key=\(API_KEY)") else { return }
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
-
+            
             request.addValue(token, forHTTPHeaderField: "Authorization")
             URLSession.shared.dataTask(with: request) { data, response, error in
                 if let _ = error {
@@ -88,15 +131,17 @@ class MyInfoController: UITableViewController {
                 let channelName = json.items[0].snippet.title
                 let thumbnailURLString = json.items[0].snippet.thumbnails.default.url
                 let channelId = json.items[0].id
-        
+                
                 let dictionary = ["google": [
                     "email": email,
                     "subscriberNums": subscriberNums,
                     "channelName": channelName,
                     "thumbnailURLString": thumbnailURLString,
-                    "channelId": channelId
+                    "channelId": channelId,
+                    "refreshToken": refreshToken,
+                    "accessToken": accessToken
                 ]]
-                print(dictionary)
+                
                 Service.shared.updateUser(withUid: uid, newData: dictionary) {
                     Service.shared.fetchUser(withUid: uid) { user in
                         self.user = user
@@ -106,44 +151,6 @@ class MyInfoController: UITableViewController {
             
             
         }
-//        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
-//            guard error == nil else { return }
-//            
-//            // If sign in succeeded, display the app's main content View.
-//            let email = signInResult?.user.profile?.email ?? ""
-//            let name = signInResult?.user.profile?.name ?? ""
-//            
-//            let user = signInResult?.user
-//            let idToken = user?.idToken?.tokenString
-//            let refreshToken = user?.refreshToken.tokenString
-//    
-//            guard let uid = Auth.auth().currentUser?.uid else { return }
-//            let dictionary = [
-//                "google": email
-//            ]
-//            
-//            guard let accessToken = user?.accessToken.tokenString else { return }
-//            let token = "Bearer \(accessToken)"
-//            guard let url = URL(string: "https://www.googleapis.com/youtube/v3/subscriptions?part=snippet&mine=true&key=AIzaSyCjJO6o9OZZDWO97K9T0tdVuPBnqVwwY_M") else { return }
-//            var request = URLRequest(url: url)
-//            request.httpMethod = "GET"
-//            request.addValue(token, forHTTPHeaderField: "Authorization")
-//            URLSession.shared.dataTask(with: request) { data, response, error in
-//                if let error = error {
-//                    print("DEBUG: failed to get youtube")
-//                    return
-//                }
-//                print(data)
-//                guard let data = data else { return }
-//                let json = try? JSONSerialization.jsonObject(with: data, options: [])
-//                print("\(json)")
-//            }.resume()
-//            Service.shared.updateUser(withUid: uid, newData: dictionary) {
-//                Service.shared.fetchUser(withUid: uid) { user in
-//                    self.user = user
-//                }
-//            }
-//        }
     }
     
     // MARK: - API
