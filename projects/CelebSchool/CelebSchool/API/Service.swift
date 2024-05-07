@@ -25,12 +25,15 @@ struct Service {
         }
     }
     
-    func updateUser(withUid uid: String, newData: [String: Any], completion: @escaping() -> Void) {
+    func updateUser(withUid uid: String, newData: [String: Any], completion: @escaping(User) -> Void) {
+        print(newData, "newData")
         Firestore.firestore().collection("users").document(uid).updateData(newData) { error in
             if let error = error {
                 print("DEBUG: Failed to update user \(error.localizedDescription)")
             }
-            completion()
+            fetchUser(withUid: uid) { user in
+                completion(user)
+            }
         }
         
     }

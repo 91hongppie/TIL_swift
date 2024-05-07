@@ -62,6 +62,10 @@
 		E79AE8192BE245E300504CAD /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79AE8182BE245E300504CAD /* HomeController.swift */; };
 		E79AE81B2BE245EE00504CAD /* MyInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79AE81A2BE245EE00504CAD /* MyInfoController.swift */; };
 		E79AE81D2BE245FF00504CAD /* MyInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79AE81C2BE245FF00504CAD /* MyInfoHeader.swift */; };
+		E7FE913F2BEA226400FD2BBE /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE913E2BEA226400FD2BBE /* GoogleService.swift */; };
+		E7FE91412BEA4EFE00FD2BBE /* MyInfoGoogleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE91402BEA4EFE00FD2BBE /* MyInfoGoogleCell.swift */; };
+		E7FE91442BEA542D00FD2BBE /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = E7FE91432BEA542D00FD2BBE /* SDWebImage */; };
+		E7FE91462BEA542D00FD2BBE /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E7FE91452BEA542D00FD2BBE /* SDWebImageMapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +94,8 @@
 		E79AE8182BE245E300504CAD /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		E79AE81A2BE245EE00504CAD /* MyInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoController.swift; sourceTree = "<group>"; };
 		E79AE81C2BE245FF00504CAD /* MyInfoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoHeader.swift; sourceTree = "<group>"; };
+		E7FE913E2BEA226400FD2BBE /* GoogleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
+		E7FE91402BEA4EFE00FD2BBE /* MyInfoGoogleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoGoogleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 				E74D325D2BE364C600878B5B /* FirebaseFirestoreSwift in Frameworks */,
 				E74D324D2BE364C600878B5B /* FirebaseAuth in Frameworks */,
 				E744DACE2BE3D36700697B36 /* GoogleSignInSwift in Frameworks */,
+				E7FE91462BEA542D00FD2BBE /* SDWebImageMapKit in Frameworks */,
 				E74D32372BE3648E00878B5B /* FirebaseAnalytics in Frameworks */,
 				E74D32392BE3648E00878B5B /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				E74D32672BE364C600878B5B /* FirebaseInstallations in Frameworks */,
@@ -121,6 +128,7 @@
 				E74D32532BE364C600878B5B /* FirebaseDatabase in Frameworks */,
 				E74D32432BE364C600878B5B /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				E74D32332BE3584600878B5B /* FirebaseAppCheck in Frameworks */,
+				E7FE91442BEA542D00FD2BBE /* SDWebImage in Frameworks */,
 				E74D32592BE364C600878B5B /* FirebaseFirestore in Frameworks */,
 				E74D32652BE364C600878B5B /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				E74D32452BE364C600878B5B /* FirebaseAnalyticsSwift in Frameworks */,
@@ -206,6 +214,7 @@
 			children = (
 				E744DAC12BE3B51E00697B36 /* Service.swift */,
 				E744DAC62BE3BEAD00697B36 /* AuthService.swift */,
+				E7FE913E2BEA226400FD2BBE /* GoogleService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -236,6 +245,7 @@
 				E79AE81C2BE245FF00504CAD /* MyInfoHeader.swift */,
 				E744DABA2BE38F1200697B36 /* InputContainerView.swift */,
 				E744DABC2BE3965300697B36 /* CustomTextField.swift */,
+				E7FE91402BEA4EFE00FD2BBE /* MyInfoGoogleCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,6 +301,8 @@
 				E74D326A2BE364C600878B5B /* FirebaseMessaging */,
 				E744DACB2BE3D36700697B36 /* GoogleSignIn */,
 				E744DACD2BE3D36700697B36 /* GoogleSignInSwift */,
+				E7FE91432BEA542D00FD2BBE /* SDWebImage */,
+				E7FE91452BEA542D00FD2BBE /* SDWebImageMapKit */,
 			);
 			productName = CelebSchool;
 			productReference = E7602A8B2BE2437200293CD6 /* CelebSchool.app */;
@@ -323,6 +335,7 @@
 			packageReferences = (
 				E74D32292BE3584600878B5B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				E744DACA2BE3D36700697B36 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				E7FE91422BEA542D00FD2BBE /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = E7602A8C2BE2437200293CD6 /* Products */;
 			projectDirPath = "";
@@ -356,10 +369,12 @@
 				E744DAC22BE3B51E00697B36 /* Service.swift in Sources */,
 				E79AE81D2BE245FF00504CAD /* MyInfoHeader.swift in Sources */,
 				E73AD6562BE8D9690024BE86 /* Constant.swift in Sources */,
+				E7FE91412BEA4EFE00FD2BBE /* MyInfoGoogleCell.swift in Sources */,
 				E7602A932BE2437200293CD6 /* ViewController.swift in Sources */,
 				E79AE8152BE245D000504CAD /* TabBarController.swift in Sources */,
 				E79AE8192BE245E300504CAD /* HomeController.swift in Sources */,
 				E744DAC52BE3B55100697B36 /* User.swift in Sources */,
+				E7FE913F2BEA226400FD2BBE /* GoogleService.swift in Sources */,
 				E79AE81B2BE245EE00504CAD /* MyInfoController.swift in Sources */,
 				E73AD65A2BE915390024BE86 /* Google.swift in Sources */,
 				E744DABD2BE3965300697B36 /* CustomTextField.swift in Sources */,
@@ -615,6 +630,14 @@
 				minimumVersion = 10.25.0;
 			};
 		};
+		E7FE91422BEA542D00FD2BBE /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -787,6 +810,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E74D32292BE3584600878B5B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		E7FE91432BEA542D00FD2BBE /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E7FE91422BEA542D00FD2BBE /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		E7FE91452BEA542D00FD2BBE /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E7FE91422BEA542D00FD2BBE /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -11,14 +11,24 @@ struct User {
     let uid: String
     let email: String
     let fullname: String
-    let google: UserGoogleInfo
+    let google: [UserGoogleInfo]?
     
     init(dictionary: [String: Any]) {
         self.uid = dictionary["uid"] as? String ?? ""
         self.email = dictionary["email"] as? String ?? ""
         self.fullname = dictionary["fullname"] as? String ?? ""
-        self.google = UserGoogleInfo(dictionary: dictionary["google"] as! [String : Any])
+        var userGoogleInfos = [UserGoogleInfo]()
+        if let googleInfos = dictionary["google"] as? [[String: Any]] {
+            for googleInfo in googleInfos {
+                userGoogleInfos.append(UserGoogleInfo(dictionary: googleInfo))
+            }
+        }
+        self.google = userGoogleInfos.count != 0 ? userGoogleInfos : []
     }
+}
+
+struct UserGoogleInfos {
+    
 }
 
 struct UserGoogleInfo {
