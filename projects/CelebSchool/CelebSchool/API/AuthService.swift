@@ -31,8 +31,7 @@ struct AuthService {
             guard let uid = authResult?.user.uid else { return}
             
             if let email = appleIDCredential.email, let fullName = appleIDCredential.fullName {
-                let data = ["email": email, "fullname": fullName, "uid": uid] as [String: Any]
-                print("DEBUG: email: \(email), fullname: \(fullName)")
+                let data = ["email": email, "fullname": fullName, "uid": uid, "totalSubscribersNum": 0] as [String: Any]
                 Firestore.firestore().collection("users").document(uid).setData(data)
             }
             

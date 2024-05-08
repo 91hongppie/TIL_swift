@@ -23,7 +23,7 @@ class MyInfoController: UITableViewController {
         
     }
     
-    private let sectionHeader = ["google"]
+    private let sectionHeader = ["Youtube"]
     
     private let headerView = MyInfoHeader(frame: .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 200))
     
@@ -31,16 +31,21 @@ class MyInfoController: UITableViewController {
         let button = UIButton(type: .system)
         
         
-        button.setTitle(((self.user?.google) != nil) ? " 계정 추가하기" : " 구글 연동하기", for: .normal)
+        button.setTitle("계정 추가하기", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.contentMode = .scaleAspectFit
-        let image = #imageLiteral(resourceName: "logo_google")
+        let image = #imageLiteral(resourceName: "logo_youtube")
         button.setImage(image, for: .normal)
         button.backgroundColor = .white
-        
+
+        button.contentMode = .scaleAspectFill
+        button.imageView?.contentMode = .scaleAspectFit
         button.configuration?.imagePadding = 10
         
         button.addTarget(self, action: #selector(connectGoogle), for: .touchUpInside)
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 30).isActive = true
+
         return button
     }()
     
@@ -71,13 +76,13 @@ class MyInfoController: UITableViewController {
         GIDSignIn.sharedInstance.signIn(withPresenting: self, hint: nil, additionalScopes: ["https://www.googleapis.com/auth/youtube.readonly"]) { signInResult, error in
             guard error == nil else { return }
             GoogleService.shared.connectGoogle(signInResult: signInResult) { dictionary in
-                print(dictionary)
                 guard let uid = Auth.auth().currentUser?.uid else { return }
                 guard let email = dictionary["email"] as? String else { return }
                 if (self.user?.google?.contains(where: { $0.email == email }) == true) {
                     return
                 } else {
                     var newData = []
+                    var totalSubscribersNum = 0
                     if let googleInfos = self.user?.google {
                         for googleInfo in googleInfos {
                             let dict = [
@@ -89,14 +94,14 @@ class MyInfoController: UITableViewController {
                                 "refreshToken": googleInfo.refreshToken,
                                 "accessToken": googleInfo.accessToken
                             ]
+                            totalSubscribersNum += googleInfo.subscriberNums
                             newData.append(dict)
                         }
                     }
                     
                     newData.append(dictionary)
                 
-                    
-                    Service.shared.updateUser(withUid: uid, newData: ["google": newData]) { user in
+                    Service.shared.updateUser(withUid: uid, newData: ["google": newData, "totalSubscribersNum": totalSubscribersNum]) { user in
                         self.user = user
                     }
                 }
