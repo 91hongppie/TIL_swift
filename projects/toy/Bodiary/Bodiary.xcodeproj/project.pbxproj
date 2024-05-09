@@ -19,6 +19,7 @@
 		E77A45B52BECC4AD00FD773F /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = E77A45B42BECC4AD00FD773F /* FSCalendar */; };
 		E77A45B72BECDE3D00FD773F /* NewRecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A45B62BECDE3D00FD773F /* NewRecordController.swift */; };
 		E77A45B92BECDED400FD773F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A45B82BECDED400FD773F /* Extension.swift */; };
+		E77A45BB2BED183400FD773F /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A45BA2BED183400FD773F /* Record.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		E77A45AF2BECA0BC00FD773F /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		E77A45B62BECDE3D00FD773F /* NewRecordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecordController.swift; sourceTree = "<group>"; };
 		E77A45B82BECDED400FD773F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		E77A45BA2BED183400FD773F /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 		E77A45AC2BEC9E7500FD773F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E77A45BA2BED183400FD773F /* Record.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			files = (
 				E77A45942BEC9E2D00FD773F /* ViewController.swift in Sources */,
 				E77A45B02BECA0BC00FD773F /* SettingController.swift in Sources */,
+				E77A45BB2BED183400FD773F /* Record.swift in Sources */,
 				E77A45902BEC9E2D00FD773F /* AppDelegate.swift in Sources */,
 				E77A45B72BECDE3D00FD773F /* NewRecordController.swift in Sources */,
 				E77A459A2BEC9E2D00FD773F /* Bodiary.xcdatamodeld in Sources */,

@@ -10,6 +10,8 @@ import FSCalendar
 
 class HomeController: UIViewController {
     
+    private var selectedDate = Date()
+    
     lazy var header: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
@@ -55,7 +57,7 @@ class HomeController: UIViewController {
         view.addSubview(titleImageView)
         titleImageView.translatesAutoresizingMaskIntoConstraints = false
         titleImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        titleImageView.leftAnchor.constraint(equalTo: titleLabel.rightAnchor).isActive = true
+        titleImageView.leftAnchor.constraint(equalTo: titleLabel.rightAnchor, constant: 5).isActive = true
         return view
     }()
     
@@ -85,9 +87,7 @@ class HomeController: UIViewController {
         calendar.calendarWeekdayView.weekdayLabels[5].text = "금"
         calendar.calendarWeekdayView.weekdayLabels[6].text = "토"
         calendar.appearance.todayColor = .clear
-        calendar.appearance.selectionColor = .systemPink
-
-        
+        calendar.appearance.selectionColor = .systemPink        
         
         
         calendar.appearance.titleDefaultColor = .white
@@ -141,12 +141,14 @@ class HomeController: UIViewController {
     
     @objc func moveToToday() {
         let today = Date()
+        selectedDate = today
         self.calendar.setCurrentPage(today, animated: true)
         self.calendar.select(today)
     }
     
     @objc func openNewRecord() {
         let controller = NewRecordController()
+        controller.delegate = self
         let nav = UINavigationController(rootViewController: controller)
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true)
@@ -161,8 +163,9 @@ class HomeController: UIViewController {
         
         
         let ok = UIAlertAction(title: "선택 완료", style: .cancel) { action in
-            self.calendar.setCurrentPage(datePicker.date, animated: true)
-            self.calendar.select(datePicker.date)
+            self.selectedDate = datePicker.date
+            self.calendar.setCurrentPage(self.selectedDate, animated: true)
+            self.calendar.select(self.selectedDate)
         }
         
         alert.addAction(ok)
@@ -246,6 +249,11 @@ extension HomeController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDe
         }
     }
     
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        self.selectedDate = date
+      }
+
+    
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         let today = Date()
         let dateFormatter = DateFormatter()
@@ -265,3 +273,10 @@ extension HomeController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDe
     
 }
 
+
+extension HomeController: NewRecordControllerDelegate {
+    func updateRecordDate() -> Date {
+        print(selectedDate)
+        return selectedDate
+    }
+}

@@ -7,9 +7,18 @@
 
 import UIKit
 
+protocol NewRecordControllerDelegate: class {
+    func updateRecordDate() -> Date
+}
+
 class NewRecordController: UIViewController {
     
     // MARK: - Properties
+    private var recordDate: Date? {
+        didSet { configureTitle() }
+    }
+    
+    weak var delegate: NewRecordControllerDelegate?
     
     private let closeButton: UIButton = {
         let button = UIButton(type: .system)
@@ -34,11 +43,19 @@ class NewRecordController: UIViewController {
     func configureUI() {
         
         view.backgroundColor = .black
-        configureNavigationBar(withTitle: "새 글 작성", prefersLargeTitles: false)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(handleDismiss))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleDismiss))
+        navigationItem.rightBarButtonItem?.tintColor = .white
         
-        
-        
+        recordDate = delegate?.updateRecordDate()
+    }
+    
+    func configureTitle() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY년 MM월 dd일"
+        guard let recordDate = recordDate else { return }
+        print(dateFormatter.string(from: recordDate))
+        configureNavigationBar(withTitle: dateFormatter.string(from: recordDate), prefersLargeTitles: false)
+
     }
 }
