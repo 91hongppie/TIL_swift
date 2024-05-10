@@ -20,6 +20,8 @@
 		E77A45B72BECDE3D00FD773F /* NewRecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A45B62BECDE3D00FD773F /* NewRecordController.swift */; };
 		E77A45B92BECDED400FD773F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A45B82BECDED400FD773F /* Extension.swift */; };
 		E77A45BB2BED183400FD773F /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A45BA2BED183400FD773F /* Record.swift */; };
+		E7A8C04C2BEE1380009B3EF6 /* DailyRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8C0482BEE11C9009B3EF6 /* DailyRecord+CoreDataClass.swift */; };
+		E7A8C04D2BEE1387009B3EF6 /* DailyRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8C0492BEE11C9009B3EF6 /* DailyRecord+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		E77A45B62BECDE3D00FD773F /* NewRecordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecordController.swift; sourceTree = "<group>"; };
 		E77A45B82BECDED400FD773F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		E77A45BA2BED183400FD773F /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		E7A8C0482BEE11C9009B3EF6 /* DailyRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyRecord+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E7A8C0492BEE11C9009B3EF6 /* DailyRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyRecord+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 		E77A45832BEC9E2D00FD773F = {
 			isa = PBXGroup;
 			children = (
+				E7A8C0482BEE11C9009B3EF6 /* DailyRecord+CoreDataClass.swift */,
+				E7A8C0492BEE11C9009B3EF6 /* DailyRecord+CoreDataProperties.swift */,
 				E77A458E2BEC9E2D00FD773F /* Bodiary */,
 				E77A458D2BEC9E2D00FD773F /* Products */,
 			);
@@ -220,6 +226,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7A8C04D2BEE1387009B3EF6 /* DailyRecord+CoreDataProperties.swift in Sources */,
+				E7A8C04C2BEE1380009B3EF6 /* DailyRecord+CoreDataClass.swift in Sources */,
 				E77A45942BEC9E2D00FD773F /* ViewController.swift in Sources */,
 				E77A45B02BECA0BC00FD773F /* SettingController.swift in Sources */,
 				E77A45BB2BED183400FD773F /* Record.swift in Sources */,
