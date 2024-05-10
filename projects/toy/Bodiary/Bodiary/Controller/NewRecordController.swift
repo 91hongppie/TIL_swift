@@ -15,6 +15,10 @@ class NewRecordController: UIViewController {
     
     // MARK: - Properties
     
+    private var recordDate: Date? {
+        didSet { configureTitle() }
+    }
+    
     private var todayImage: UIImage?
     
     private let plusPhotoButton: UIButton = {
@@ -57,15 +61,11 @@ class NewRecordController: UIViewController {
     
     private let placeholder: UILabel = {
         let label = UILabel()
-        label.text = "오늘 한 운동을 입력해주세요."
+        label.text = "오늘은 어디 운동하셨나요?"
         label.font = .systemFont(ofSize: 16)
         label.textColor = .lightGray
         return label
     }()
-    
-    private var recordDate: Date? {
-        didSet { configureTitle() }
-    }
     
     weak var delegate: NewRecordControllerDelegate?
     
@@ -84,7 +84,19 @@ class NewRecordController: UIViewController {
     // MARK: - Selectors
     
     @objc func handleSave() {
-        print("왜 안되냐")
+        view.endEditing(true)
+        if todayImage == nil {
+            let alert = UIAlertController(title: "사진을 등록해주세요.", message: "", preferredStyle: .alert)
+            
+            present(alert, animated: true)
+            Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { _ in
+                alert.dismiss(animated: true)
+            }
+            return
+        }
+        print(todayImage)
+        print(recordDate)
+        print(messageInput.text)
     }
     
     @objc func keyboardWillHide() {
@@ -121,7 +133,7 @@ class NewRecordController: UIViewController {
         view.backgroundColor = .black
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleDismiss))
-        navigationItem.leftBarButtonItem?.tintColor = .systemRed
+        navigationItem.leftBarButtonItem?.tintColor = .systemPink
         
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(handleSave))
