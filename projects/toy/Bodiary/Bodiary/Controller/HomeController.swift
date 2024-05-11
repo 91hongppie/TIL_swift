@@ -130,6 +130,7 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
+        fetchRecord()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -184,6 +185,21 @@ class HomeController: UIViewController {
         backBarButton.tintColor = .white
         navigationItem.backBarButtonItem = backBarButton
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    // MARK: - API
+    func fetchRecord() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        do {
+            let data = try context.fetch(DailyRecord.fetchRequest()) as! [DailyRecord]
+            data.forEach {
+                print($0.message, $0.timestamp)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     // MARK: - Helpers

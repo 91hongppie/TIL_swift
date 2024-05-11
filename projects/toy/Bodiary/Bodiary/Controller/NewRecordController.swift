@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 protocol NewRecordControllerDelegate: class {
     func updateRecordDate() -> Date
@@ -94,9 +95,24 @@ class NewRecordController: UIViewController {
             }
             return
         }
-        print(todayImage)
-        print(recordDate)
-        print(messageInput.text)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        
+        let entity = NSEntityDescription.entity(forEntityName: "DailyRecord", in: context)
+        
+        if let entity = entity {
+            let dailyRecord = NSManagedObject(entity: entity, insertInto: context)
+            dailyRecord.setValue(messageInput.text, forKey: "message")
+            dailyRecord.setValue(recordDate, forKey: "timestamp")
+            dailyRecord.setValue(todayImage?.pngData(), forKey: "image")
+        }
+        
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     @objc func keyboardWillHide() {
