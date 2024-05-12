@@ -303,7 +303,13 @@ extension HomeController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDe
 
 extension HomeController: NewRecordControllerDelegate {
     func updateRecordDate() -> Date {
-        print(selectedDate)
         return selectedDate
+    }
+    
+    func updateRecordData() -> DailyRecord? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY년 MM월 dd일"
+        let dateStr = dateFormatter.string(from: selectedDate)
+        return records[dateStr]
     }
 }

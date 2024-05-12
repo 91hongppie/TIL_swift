@@ -10,6 +10,7 @@ import CoreData
 
 protocol NewRecordControllerDelegate: class {
     func updateRecordDate() -> Date
+    func updateRecordData() -> DailyRecord?
 }
 
 class NewRecordController: UIViewController {
@@ -18,6 +19,10 @@ class NewRecordController: UIViewController {
     
     private var recordDate: Date? {
         didSet { configureTitle() }
+    }
+    
+    private var dailyRecord: DailyRecord? {
+        didSet{ fetchData() }
     }
     
     private var todayImage: UIImage?
@@ -110,6 +115,13 @@ class NewRecordController: UIViewController {
         
         do {
             try context.save()
+            let alert = UIAlertController(title: "저장되었습니다.", message: "", preferredStyle: .alert)
+            
+            present(alert, animated: true)
+            Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { _ in
+                alert.dismiss(animated: true)
+            }
+            
         } catch {
             print(error.localizedDescription)
         }
@@ -129,6 +141,7 @@ class NewRecordController: UIViewController {
     
     @objc func handleTextDidChange() {
         placeholder.isHidden = !messageInput.text.isEmpty
+        hideSaveButton()
     }
     
     @objc func handleSelectPhoto() {
@@ -144,6 +157,33 @@ class NewRecordController: UIViewController {
     
     // MARK: - Helpers
     
+    func fetchData() {
+        guard let dailyRecord = dailyRecord else { return }
+        messageInput.text = dailyRecord.message
+        placeholder.isHidden = !messageInput.text.isEmpty
+        guard let imageData = dailyRecord.image else { return }
+        let image = UIImage(data: imageData)
+        configureImage(image)
+        hideSaveButton()
+    }
+    
+    func hideSaveButton() {
+        let saveButton = navigationItem.rightBarButtonItem
+        saveButton?.isHidden = false
+        guard let dailyRecord = dailyRecord else { return }
+        guard let imageData = dailyRecord.image else { return }
+        if dailyRecord.message == messageInput.text && imageData == todayImage?.pngData() {
+            saveButton?.isHidden = true
+        }
+    }
+    
+    func configureImage(_ image: UIImage?) {
+        todayImage = image
+        plusPhotoButton.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
+        plusPhotoButton.layer.borderColor = UIColor.white.cgColor
+        plusPhotoButton.layer.borderWidth = 0.0
+    }
+    
     func configureUI() {
         
         view.backgroundColor = .black
@@ -156,6 +196,7 @@ class NewRecordController: UIViewController {
         navigationItem.rightBarButtonItem?.tintColor = .systemGreen
         
         recordDate = delegate?.updateRecordDate()
+        dailyRecord = delegate?.updateRecordData()
         
         view.addSubview(plusPhotoButton)
         plusPhotoButton.translatesAutoresizingMaskIntoConstraints = false
@@ -171,7 +212,7 @@ class NewRecordController: UIViewController {
         customTextInput.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
         customTextInput.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
         customTextInput.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -183,7 +224,6 @@ class NewRecordController: UIViewController {
         dateFormatter.dateFormat = "YYYY년 MM월 dd일"
         guard let recordDate = recordDate else { return }
         configureNavigationBar(withTitle: dateFormatter.string(from: recordDate), prefersLargeTitles: false)
-
     }
 }
 
@@ -191,11 +231,7 @@ class NewRecordController: UIViewController {
 extension NewRecordController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.originalImage] as? UIImage
-        todayImage = image
-        plusPhotoButton.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
-        plusPhotoButton.layer.borderColor = UIColor.white.cgColor
-        plusPhotoButton.layer.borderWidth = 0.0
-        dismiss(animated: true)
+        configureImage(image)
     }
     
 }
