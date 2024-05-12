@@ -12,6 +12,8 @@ class HomeController: UIViewController {
     
     private var selectedDate = Date()
     
+    private var records: [String: DailyRecord] = [:]
+    
     lazy var header: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
@@ -193,10 +195,15 @@ class HomeController: UIViewController {
         let context = appDelegate.persistentContainer.viewContext
         
         do {
-            let data = try context.fetch(DailyRecord.fetchRequest()) as! [DailyRecord]
-            data.forEach {
-                print($0.message, $0.timestamp)
+            let datas = try context.fetch(DailyRecord.fetchRequest()) as! [DailyRecord]
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "YYYY년 MM월 dd일"
+            datas.forEach { dailyRecord in
+                guard let timestamp = dailyRecord.timestamp else { return }
+                let timestampStr = dateFormatter.string(from: timestamp)
+                records[timestampStr] = dailyRecord
             }
+            print(records)
         } catch {
             print(error.localizedDescription)
         }
@@ -274,7 +281,7 @@ extension HomeController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDe
         let today = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY년 MM월 dd일"
-        if dateFormatter.string(from: today) == dateFormatter.string(from: date) {
+        if records[dateFormatter.string(from: date)] != nil {
             return 1
         } else {
             return 0
