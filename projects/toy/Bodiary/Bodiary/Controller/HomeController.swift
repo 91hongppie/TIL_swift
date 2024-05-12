@@ -27,7 +27,7 @@ class HomeController: UIViewController {
     private let settingButton: UIButton = {
         let button = UIButton(type: .system)
         
-        button.setImage(UIImage(systemName: "gear"), for: .normal)
+        button.setImage(UIImage(systemName: "archivebox"), for: .normal)
         button.tintColor = .white
         button.addTarget(self, action: #selector(goSetting), for: .touchUpInside)
         
