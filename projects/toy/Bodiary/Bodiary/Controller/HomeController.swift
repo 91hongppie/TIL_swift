@@ -12,7 +12,10 @@ class HomeController: UIViewController {
     
     private var selectedDate = Date()
     
-    private var records: [String: DailyRecord] = [:]
+    private var records: [String: DailyRecord] = [:] {
+        didSet { calendar.reloadData() }
+        
+    }
     
     lazy var header: UIView = {
         let view = UIView()
@@ -138,6 +141,7 @@ class HomeController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+        fetchRecord()
     }
     
     // MARK: - Selectors
@@ -203,7 +207,7 @@ class HomeController: UIViewController {
                 let timestampStr = dateFormatter.string(from: timestamp)
                 records[timestampStr] = dailyRecord
             }
-            print(records)
+            calendar.reloadData()
         } catch {
             print(error.localizedDescription)
         }
