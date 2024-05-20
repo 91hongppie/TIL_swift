@@ -11,6 +11,7 @@ import CoreData
 protocol NewRecordControllerDelegate: class {
     func updateRecordDate() -> Date
     func updateRecordData() -> DailyRecord?
+    func dismissal(_ isModified: Bool) -> Void
 }
 
 class NewRecordController: UIViewController {
@@ -24,6 +25,8 @@ class NewRecordController: UIViewController {
     private var dailyRecord: DailyRecord? {
         didSet{ fetchData() }
     }
+    
+    private var isModified = false
     
     private var todayImage: UIImage?
     
@@ -104,21 +107,29 @@ class NewRecordController: UIViewController {
         let context = appDelegate.persistentContainer.viewContext
         
         
-        let entity = NSEntityDescription.entity(forEntityName: "DailyRecord", in: context)
-        
-        if let entity = entity {
-            let dailyRecord = NSManagedObject(entity: entity, insertInto: context)
-            dailyRecord.setValue(messageInput.text, forKey: "message")
-            dailyRecord.setValue(recordDate, forKey: "timestamp")
-            dailyRecord.setValue(todayImage?.pngData(), forKey: "image")
+        if dailyRecord == nil {
+            let entity = NSEntityDescription.entity(forEntityName: "DailyRecord", in: context)
+            
+            if let entity = entity {
+                let dailyRecord = NSManagedObject(entity: entity, insertInto: context)
+                dailyRecord.setValue(messageInput.text, forKey: "message")
+                dailyRecord.setValue(recordDate, forKey: "timestamp")
+                dailyRecord.setValue(todayImage?.pngData(), forKey: "image")
+            }
+        } else {
+            dailyRecord?.setValue(messageInput.text, forKey: "message")
+            dailyRecord?.setValue(recordDate, forKey: "timestamp")
+            dailyRecord?.setValue(todayImage?.pngData(), forKey: "image")
         }
-        
         do {
             try context.save()
+            let cacheKey = NSString(string: String(describing: dailyRecord?.timestamp))
+            isModified = true
+            ImageCacheManager.shared.removeObject(forKey: cacheKey)
             let alert = UIAlertController(title: "저장되었습니다.", message: "", preferredStyle: .alert)
             
             present(alert, animated: true)
-            Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { _ in
+            Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false) { _ in
                 alert.dismiss(animated: true)
             }
             
@@ -141,7 +152,6 @@ class NewRecordController: UIViewController {
     
     @objc func handleTextDidChange() {
         placeholder.isHidden = !messageInput.text.isEmpty
-        hideSaveButton()
     }
     
     @objc func handleSelectPhoto() {
@@ -152,7 +162,7 @@ class NewRecordController: UIViewController {
     }
     
     @objc func handleDismiss() {
-        dismiss(animated: true)
+        delegate?.dismissal(isModified)
     }
     
     // MARK: - Helpers
@@ -164,7 +174,6 @@ class NewRecordController: UIViewController {
         guard let imageData = dailyRecord.image else { return }
         let image = UIImage(data: imageData)
         configureImage(image)
-        hideSaveButton()
     }
     
     func hideSaveButton() {
@@ -231,6 +240,7 @@ class NewRecordController: UIViewController {
 extension NewRecordController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.originalImage] as? UIImage
+        picker.dismiss(animated: true)
         configureImage(image)
     }
     

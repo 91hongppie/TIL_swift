@@ -7,6 +7,7 @@
 
 import UIKit
 import FSCalendar
+import CoreData
 
 class HomeController: UIViewController {
     
@@ -22,19 +23,19 @@ class HomeController: UIViewController {
         view.backgroundColor = .clear
         
         
-        view.addSubview(settingButton)
-        settingButton.translatesAutoresizingMaskIntoConstraints = false
-        settingButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        settingButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        view.addSubview(collectButton)
+        collectButton.translatesAutoresizingMaskIntoConstraints = false
+        collectButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        collectButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         return view
     }()
     
-    private let settingButton: UIButton = {
+    private let collectButton: UIButton = {
         let button = UIButton(type: .system)
         
         button.setImage(UIImage(systemName: "archivebox"), for: .normal)
         button.tintColor = .white
-        button.addTarget(self, action: #selector(goSetting), for: .touchUpInside)
+        button.addTarget(self, action: #selector(goCollect), for: .touchUpInside)
         
         return button
     }()
@@ -92,7 +93,7 @@ class HomeController: UIViewController {
         calendar.calendarWeekdayView.weekdayLabels[5].text = "금"
         calendar.calendarWeekdayView.weekdayLabels[6].text = "토"
         calendar.appearance.todayColor = .clear
-        calendar.appearance.selectionColor = .systemPink        
+        calendar.appearance.selectionColor = .systemPink
         
         
         calendar.appearance.titleDefaultColor = .white
@@ -141,7 +142,6 @@ class HomeController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
-        fetchRecord()
     }
     
     // MARK: - Selectors
@@ -185,8 +185,15 @@ class HomeController: UIViewController {
         present(alert, animated: true)
     }
     
-    @objc func goSetting() {
-        let controller = SettingController()
+    @objc func goCollect() {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        let controller = CollectController(collectionViewLayout: layout)
+        controller.delegate = self
         let backBarButton = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
         backBarButton.tintColor = .white
         navigationItem.backBarButtonItem = backBarButton
@@ -199,8 +206,12 @@ class HomeController: UIViewController {
         let context = appDelegate.persistentContainer.viewContext
         
         do {
-            let datas = try context.fetch(DailyRecord.fetchRequest()) as! [DailyRecord]
+            let request = DailyRecord.fetchRequest()
+            request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
+            
+            let datas = try context.fetch(request) as! [DailyRecord]
             let dateFormatter = DateFormatter()
+            print(datas.count)
             dateFormatter.dateFormat = "YYYY년 MM월 dd일"
             datas.forEach { dailyRecord in
                 guard let timestamp = dailyRecord.timestamp else { return }
@@ -212,6 +223,22 @@ class HomeController: UIViewController {
             print(error.localizedDescription)
         }
     }
+    
+    func deleteAllRecord() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = DailyRecord.fetchRequest()
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try context.execute(deleteRequest)
+            try context.save()
+            print("Deleted all Person entities.")
+        } catch let error as NSError {
+            print("Could not delete. \(error), \(error.userInfo)")
+        }
+    }
+    
     
     // MARK: - Helpers
     func configureUI() {
@@ -278,8 +305,8 @@ extension HomeController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDe
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         self.selectedDate = date
-      }
-
+    }
+    
     
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         let today = Date()
@@ -296,7 +323,7 @@ extension HomeController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDe
         let eventScaleFactor: CGFloat = 1
         cell.eventIndicator.transform = CGAffineTransform(scaleX: eventScaleFactor, y: eventScaleFactor)
     }
-
+    
     
 }
 
@@ -312,4 +339,21 @@ extension HomeController: NewRecordControllerDelegate {
         let dateStr = dateFormatter.string(from: selectedDate)
         return records[dateStr]
     }
+    
+    func dismissal(_ isModified: Bool) {
+        dismiss(animated: true)
+        if !isModified {
+            return
+        }
+        fetchRecord()
+    }
 }
+
+extension HomeController: CollectControllerDelegate {
+    
+    func updateData() -> [String : DailyRecord]? {
+        return records
+    }
+    
+}
+
