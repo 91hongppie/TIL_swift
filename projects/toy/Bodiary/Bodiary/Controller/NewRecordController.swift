@@ -63,6 +63,8 @@ class NewRecordController: UIViewController {
         let tv = UITextView()
         tv.font = .systemFont(ofSize: 16)
         tv.backgroundColor = .black
+        tv.autocorrectionType = .no
+        tv.spellCheckingType = .no
         tv.keyboardType = .webSearch
         tv.textColor = .white
         return tv
@@ -123,9 +125,10 @@ class NewRecordController: UIViewController {
         }
         do {
             try context.save()
-            let cacheKey = NSString(string: String(describing: dailyRecord?.timestamp))
+            let cacheKey = NSString(string: "\(dailyRecord?.timestamp)")
             isModified = true
-            ImageCacheManager.shared.removeObject(forKey: cacheKey)
+            guard let nextImage = todayImage else { return }
+            ImageCacheManager.shared.setObject(nextImage, forKey: cacheKey)
             let alert = UIAlertController(title: "저장되었습니다.", message: "", preferredStyle: .alert)
             
             present(alert, animated: true)

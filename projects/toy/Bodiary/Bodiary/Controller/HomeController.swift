@@ -14,7 +14,9 @@ class HomeController: UIViewController {
     private var selectedDate = Date()
     
     private var records: [String: DailyRecord] = [:] {
-        didSet { calendar.reloadData() }
+        didSet {
+            calendar.reloadData()
+        }
         
     }
     
@@ -211,7 +213,6 @@ class HomeController: UIViewController {
             
             let datas = try context.fetch(request) as! [DailyRecord]
             let dateFormatter = DateFormatter()
-            print(datas.count)
             dateFormatter.dateFormat = "YYYY년 MM월 dd일"
             datas.forEach { dailyRecord in
                 guard let timestamp = dailyRecord.timestamp else { return }

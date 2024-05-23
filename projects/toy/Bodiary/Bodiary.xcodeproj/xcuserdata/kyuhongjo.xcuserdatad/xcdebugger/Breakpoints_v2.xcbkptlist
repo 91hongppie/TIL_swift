@@ -14,57 +14,10 @@
             filePath = "Bodiary/Controller/HomeController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "297"
-            endingLineNumber = "297"
-            landmarkName = "HomeController"
-            landmarkType = "21">
-            <Locations>
-               <Location
-                  uuid = "AE5C4703-3BC7-4720-B1E3-72E43F26E228 - 10a0bafce6b6c140"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Bodiary.HomeController.calendarCurrentPageDidChange(__C.FSCalendar) -&gt; ()"
-                  moduleName = "Bodiary"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kyuhongjo/Desktop/learning/TIL_swift/projects/toy/Bodiary/Bodiary/Controller/HomeController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "206"
-                  endingLineNumber = "206"
-                  offsetFromSymbolStart = "112">
-               </Location>
-               <Location
-                  uuid = "AE5C4703-3BC7-4720-B1E3-72E43F26E228 - 10a0bafce6b6c1dc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Bodiary.HomeController.calendarCurrentPageDidChange(__C.FSCalendar) -&gt; ()"
-                  moduleName = "Bodiary"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kyuhongjo/Desktop/learning/TIL_swift/projects/toy/Bodiary/Bodiary/Controller/HomeController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "210"
-                  endingLineNumber = "210"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  uuid = "AE5C4703-3BC7-4720-B1E3-72E43F26E228 - 10a0bafce6b6c123"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Bodiary.HomeController.calendarCurrentPageDidChange(__C.FSCalendar) -&gt; ()"
-                  moduleName = "Bodiary"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kyuhongjo/Desktop/learning/TIL_swift/projects/toy/Bodiary/Bodiary/Controller/HomeController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "207"
-                  endingLineNumber = "207"
-                  offsetFromSymbolStart = "112">
-               </Location>
-            </Locations>
+            startingLineNumber = "298"
+            endingLineNumber = "298"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
